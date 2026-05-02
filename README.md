@@ -43,21 +43,27 @@ cd openclaw-plug-and-play\windows
 4. **Pulls default model** — `kimi-k2.6:cloud` with retry logic
 5. **Installs OpenClaw** — `npm install -g openclaw`
 6. **Configures workspace** — Creates `~/.openclaw/` with defaults
-7. **Prompts for tokens** — Discord, Telegram, admin ID (5 questions)
-8. **Sets security defaults** — DMs off, guild whitelist, admin-only
+7. **Prompts for tokens** — Discord, Telegram, admin ID + extra whitelist users
+8. **Enables both channels** — Discord + Telegram active
 9. **Prints setup guide** — Discord intents, invite URL, BotFather steps
 
 ---
 
-## Security Defaults
+## Discord Security Model
 
-| Setting | Default | Why |
-|---------|---------|-----|
-| DMs | `false` | Prevents random users from DMing your bot |
-| Admin whitelist | Your Discord ID | Only you can interact until you add others |
-| Guild restriction | Open or specified | Optional: lock to specific servers |
-| Token storage | `.env` file | Auto-.gitignored, never committed |
-| Device auth | Disabled | `dangerouslyDisableDeviceAuth: true` for local use |
+| Feature | Setting | How It Works |
+|---------|---------|--------------|
+| **DMs** | ✅ Enabled | Only whitelisted Discord IDs can DM the bot |
+| **Groups** | ✅ Enabled | Works in all servers (or whitelisted guild if set) |
+| **Whitelist** | Multi-user | You + any extra users you add during setup |
+| **Guild lock** | Optional | Restrict to specific server, or leave open |
+
+Add more whitelisted users anytime by editing `~/.openclaw/config/gateway.yaml`:
+
+```yaml
+discord:
+  allowedUsers: [123456789, 987654321, 555555555]
+```
 
 ---
 

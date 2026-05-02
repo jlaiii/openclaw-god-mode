@@ -460,27 +460,32 @@ cd openclaw-plug-and-play\windows
 
         <!-- Security -->
         <section>
-            <h2>Security Defaults</h2>
+            <h2>Discord Security Model</h2>
             <table>
                 <tr>
+                    <th>Feature</th>
                     <th>Setting</th>
-                    <th>Default</th>
-                    <th>Why</th>
+                    <th>How It Works</th>
                 </tr>
                 <tr>
-                    <td>DMs (direct messages)</td>
-                    <td><code>false</code></td>
-                    <td>Prevents random users from DMing your bot</td>
+                    <td>DMs</td>
+                    <td><code>allowDMs: true</code></td>
+                    <td>✅ Enabled — only whitelisted Discord IDs can DM</td>
                 </tr>
                 <tr>
-                    <td>Admin whitelist</td>
-                    <td>Your Discord ID only</td>
-                    <td>Only you can interact until you add others</td>
+                    <td>Groups</td>
+                    <td><code>allowGroups: true</code></td>
+                    <td>✅ Enabled — works in all servers (or whitelisted guild)</td>
                 </tr>
                 <tr>
-                    <td>Guild restriction</td>
-                    <td>Empty (open) or specified</td>
-                    <td>Optional: lock to specific Discord servers</td>
+                    <td>Whitelist</td>
+                    <td>Multi-user</td>
+                    <td>You + any extra users added during setup</td>
+                </tr>
+                <tr>
+                    <td>Guild lock</td>
+                    <td>Optional</td>
+                    <td>Restrict to specific server, or leave open</td>
                 </tr>
                 <tr>
                     <td>Token storage</td>
@@ -493,6 +498,13 @@ cd openclaw-plug-and-play\windows
                     <td><code>dangerouslyDisableDeviceAuth: true</code> for local use</td>
                 </tr>
             </table>
+            <p>Add more whitelisted users anytime by editing <code>~/.openclaw/config/gateway.yaml</code>:</p>
+            <div class="code-header">
+                <span class="code-label">yaml</span>
+                <button class="copy-btn" onclick="copy(this)">Copy</button>
+            </div>
+            <pre><code>discord:
+  allowedUsers: [123456789, 987654321, 555555555]</code></pre>
         </section>
 
         <!-- Model Catalog -->
