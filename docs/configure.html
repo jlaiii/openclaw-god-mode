@@ -961,9 +961,11 @@ I read codebases, write tests, and deploy changes.
                 } catch(e) {
                     console.log('No preset in URL');
                     addDefaultAgent();
+                    syncAllIntegrations();
                 }
             } else {
                 addDefaultAgent();
+                syncAllIntegrations();
             }
         });
 
@@ -990,6 +992,9 @@ I read codebases, write tests, and deploy changes.
             set('discordToken', data.dt);
             set('telegramEnabled', data.ide?.telegram ?? true);
             set('telegramToken', data.tt);
+            // Sync UI state for core integrations too
+            toggleIntegration('discord');
+            toggleIntegration('telegram');
 
             // Expanded integrations — restore state from URL hash (all off by default)
             const INTEGRATIONS = ['whatsapp','signal','imessage','line','zalo','wechat','slack','googlechat','msteams','mattermost','nextcloud','irc','matrix','nostr','twitch'];
@@ -1232,6 +1237,10 @@ I read codebases, write tests, and deploy changes.
             if (row) {
                 row.className = 'integration-row ' + (enabled ? 'enabled' : 'disabled');
             }
+        }
+
+        function syncAllIntegrations() {
+            ['discord', 'telegram', 'whatsapp', 'signal', 'imessage', 'line', 'zalo', 'wechat', 'slack', 'googlechat', 'msteams', 'mattermost', 'nextcloud', 'irc', 'matrix', 'nostr', 'twitch'].forEach(toggleIntegration);
         }
 
         function addFallback(agentIndex) {
@@ -1478,6 +1487,7 @@ chmod +x bootstrap.sh && bash bootstrap.sh`;
             document.getElementById('results').classList.remove('show');
             agents = [];
             addDefaultAgent();
+            syncAllIntegrations();
             window.location.hash = '';
         }
 
