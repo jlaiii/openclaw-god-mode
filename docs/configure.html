@@ -1382,6 +1382,16 @@ I read codebases, write tests, and deploy changes.
         function generate() {
             const d = getFormData();
 
+            // Validate provider-specific required fields
+            if (d.pv === 'google' && !d.guk) {
+                alert('Google API Key is required when using Google Gemini.\n\nGet one at https://aistudio.google.com/app/apikey');
+                return;
+            }
+            if (d.pv === 'anthropic' && !d.auk) {
+                alert('Anthropic API Key is required when using Claude.\n\nGet one at https://console.anthropic.com/settings/keys');
+                return;
+            }
+
             // Validate based on which channels are actually enabled
             const allChannels = [...new Set(d.ag.flatMap(a => a.c))];
             const discordEnabled = allChannels.includes("discord");
@@ -1462,6 +1472,7 @@ I read codebases, write tests, and deploy changes.
                 d.gu ? `• Guild lock: ${d.gu}` : '• No guild restriction',
                 d.ex ? `• Extra users: ${d.ex}` : '',
                 `• Integrations: ${enabledIntegrations.join(', ') || 'none'}`,
+                d.pv ? `• Provider: ${d.pv}${d.pv === 'google' ? ' → ' + (d.guc || d.gum) : d.pv === 'anthropic' ? ' → ' + (d.auc || d.aum) : ''}` : '• Provider: ollama',
                 d.da ? '• Device auth: DISABLED' : '• Device auth: enabled',
                 d.np ? '• NOPASSWD sudo: enabled' : '',
                 d.as ? '• Auto-start on boot: enabled' : '• Auto-start on boot: disabled',
@@ -1522,6 +1533,15 @@ I read codebases, write tests, and deploy changes.
                 addIntegrationEnvs(envLines, 'export ');
                 envLines.push(`export CUSTOM_IDENTITY='${bootstrapEscaped}'`);
                 envLines.push(`export IDENTITY_PRESET='custom'`);
+                // Provider env vars for custom identity bootstrap path
+                if (d.pv) envLines.push(`export AI_PROVIDER='${escapeShell(d.pv)}'`);
+                if (d.guk) envLines.push(`export GOOGLE_API_KEY='${escapeShell(d.guk)}'`);
+                if (d.gum) envLines.push(`export GOOGLE_MODEL='${escapeShell(d.gum)}'`);
+                if (d.guc) envLines.push(`export GOOGLE_MODEL_CUSTOM='${escapeShell(d.guc)}'`);
+                if (d.auk) envLines.push(`export ANTHROPIC_API_KEY='${escapeShell(d.auk)}'`);
+                if (d.aum) envLines.push(`export ANTHROPIC_MODEL='${escapeShell(d.aum)}'`);
+                if (d.auc) envLines.push(`export ANTHROPIC_MODEL_CUSTOM='${escapeShell(d.auc)}'`);
+                if (d.obu) envLines.push(`export OLLAMA_BASE_URL='${escapeShell(d.obu)}'`);
                 return `mkdir -p /tmp/omg && cd /tmp/omg && cat > bootstrap.sh << 'BOOTSTRAP_EOF'
 #!/bin/bash
 set -e
@@ -1535,6 +1555,16 @@ chmod +x bootstrap.sh && bash bootstrap.sh`;
             if (d.ip && d.ip !== 'custom') {
                 envs.push(`IDENTITY_PRESET='${escapeShell(d.ip)}'`);
             }
+
+            // Provider env vars for standard path too
+            if (d.pv) envs.push(`AI_PROVIDER='${escapeShell(d.pv)}'`);
+            if (d.guk) envs.push(`GOOGLE_API_KEY='${escapeShell(d.guk)}'`);
+            if (d.gum) envs.push(`GOOGLE_MODEL='${escapeShell(d.gum)}'`);
+            if (d.guc) envs.push(`GOOGLE_MODEL_CUSTOM='${escapeShell(d.guc)}'`);
+            if (d.auk) envs.push(`ANTHROPIC_API_KEY='${escapeShell(d.auk)}'`);
+            if (d.aum) envs.push(`ANTHROPIC_MODEL='${escapeShell(d.aum)}'`);
+            if (d.auc) envs.push(`ANTHROPIC_MODEL_CUSTOM='${escapeShell(d.auc)}'`);
+            if (d.obu) envs.push(`OLLAMA_BASE_URL='${escapeShell(d.obu)}'`);
 
             // Add integration env vars for standard path too
             addIntegrationEnvs(envs);
