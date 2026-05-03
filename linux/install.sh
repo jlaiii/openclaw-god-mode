@@ -99,25 +99,61 @@ install_packages() {
 install_ollama() {
     if command -v ollama &>/dev/null; then
         ok "Ollama already installed: $(ollama --version)"
+        enable_ollama_service
         return
     fi
     
     log "Installing Ollama..."
     curl -fsSL https://ollama.com/install.sh | sh
     
-    # Start service
-    if systemctl --user is-active ollama &>/dev/null || systemctl is-active ollama &>/dev/null; then
-        ok "Ollama service already running"
-    else
-        log "Starting Ollama service..."
-        if systemctl --user start ollama 2>/dev/null || sudo systemctl start ollama 2>/dev/null; then
-            ok "Ollama service started"
+    enable_ollama_service
+    ok "Ollama installed"
+}
+
+# ─── Enable Ollama systemd service for boot ───
+enable_ollama_service() {
+    log "Enabling Ollama service for auto-start on boot..."
+    
+    # Check for system-level ollama service (installed via official script as root)
+    if [ -f /etc/systemd/system/ollama.service ]; then
+        if systemctl is-enabled ollama.service &>/dev/null; then
+            ok "System ollama.service already enabled for boot"
         else
-            warn "Could not start Ollama via systemd. It may need manual start."
+            sudo systemctl enable ollama.service
+            ok "System ollama.service enabled for boot"
         fi
+        
+        # Ensure it's running now
+        if ! systemctl is-active ollama.service &>/dev/null; then
+            sudo systemctl start ollama.service 2>/dev/null || warn "Could not start system ollama.service"
+        fi
+        return
     fi
     
-    ok "Ollama installed"
+    # Check for user-level ollama service
+    if [ -f "$HOME/.config/systemd/user/ollama.service" ]; then
+        if systemctl --user is-enabled ollama.service &>/dev/null; then
+            ok "User ollama.service already enabled for boot"
+        else
+            systemctl --user enable ollama.service
+            ok "User ollama.service enabled for boot"
+        fi
+        
+        # Ensure it's running now
+        if ! systemctl --user is-active ollama.service &>/dev/null; then
+            systemctl --user start ollama.service 2>/dev/null || warn "Could not start user ollama.service"
+        fi
+        return
+    fi
+    
+    # Fallback: try to find and enable any ollama service
+    if systemctl list-unit-files | grep -q "ollama.service"; then
+        sudo systemctl enable ollama.service 2>/dev/null || systemctl --user enable ollama.service 2>/dev/null
+        ok "Ollama service enabled for boot (fallback)"
+    else
+        warn "Ollama service file not found — may need manual enable after install"
+        warn "Try: sudo systemctl enable ollama  OR  systemctl --user enable ollama"
+    fi
 }
 
 # ─── Pull Default Model ───
