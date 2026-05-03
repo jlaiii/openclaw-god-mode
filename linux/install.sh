@@ -254,24 +254,76 @@ prompt_config() {
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     echo ""
     
-    read -rp "Discord Bot Token: " discord_token
-    read -rp "Telegram Bot Token (leave blank to skip): " telegram_token
-    read -rp "Your Discord User ID (admin/owner): " admin_id
+    # Check if running non-interactively (no TTY)
+    local non_interactive=false
+    if ! tty -s 2>/dev/null || [ ! -t 0 ]; then
+        non_interactive=true
+    fi
+    
+    # Check for environment variables first
+    discord_token="${DISCORD_TOKEN:-}"
+    telegram_token="${TELEGRAM_TOKEN:-}"
+    admin_id="${ADMIN_DISCORD_ID:-}"
+    guild_id="${DISCORD_GUILD_ID:-}"
+    local extra_users="${DISCORD_EXTRA_USERS:-}"
+    
+    if [ "$non_interactive" = true ] && [ -z "$discord_token" ]; then
+        warn "Non-interactive mode: no TTY detected. Set DISCORD_TOKEN env var to auto-configure."
+        warn "Continuing with placeholder config. You MUST edit ~/.openclaw/config/gateway.yaml manually."
+        discord_token="YOUR_DISCORD_BOT_TOKEN"
+        admin_id="${admin_id:-YOUR_ADMIN_ID}"
+        guild_id="${guild_id:-}"
+    fi
+    
+    # Only prompt if not already set via env vars
+    if [ -z "$discord_token" ]; then
+        read -rp "Discord Bot Token: " discord_token
+    else
+        ok "Discord token provided via DISCORD_TOKEN environment variable"
+    fi
+    
+    if [ -z "$telegram_token" ]; then
+        read -rp "Telegram Bot Token (leave blank to skip): " telegram_token
+    else
+        ok "Telegram token provided via TELEGRAM_TOKEN environment variable"
+    fi
+    
+    if [ -z "$admin_id" ]; then
+        read -rp "Your Discord User ID (admin/owner): " admin_id
+    else
+        ok "Admin ID provided via ADMIN_DISCORD_ID environment variable"
+    fi
     
     # Build whitelist array
     local whitelist=()
     [ -n "$admin_id" ] && whitelist+=("$admin_id")
     
-    # Allow adding more users
-    echo ""
-    echo "Add more Discord users to DM whitelist (leave blank when done):"
-    while true; do
-        read -rp "  Discord User ID to whitelist: " extra_id
-        [ -z "$extra_id" ] && break
-        whitelist+=("$extra_id")
-    done
+    # Add extra users from env var (comma-separated)
+    if [ -n "$extra_users" ]; then
+        IFS=',' read -ra extra_arr <<< "$extra_users"
+        for eid in "${extra_arr[@]}"; do
+            eid=$(echo "$eid" | tr -d ' ')
+            [ -n "$eid" ] && whitelist+=("$eid")
+        done
+        ok "Added ${#extra_arr[@]} extra user(s) from DISCORD_EXTRA_USERS"
+    fi
     
-    read -rp "Discord Guild ID to whitelist (leave blank for any server): " guild_id
+    # Allow adding more users (only if interactive)
+    if [ "$non_interactive" = false ]; then
+        echo ""
+        echo "Add more Discord users to DM whitelist (leave blank when done):"
+        while true; do
+            read -rp "  Discord User ID to whitelist: " extra_id
+            [ -z "$extra_id" ] && break
+            whitelist+=("$extra_id")
+        done
+    fi
+    
+    if [ -z "$guild_id" ]; then
+        read -rp "Discord Guild ID to whitelist (leave blank for any server): " guild_id
+    else
+        ok "Guild ID provided via DISCORD_GUILD_ID environment variable"
+    fi
     
     # Write to .env
     local env_file="$HOME/.openclaw/.env"
