@@ -233,6 +233,26 @@ EOF
         ok "Config template written to ~/.openclaw/config/gateway.yaml"
     fi
     
+    # Create openclaw.json with gateway.mode=local (required by OpenClaw)
+    if [ ! -f "$workspace/openclaw.json" ]; then
+        cat > "$workspace/openclaw.json" << 'EOF'
+{
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "auto-generated-on-first-install"
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.5.2",
+    "lastTouchedAt": "auto"
+  }
+}
+EOF
+        ok "Gateway mode set to local in ~/.openclaw/openclaw.json"
+    fi
+    
     # Write .env template
     cat > "$workspace/.env" << 'EOF'
 # OpenClaw Environment Variables
@@ -446,84 +466,42 @@ setup_nopasswd_sudo() {
     ok "NOPASSWD sudo configured: $sudoers_file"
 }
 
-# ─── Persist OpenClaw service with elevated privileges ───
+# ─── Persist OpenClaw service ───
 persist_openclaw_service() {
-    log "Setting up OpenClaw systemd service with watchdog..."
+    log "Setting up OpenClaw systemd service..."
     
-    local service_file="/etc/systemd/system/openclaw.service"
-    local user="${SUDO_USER:-$USER}"
-    local home_dir
-    home_dir=$(eval echo "~$user")
+    # Use openclaw's built-in installer (creates proper user service)
+    openclaw gateway install --force 2>&1 | grep -E "Installed|already|Reinstall|No gateway token" || true
     
-    if [ -f "$service_file" ]; then
-        # Check if service is already correct
-        if grep -q "User=root" "$service_file" 2>/dev/null; then
-            ok "OpenClaw service already configured for root"
-        else
-            log "Updating OpenClaw service to run as root..."
-            sudo sed -i 's/^User=.*/User=root/' "$service_file"
-            sudo sed -i 's/^Group=.*/Group=root/' "$service_file"
-            sudo systemctl daemon-reload
-        fi
+    # Enable for boot
+    if systemctl --user is-enabled openclaw-gateway.service &>/dev/null; then
+        ok "OpenClaw user service enabled for boot"
     else
-        cat << 'SERVICE' | sudo tee "$service_file" >/dev/null
-[Unit]
-Description=OpenClaw Gateway (God Mode)
-After=network.target ollama.service
-Wants=ollama.service
-
-[Service]
-Type=simple
-User=root
-Group=root
-WorkingDirectory=/root/.openclaw
-Environment="HOME=/root"
-Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-ExecStart=/usr/bin/openclaw gateway start
-ExecStop=/usr/bin/openclaw gateway stop
-Restart=always
-RestartSec=10
-WatchdogSec=30
-
-[Install]
-WantedBy=multi-user.target
-SERVICE
-        
-        sudo chmod 644 "$service_file"
-        sudo systemctl daemon-reload
-        ok "OpenClaw systemd service created (root + watchdog)"
-    fi
-    
-    # Enable service to start on boot
-    if systemctl is-enabled openclaw.service &>/dev/null; then
-        ok "OpenClaw service already enabled"
-    else
-        sudo systemctl enable openclaw.service
-        ok "OpenClaw service enabled for boot"
+        systemctl --user enable openclaw-gateway.service
+        ok "OpenClaw user service enabled for boot"
     fi
 }
 
 # ─── Auto-start OpenClaw if tokens are configured ───
 start_openclaw_if_ready() {
-    local config_file="$HOME/.openclaw/config/gateway.yaml"
-    
     # Check if tokens are set (not still ${VAR} placeholders)
-    if grep -q '\${DISCORD_TOKEN}' "$config_file" 2>/dev/null; then
+    if grep -q '\${DISCORD_TOKEN}' "$HOME/.openclaw/config/gateway.yaml" 2>/dev/null; then
         warn "Discord token not set — skipping auto-start"
+        warn "Set your token in ~/.openclaw/.env then run: systemctl --user start openclaw-gateway.service"
         return 0
     fi
     
     log "Starting OpenClaw service..."
-    if sudo systemctl start openclaw.service 2>/dev/null; then
+    if systemctl --user start openclaw-gateway.service 2>/dev/null; then
         ok "OpenClaw service started"
         sleep 2
-        if systemctl is-active openclaw.service &>/dev/null; then
+        if systemctl --user is-active openclaw-gateway.service &>/dev/null; then
             ok "OpenClaw running and healthy"
         else
             warn "OpenClaw service started but may not be healthy yet"
         fi
     else
-        warn "Could not start OpenClaw service. Start manually: sudo systemctl start openclaw"
+        warn "Could not start OpenClaw service. Start manually: systemctl --user start openclaw-gateway.service"
     fi
 }
 
@@ -607,19 +585,19 @@ print_status() {
     echo "Discord:    DMs ON (whitelisted users only), Groups ON"
     echo ""
     echo "System:     Passwordless sudo configured"
-    echo "Service:    systemd openclaw.service (root, watchdog, auto-start)"
+    echo "Service:    systemd user service (auto-start, auto-restart)"
     echo ""
     echo "Next steps:"
     echo "  1. Review ~/.openclaw/config/gateway.yaml"
-    echo "  2. Check service: sudo systemctl status openclaw"
+    echo "  2. Check service: systemctl --user status openclaw-gateway.service"
     echo ""
     echo "Commands:"
-    echo "  ollama list                    # List models"
-    echo "  ollama pull <model>            # Pull a model"
-    echo "  openclaw status                # Check gateway status"
-    echo "  openclaw gateway start         # Manual start (if not using systemd)"
-    echo "  sudo systemctl start openclaw  # Start via systemd"
-    echo "  sudo systemctl stop openclaw   # Stop via systemd"
+    echo "  ollama list                            # List models"
+    echo "  ollama pull <model>                    # Pull a model"
+    echo "  openclaw status                        # Check gateway status"
+    echo "  openclaw gateway run                   # Manual foreground start"
+    echo "  systemctl --user start openclaw-gateway.service   # Start via systemd"
+    echo "  systemctl --user stop openclaw-gateway.service    # Stop via systemd"
     echo ""
     echo "⚠️  IMPORTANT: Log out and back in for NOPASSWD sudo to take full effect."
     echo "   Or run: exec sudo -i"
