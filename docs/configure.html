@@ -351,6 +351,88 @@
         .fallback-add-row { display: flex; align-items: center; gap: 8px; }
         .fallback-add-row select { flex: 1; }
 
+        /* Integration grid styles */
+        .integration-grid {
+            display: grid;
+            gap: 8px;
+        }
+        .integration-row {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 14px;
+            transition: border-color 0.2s;
+        }
+        .integration-row:hover { border-color: var(--accent); }
+        .integration-row.enabled { border-left: 3px solid var(--success); }
+        .integration-row.disabled { opacity: 0.8; }
+
+        .integration-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .integration-header input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .integration-header .int-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin: 0;
+            cursor: pointer;
+            color: var(--text);
+            flex: 1;
+        }
+        .integration-header .int-status {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .integration-header .int-status.enabled {
+            background: rgba(63, 185, 80, 0.15);
+            color: var(--success);
+        }
+        .integration-header .int-status.disabled {
+            background: var(--bg-input);
+            color: var(--text-muted);
+        }
+        .integration-header .int-status.configured {
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent);
+        }
+
+        .integration-body {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border);
+            display: none;
+        }
+        .integration-body input {
+            width: 100%;
+            padding: 8px 10px;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 13px;
+        }
+        .integration-body input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .integration-body .int-hint {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
         footer {
             border-top: 1px solid var(--border);
             padding: 24px 0;
@@ -386,24 +468,236 @@
         </div>
 
         <form id="configForm" onsubmit="event.preventDefault(); generate();">
-            <!-- Bot Tokens -->
+            <!-- Integrations -->
             <div class="section">
-                <div class="section-title">🔑 Bot Tokens</div>
+                <div class="section-title">🔌 Integrations <span class="hint">multi-channel gateway — enable only the ones you need</span></div>
 
-                <div class="form-group">
-                    <label>Discord Bot Token <span class="hint">only required if you enable Discord below</span></label>
-                    <input type="password" id="discordToken" placeholder="MTI3N...">
+                <!-- Core Messaging -->
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px;">Core Messaging</label>
+                    <div class="integration-grid">
+                        <!-- Discord -->
+                        <div class="integration-row" id="int-discord">
+                            <div class="integration-header">
+                                <input type="checkbox" id="discordEnabled" checked onchange="toggleIntegration('discord')">
+                                <label for="discordEnabled" class="int-name">Discord</label>
+                                <span class="int-status" id="discordStatus">Enabled</span>
+                            </div>
+                            <div class="integration-body" id="discordBody">
+                                <input type="password" id="discordToken" placeholder="Bot Token (MTI3N...)">
+                            </div>
+                        </div>
+                        <!-- Telegram -->
+                        <div class="integration-row" id="int-telegram">
+                            <div class="integration-header">
+                                <input type="checkbox" id="telegramEnabled" checked onchange="toggleIntegration('telegram')">
+                                <label for="telegramEnabled" class="int-name">Telegram</label>
+                                <span class="int-status" id="telegramStatus">Enabled</span>
+                            </div>
+                            <div class="integration-body" id="telegramBody">
+                                <input type="password" id="telegramToken" placeholder="Bot Token (123456:ABC...)">
+                            </div>
+                        </div>
+                        <!-- WhatsApp -->
+                        <div class="integration-row" id="int-whatsapp">
+                            <div class="integration-header">
+                                <input type="checkbox" id="whatsappEnabled" onchange="toggleIntegration('whatsapp')">
+                                <label for="whatsappEnabled" class="int-name">WhatsApp</label>
+                                <span class="int-status" id="whatsappStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="whatsappBody" style="display:none;">
+                                <input type="password" id="whatsappToken" placeholder="Session string or API key">
+                            </div>
+                        </div>
+                        <!-- Signal -->
+                        <div class="integration-row" id="int-signal">
+                            <div class="integration-header">
+                                <input type="checkbox" id="signalEnabled" onchange="toggleIntegration('signal')">
+                                <label for="signalEnabled" class="int-name">Signal</label>
+                                <span class="int-status" id="signalStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="signalBody" style="display:none;">
+                                <input type="text" id="signalNumber" placeholder="Phone number (+1234567890)">
+                            </div>
+                        </div>
+                        <!-- iMessage -->
+                        <div class="integration-row" id="int-imessage">
+                            <div class="integration-header">
+                                <input type="checkbox" id="imessageEnabled" onchange="toggleIntegration('imessage')">
+                                <label for="imessageEnabled" class="int-name">iMessage</label>
+                                <span class="int-status" id="imessageStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="imessageBody" style="display:none;">
+                                <p class="int-hint">Requires macOS with BlueBubbles or similar bridge</p>
+                            </div>
+                        </div>
+                        <!-- LINE -->
+                        <div class="integration-row" id="int-line">
+                            <div class="integration-header">
+                                <input type="checkbox" id="lineEnabled" onchange="toggleIntegration('line')">
+                                <label for="lineEnabled" class="int-name">LINE</label>
+                                <span class="int-status" id="lineStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="lineBody" style="display:none;">
+                                <input type="password" id="lineToken" placeholder="Channel Access Token">
+                            </div>
+                        </div>
+                        <!-- Zalo -->
+                        <div class="integration-row" id="int-zalo">
+                            <div class="integration-header">
+                                <input type="checkbox" id="zaloEnabled" onchange="toggleIntegration('zalo')">
+                                <label for="zaloEnabled" class="int-name">Zalo</label>
+                                <span class="int-status" id="zaloStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="zaloBody" style="display:none;">
+                                <input type="password" id="zaloToken" placeholder="OA Access Token">
+                            </div>
+                        </div>
+                        <!-- WeChat -->
+                        <div class="integration-row" id="int-wechat">
+                            <div class="integration-header">
+                                <input type="checkbox" id="wechatEnabled" onchange="toggleIntegration('wechat')">
+                                <label for="wechatEnabled" class="int-name">WeChat</label>
+                                <span class="int-status" id="wechatStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="wechatBody" style="display:none;">
+                                <input type="password" id="wechatToken" placeholder="AppID / Token">
+                                <input type="text" id="wechatAppId" placeholder="App ID (optional)" style="margin-top: 6px;">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Enterprise / Team -->
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px;">Enterprise / Team</label>
+                    <div class="integration-grid">
+                        <!-- Slack -->
+                        <div class="integration-row" id="int-slack">
+                            <div class="integration-header">
+                                <input type="checkbox" id="slackEnabled" onchange="toggleIntegration('slack')">
+                                <label for="slackEnabled" class="int-name">Slack</label>
+                                <span class="int-status" id="slackStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="slackBody" style="display:none;">
+                                <input type="password" id="slackToken" placeholder="Bot User OAuth Token (xoxb-...)">
+                            </div>
+                        </div>
+                        <!-- Google Chat -->
+                        <div class="integration-row" id="int-googlechat">
+                            <div class="integration-header">
+                                <input type="checkbox" id="googlechatEnabled" onchange="toggleIntegration('googlechat')">
+                                <label for="googlechatEnabled" class="int-name">Google Chat</label>
+                                <span class="int-status" id="googlechatStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="googlechatBody" style="display:none;">
+                                <input type="password" id="googlechatToken" placeholder="Service Account Key JSON">
+                            </div>
+                        </div>
+                        <!-- Microsoft Teams -->
+                        <div class="integration-row" id="int-msteams">
+                            <div class="integration-header">
+                                <input type="checkbox" id="msteamsEnabled" onchange="toggleIntegration('msteams')">
+                                <label for="msteamsEnabled" class="int-name">Microsoft Teams</label>
+                                <span class="int-status" id="msteamsStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="msteamsBody" style="display:none;">
+                                <input type="password" id="msteamsToken" placeholder="Bot Framework Token">
+                            </div>
+                        </div>
+                        <!-- Mattermost -->
+                        <div class="integration-row" id="int-mattermost">
+                            <div class="integration-header">
+                                <input type="checkbox" id="mattermostEnabled" onchange="toggleIntegration('mattermost')">
+                                <label for="mattermostEnabled" class="int-name">Mattermost</label>
+                                <span class="int-status" id="mattermostStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="mattermostBody" style="display:none;">
+                                <input type="password" id="mattermostToken" placeholder="Personal Access Token">
+                                <input type="text" id="mattermostUrl" placeholder="Server URL (https://mattermost.example.com)" style="margin-top: 6px;">
+                            </div>
+                        </div>
+                        <!-- Nextcloud Talk -->
+                        <div class="integration-row" id="int-nextcloud">
+                            <div class="integration-header">
+                                <input type="checkbox" id="nextcloudEnabled" onchange="toggleIntegration('nextcloud')">
+                                <label for="nextcloudEnabled" class="int-name">Nextcloud Talk</label>
+                                <span class="int-status" id="nextcloudStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="nextcloudBody" style="display:none;">
+                                <input type="password" id="nextcloudToken" placeholder="App Password">
+                                <input type="text" id="nextcloudUrl" placeholder="Nextcloud URL (https://cloud.example.com)" style="margin-top: 6px;">
+                            </div>
+                        </div>
+                        <!-- IRC -->
+                        <div class="integration-row" id="int-irc">
+                            <div class="integration-header">
+                                <input type="checkbox" id="ircEnabled" onchange="toggleIntegration('irc')">
+                                <label for="ircEnabled" class="int-name">IRC</label>
+                                <span class="int-status" id="ircStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="ircBody" style="display:none;">
+                                <input type="text" id="ircServer" placeholder="Server (irc.libera.chat:6667)">
+                                <input type="text" id="ircNick" placeholder="Nickname" style="margin-top: 6px;">
+                                <input type="password" id="ircPass" placeholder="NickServ password (optional)" style="margin-top: 6px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decentralized -->
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px;">Decentralized / Open Protocols</label>
+                    <div class="integration-grid">
+                        <!-- Matrix -->
+                        <div class="integration-row" id="int-matrix">
+                            <div class="integration-header">
+                                <input type="checkbox" id="matrixEnabled" onchange="toggleIntegration('matrix')">
+                                <label for="matrixEnabled" class="int-name">Matrix</label>
+                                <span class="int-status" id="matrixStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="matrixBody" style="display:none;">
+                                <input type="password" id="matrixToken" placeholder="Access Token">
+                                <input type="text" id="matrixServer" placeholder="Homeserver (https://matrix.org)" style="margin-top: 6px;">
+                            </div>
+                        </div>
+                        <!-- Nostr -->
+                        <div class="integration-row" id="int-nostr">
+                            <div class="integration-header">
+                                <input type="checkbox" id="nostrEnabled" onchange="toggleIntegration('nostr')">
+                                <label for="nostrEnabled" class="int-name">Nostr</label>
+                                <span class="int-status" id="nostrStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="nostrBody" style="display:none;">
+                                <input type="password" id="nostrKey" placeholder="Private Key (nsec...)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Streaming -->
                 <div class="form-group">
-                    <label>Telegram Bot Token <span class="hint">only required if you enable Telegram below</span></label>
-                    <input type="password" id="telegramToken" placeholder="123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11">
+                    <label style="font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px;">Streaming / Other</label>
+                    <div class="integration-grid">
+                        <!-- Twitch -->
+                        <div class="integration-row" id="int-twitch">
+                            <div class="integration-header">
+                                <input type="checkbox" id="twitchEnabled" onchange="toggleIntegration('twitch')">
+                                <label for="twitchEnabled" class="int-name">Twitch</label>
+                                <span class="int-status" id="twitchStatus">Disabled</span>
+                            </div>
+                            <div class="integration-body" id="twitchBody" style="display:none;">
+                                <input type="password" id="twitchToken" placeholder="OAuth Token (oauth:...)">
+                                <input type="text" id="twitchChannel" placeholder="Channel name" style="margin-top: 6px;">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Access Control -->
             <div class="section">
-                <div class="section-title">🛡️ Access Control</div>
+                <div class="section-title">🛡️ Access Control <span class="hint">Discord-specific whitelist (other platforms use their own auth)</span></div>
 
                 <div class="form-group">
                     <label>Your Discord User ID (Admin) <span class="hint">required if Discord enabled — right-click name → Copy User ID</span></label>
@@ -411,7 +705,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Extra Whitelisted User IDs <span class="hint">comma-separated</span></label>
+                    <label>Extra Whitelisted User IDs <span class="hint">comma-separated Discord IDs</span></label>
                     <input type="text" id="extraUsers" placeholder="9876543210987654321, 1111111111111111111">
                 </div>
 
@@ -691,8 +985,29 @@ I read codebases, write tests, and deploy changes.
                 }
             };
 
+            // Core integrations
+            set('discordEnabled', data.ide?.discord ?? true);
             set('discordToken', data.dt);
+            set('telegramEnabled', data.ide?.telegram ?? true);
             set('telegramToken', data.tt);
+
+            // Expanded integrations — restore state from URL hash (all off by default)
+            const INTEGRATIONS = ['whatsapp','signal','imessage','line','zalo','wechat','slack','googlechat','msteams','mattermost','nextcloud','irc','matrix','nostr','twitch'];
+            INTEGRATIONS.forEach(name => {
+                const key = name + 'Enabled';
+                set(key, data.ide?.[name] ?? false);
+                // refresh UI state
+                toggleIntegration(name);
+            });
+
+            // Extra credential fields from URL hash (one-liner envs don't carry these, but URL share does)
+            if (data.in) {
+                Object.keys(data.in).forEach(k => {
+                    const el = document.getElementById(k);
+                    if (el) el.value = data.in[k];
+                });
+            }
+
             set('adminId', data.ad);
             set('extraUsers', data.ex);
             set('guildId', data.gu);
@@ -728,6 +1043,38 @@ I read codebases, write tests, and deploy changes.
         }
 
         function getFormData() {
+            const INTEGRATIONS = ['whatsapp','signal','imessage','line','zalo','wechat','slack','googlechat','msteams','mattermost','nextcloud','irc','matrix','nostr','twitch'];
+            const ide = {};
+            const inp = {};
+
+            // Core (backward compat defaults)
+            ide.discord = document.getElementById('discordEnabled').checked;
+            ide.telegram = document.getElementById('telegramEnabled').checked;
+
+            // Expanded integrations
+            INTEGRATIONS.forEach(name => {
+                ide[name] = document.getElementById(name + 'Enabled').checked;
+                // Collect any extra credential fields that have values
+                const tokenEl = document.getElementById(name + 'Token');
+                if (tokenEl && tokenEl.value.trim()) inp[name + 'Token'] = tokenEl.value.trim();
+                const urlEl = document.getElementById(name + 'Url');
+                if (urlEl && urlEl.value.trim()) inp[name + 'Url'] = urlEl.value.trim();
+                const serverEl = document.getElementById(name + 'Server');
+                if (serverEl && serverEl.value.trim()) inp[name + 'Server'] = serverEl.value.trim();
+                const nickEl = document.getElementById(name + 'Nick');
+                if (nickEl && nickEl.value.trim()) inp[name + 'Nick'] = nickEl.value.trim();
+                const passEl = document.getElementById(name + 'Pass');
+                if (passEl && passEl.value.trim()) inp[name + 'Pass'] = passEl.value.trim();
+                const numberEl = document.getElementById(name + 'Number');
+                if (numberEl && numberEl.value.trim()) inp[name + 'Number'] = numberEl.value.trim();
+                const channelEl = document.getElementById(name + 'Channel');
+                if (channelEl && channelEl.value.trim()) inp[name + 'Channel'] = channelEl.value.trim();
+                const keyEl = document.getElementById(name + 'Key');
+                if (keyEl && keyEl.value.trim()) inp[name + 'Key'] = keyEl.value.trim();
+                const appIdEl = document.getElementById(name + 'AppId');
+                if (appIdEl && appIdEl.value.trim()) inp[name + 'AppId'] = appIdEl.value.trim();
+            });
+
             return {
                 dt: document.getElementById('discordToken').value.trim(),
                 tt: document.getElementById('telegramToken').value.trim(),
@@ -742,6 +1089,8 @@ I read codebases, write tests, and deploy changes.
                 bm: document.getElementById('bindMode').value,
                 ip: document.getElementById('identityPreset').value,
                 ci: document.getElementById('customIdentity').value.trim(),
+                ide: ide,          // integration enabled flags
+                in: Object.keys(inp).length ? inp : undefined,  // integration inputs (only if any set)
                 ag: agents.map(a => ({
                     id: a.id,
                     m: a.model,
@@ -811,7 +1160,7 @@ I read codebases, write tests, and deploy changes.
                     <div style="margin-top: 16px;">
                         <label>Channels</label>
                         <div class="channel-tags">
-                            ${['discord', 'telegram', 'webchat', 'slack', 'whatsapp', 'signal', 'matrix', 'irc'].map(ch => `
+                            ${['discord', 'telegram', 'whatsapp', 'signal', 'imessage', 'line', 'zalo', 'wechat', 'slack', 'googlechat', 'msteams', 'mattermost', 'nextcloud', 'matrix', 'nostr', 'irc', 'twitch', 'webchat'].map(ch => `
                                 <label class="channel-tag ${agent.channels.includes(ch) ? 'active' : ''}" onclick="toggleChannel(${index}, '${ch}')">
                                     <input type="checkbox" ${agent.channels.includes(ch) ? 'checked' : ''}>
                                     ${ch}
@@ -866,6 +1215,23 @@ I read codebases, write tests, and deploy changes.
                 agent.channels.push(channel);
             }
             renderAgents();
+        }
+
+        // ─── Integration toggles ───
+        function toggleIntegration(name) {
+            const enabled = document.getElementById(name + 'Enabled').checked;
+            const body = document.getElementById(name + 'Body');
+            const status = document.getElementById(name + 'Status');
+            const row = document.getElementById('int-' + name);
+
+            if (body) body.style.display = enabled ? 'block' : 'none';
+            if (status) {
+                status.textContent = enabled ? 'Enabled' : 'Disabled';
+                status.className = 'int-status ' + (enabled ? 'enabled' : 'disabled');
+            }
+            if (row) {
+                row.className = 'integration-row ' + (enabled ? 'enabled' : 'disabled');
+            }
         }
 
         function addFallback(agentIndex) {
@@ -943,11 +1309,46 @@ I read codebases, write tests, and deploy changes.
             if (d.ex) envs.push(`DISCORD_EXTRA_USERS="${escapeShell(d.ex)}"`);
             if (d.gu) envs.push(`DISCORD_GUILD_ID="${escapeShell(d.gu)}"`);
             if (d.tt) envs.push(`TELEGRAM_TOKEN="${escapeShell(d.tt)}"`);
-            const oneliner = buildOneliner(d, envs);
 
+            // Add env vars for expanded integrations
+            const INTEGRATION_KEYS = {
+                whatsapp:  ['whatsappToken'],
+                signal:    ['signalNumber'],
+                line:      ['lineToken'],
+                zalo:      ['zaloToken'],
+                wechat:    ['wechatToken','wechatAppId'],
+                slack:     ['slackToken'],
+                googlechat:['googlechatToken'],
+                msteams:   ['msteamsToken'],
+                mattermost:['mattermostToken', 'mattermostUrl'],
+                nextcloud: ['nextcloudToken', 'nextcloudUrl'],
+                irc:       ['ircServer', 'ircNick', 'ircPass'],
+                matrix:    ['matrixToken', 'matrixServer'],
+                nostr:     ['nostrKey'],
+                twitch:    ['twitchToken', 'twitchChannel'],
+            };
+            Object.keys(INTEGRATION_KEYS).forEach(name => {
+                if (!d.ide || !d.ide[name]) return;
+                INTEGRATION_KEYS[name].forEach(key => {
+                    const val = (d.in && d.in[key]) || document.getElementById(key)?.value?.trim();
+                    if (val) {
+                        const envName = key.replace(/^[a-z]/, c => c.toUpperCase()).replace(/[A-Z]/g, c => '_' + c);
+                        // camelCase to SCREAMING_SNAKE_CASE more carefully
+                        const snake = key.replace(/([A-Z])/g, '_$1').toUpperCase();
+                        envs.push(`${snake}="${escapeShell(val)}"`);
+                    }
+                });
+            });
+
+            const oneliner = buildOneliner(d, envs);
             document.getElementById('oneliner').textContent = oneliner;
 
             // Update summary
+            const enabledIntegrations = Object.entries(d.ide || {})
+                .filter(([k,v]) => v)
+                .map(([k]) => k)
+                .filter(k => ['discord','telegram','whatsapp','signal','imessage','line','zalo','wechat','slack','googlechat','msteams','mattermost','nextcloud','matrix','nostr','irc','twitch'].includes(k));
+
             const parts = [
                 `• ${d.ag.length} agent(s): ${d.ag.map(a => a.id).join(', ')}`,
                 `• Models: ${d.ag.map(a => a.m + (a.fb?.length ? ' → ' + a.fb.join(' → ') : '')).join(', ')}`,
@@ -956,7 +1357,7 @@ I read codebases, write tests, and deploy changes.
                 `• Discord: DMs=${d.dm ? 'ON' : 'OFF'}, Groups=${d.gr ? 'ON' : 'OFF'}`,
                 d.gu ? `• Guild lock: ${d.gu}` : '• No guild restriction',
                 d.ex ? `• Extra users: ${d.ex}` : '',
-                d.tt ? '• Telegram: enabled' : '• Telegram: disabled',
+                `• Integrations: ${enabledIntegrations.join(', ') || 'none'}`,
                 d.da ? '• Device auth: DISABLED' : '• Device auth: enabled',
                 d.np ? '• NOPASSWD sudo: enabled' : '',
                 d.as ? '• Auto-start on boot: enabled' : '• Auto-start on boot: disabled',
@@ -975,6 +1376,36 @@ I read codebases, write tests, and deploy changes.
         }
 
         function buildOneliner(d, envs) {
+            // Helper to add integration env vars to a list
+            const addIntegrationEnvs = (list, prefix='') => {
+                const INTEGRATION_KEYS = {
+                    whatsapp:  ['whatsappToken'],
+                    signal:    ['signalNumber'],
+                    line:      ['lineToken'],
+                    zalo:      ['zaloToken'],
+                    wechat:    ['wechatToken','wechatAppId'],
+                    slack:     ['slackToken'],
+                    googlechat:['googlechatToken'],
+                    msteams:   ['msteamsToken'],
+                    mattermost:['mattermostToken', 'mattermostUrl'],
+                    nextcloud: ['nextcloudToken', 'nextcloudUrl'],
+                    irc:       ['ircServer', 'ircNick', 'ircPass'],
+                    matrix:    ['matrixToken', 'matrixServer'],
+                    nostr:     ['nostrKey'],
+                    twitch:    ['twitchToken', 'twitchChannel'],
+                };
+                Object.keys(INTEGRATION_KEYS).forEach(name => {
+                    if (!d.ide || !d.ide[name]) return;
+                    INTEGRATION_KEYS[name].forEach(key => {
+                        const val = (d.in && d.in[key]) || document.getElementById(key)?.value?.trim();
+                        if (val) {
+                            const snake = key.replace(/([A-Z])/g, '_$1').toUpperCase();
+                            list.push(`${prefix}${snake}='${escapeShell(val)}'`);
+                        }
+                    });
+                });
+            };
+
             // For custom identity, we write a temp script that creates the BOOTSTRAP.md before running install
             if (d.ip === 'custom' && d.ci) {
                 const bootstrapEscaped = d.ci.replace(/\\/g, '\\\\').replace(/'/g, "\\\\'\\\\'").replace(/\$/g, '\\$');
@@ -984,6 +1415,7 @@ I read codebases, write tests, and deploy changes.
                 if (d.ex) envLines.push(`export DISCORD_EXTRA_USERS='${escapeShell(d.ex)}'`);
                 if (d.gu) envLines.push(`export DISCORD_GUILD_ID='${escapeShell(d.gu)}'`);
                 if (d.tt) envLines.push(`export TELEGRAM_TOKEN='${escapeShell(d.tt)}'`);
+                addIntegrationEnvs(envLines, 'export ');
                 envLines.push(`export CUSTOM_IDENTITY='${bootstrapEscaped}'`);
                 envLines.push(`export IDENTITY_PRESET='custom'`);
                 return `mkdir -p /tmp/omg && cd /tmp/omg && cat > bootstrap.sh << 'BOOTSTRAP_EOF'
@@ -1000,6 +1432,9 @@ chmod +x bootstrap.sh && bash bootstrap.sh`;
                 envs.push(`IDENTITY_PRESET='${escapeShell(d.ip)}'`);
             }
 
+            // Add integration env vars for standard path too
+            addIntegrationEnvs(envs);
+
             // Encode agent config (with fallbacks) for the install script
             const agentsJson = JSON.stringify(d.ag.map(a => ({
                 id: a.id,
@@ -1009,9 +1444,8 @@ chmod +x bootstrap.sh && bash bootstrap.sh`;
             })));
             envs.push(`AGENTS_JSON='${escapeShell(agentsJson)}'`);
 
-            return `${envs.join(' ')} bash -c 'rm -rf /tmp/omg \u0026\u0026 git clone https://github.com/jlaiii/openclaw-god-mode.git /tmp/omg \u0026\u0026 cd /tmp/omg/linux \u0026\u0026 chmod +x install.sh \u0026\u0026 ./install.sh'`;
+            return `${envs.join(' ')} bash -c 'rm -rf /tmp/omg && git clone https://github.com/jlaiii/openclaw-god-mode.git /tmp/omg && cd /tmp/omg/linux && chmod +x install.sh && ./install.sh'`;
         }
-
         function onIdentityChange() {
             const preset = document.getElementById('identityPreset').value;
             const customGroup = document.getElementById('customIdentityGroup');

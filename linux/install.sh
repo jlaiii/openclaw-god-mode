@@ -226,6 +226,58 @@ agents:
       allowedUsers: [${ADMIN_DISCORD_ID}]
     telegram:
       token: ${TELEGRAM_TOKEN}
+    # ── Expanded integrations (all disabled by default, fill in tokens to enable) ──
+    whatsapp:
+      # token: ${WHATSAPP_TOKEN}
+      enabled: false
+    signal:
+      # number: ${SIGNAL_NUMBER}
+      enabled: false
+    imessage:
+      enabled: false
+    line:
+      # token: ${LINE_TOKEN}
+      enabled: false
+    zalo:
+      # token: ${ZALO_TOKEN}
+      enabled: false
+    wechat:
+      # token: ${WECHAT_TOKEN}
+      # appId: ${WECHAT_APP_ID}
+      enabled: false
+    slack:
+      # token: ${SLACK_TOKEN}
+      enabled: false
+    googlechat:
+      # token: ${GOOGLECHAT_TOKEN}
+      enabled: false
+    msteams:
+      # token: ${MSTEAMS_TOKEN}
+      enabled: false
+    mattermost:
+      # token: ${MATTERMOST_TOKEN}
+      # url: ${MATTERMOST_URL}
+      enabled: false
+    nextcloud:
+      # token: ${NEXTCLOUD_TOKEN}
+      # url: ${NEXTCLOUD_URL}
+      enabled: false
+    irc:
+      # server: ${IRC_SERVER}
+      # nick: ${IRC_NICK}
+      # password: ${IRC_PASS}
+      enabled: false
+    matrix:
+      # token: ${MATRIX_TOKEN}
+      # server: ${MATRIX_SERVER}
+      enabled: false
+    nostr:
+      # privateKey: ${NOSTR_KEY}
+      enabled: false
+    twitch:
+      # token: ${TWITCH_TOKEN}
+      # channel: ${TWITCH_CHANNEL}
+      enabled: false
     ollama:
       host: http://localhost:11434
 EOF
@@ -481,6 +533,28 @@ console.log(Array.from(allCh).join(" "));
         [ -n "$telegram_token" ] && echo "TELEGRAM_TOKEN=$telegram_token"
         [ -n "$admin_id" ] && echo "ADMIN_DISCORD_ID=$admin_id"
         [ -n "$guild_id" ] && echo "DISCORD_GUILD_ID=$guild_id"
+        # Expanded integrations
+        [ -n "${WHATSAPP_TOKEN:-}" ] && echo "WHATSAPP_TOKEN=$WHATSAPP_TOKEN"
+        [ -n "${SIGNAL_NUMBER:-}" ] && echo "SIGNAL_NUMBER=$SIGNAL_NUMBER"
+        [ -n "${LINE_TOKEN:-}" ] && echo "LINE_TOKEN=$LINE_TOKEN"
+        [ -n "${ZALO_TOKEN:-}" ] && echo "ZALO_TOKEN=$ZALO_TOKEN"
+        [ -n "${WECHAT_TOKEN:-}" ] && echo "WECHAT_TOKEN=$WECHAT_TOKEN"
+        [ -n "${WECHAT_APP_ID:-}" ] && echo "WECHAT_APP_ID=$WECHAT_APP_ID"
+        [ -n "${SLACK_TOKEN:-}" ] && echo "SLACK_TOKEN=$SLACK_TOKEN"
+        [ -n "${GOOGLECHAT_TOKEN:-}" ] && echo "GOOGLECHAT_TOKEN=$GOOGLECHAT_TOKEN"
+        [ -n "${MSTEAMS_TOKEN:-}" ] && echo "MSTEAMS_TOKEN=$MSTEAMS_TOKEN"
+        [ -n "${MATTERMOST_TOKEN:-}" ] && echo "MATTERMOST_TOKEN=$MATTERMOST_TOKEN"
+        [ -n "${MATTERMOST_URL:-}" ] && echo "MATTERMOST_URL=$MATTERMOST_URL"
+        [ -n "${NEXTCLOUD_TOKEN:-}" ] && echo "NEXTCLOUD_TOKEN=$NEXTCLOUD_TOKEN"
+        [ -n "${NEXTCLOUD_URL:-}" ] && echo "NEXTCLOUD_URL=$NEXTCLOUD_URL"
+        [ -n "${IRC_SERVER:-}" ] && echo "IRC_SERVER=$IRC_SERVER"
+        [ -n "${IRC_NICK:-}" ] && echo "IRC_NICK=$IRC_NICK"
+        [ -n "${IRC_PASS:-}" ] && echo "IRC_PASS=$IRC_PASS"
+        [ -n "${MATRIX_TOKEN:-}" ] && echo "MATRIX_TOKEN=$MATRIX_TOKEN"
+        [ -n "${MATRIX_SERVER:-}" ] && echo "MATRIX_SERVER=$MATRIX_SERVER"
+        [ -n "${NOSTR_KEY:-}" ] && echo "NOSTR_KEY=$NOSTR_KEY"
+        [ -n "${TWITCH_TOKEN:-}" ] && echo "TWITCH_TOKEN=$TWITCH_TOKEN"
+        [ -n "${TWITCH_CHANNEL:-}" ] && echo "TWITCH_CHANNEL=$TWITCH_CHANNEL"
     } > "$env_file"
     
     # Update config with values
