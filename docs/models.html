@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw God Mode — Model Manager</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-input: #21262d;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-hover: #79b8ff;
+            --success: #3fb950;
+            --warning: #d29922;
+            --danger: #f85149;
+            --code-bg: #21262d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 24px 0;
+            text-align: center;
+        }
+
+        .logo { font-size: 32px; margin-bottom: 4px; }
+        h1 { font-size: 22px; font-weight: 600; }
+        .tagline { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        .status-bar {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 16px 0;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 44px;
+        }
+        .status-bar .spinner {
+            width: 14px; height: 14px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            display: none;
+        }
+        .status-bar.loading .spinner { display: inline-block; }
+        .status-bar.error { border-color: var(--danger); color: var(--danger); }
+        .status-bar.success { border-color: var(--success); color: var(--success); }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .btn-primary { background: var(--accent); color: var(--bg); }
+        .btn-primary:hover:not(:disabled) { background: var(--accent-hover); }
+        .btn-secondary { background: var(--bg-input); color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover:not(:disabled) { border-color: var(--accent); }
+        .btn-danger { background: var(--bg-input); color: var(--danger); border: 1px solid var(--danger); }
+        .btn-sm { padding: 5px 10px; font-size: 12px; }
+
+        .search-box {
+            width: 100%;
+            padding: 8px 12px;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+        .search-box:focus { outline: none; border-color: var(--accent); }
+
+        .model-list {
+            display: grid;
+            gap: 6px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+        .model-list::-webkit-scrollbar { width: 6px; }
+        .model-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+        .model-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 12px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 13px;
+        }
+        .model-row.installed { border-left: 3px solid var(--success); }
+        .model-row.selected { border-color: var(--accent); background: rgba(88,166,255,0.08); }
+
+        .model-info { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
+        .model-name { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .model-tag {
+            font-size: 10px;
+            padding: 1px 6px;
+            border-radius: 4px;
+            background: var(--bg-input);
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+        .model-tag.installed { background: rgba(63,185,80,0.15); color: var(--success); }
+        .model-tag.pulling { background: rgba(88,166,255,0.15); color: var(--accent); }
+        .model-tag.error { background: rgba(248,81,73,0.15); color: var(--danger); }
+
+        .model-actions { display: flex; gap: 6px; }
+
+        .tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+        .tab {
+            padding: 6px 12px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .tab:hover { color: var(--text); }
+        .tab.active { color: var(--accent); background: rgba(88,166,255,0.08); }
+        .tab .count {
+            font-size: 11px;
+            background: var(--bg-input);
+            padding: 1px 5px;
+            border-radius: 4px;
+            margin-left: 4px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 32px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .pull-panel {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 12px;
+        }
+        .pull-panel h3 {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .pull-input-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .pull-input-row input {
+            flex: 1;
+            padding: 8px 12px;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 13px;
+        }
+        .pull-input-row input:focus { outline: none; border-color: var(--accent); }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: var(--bg-input);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        .progress-bar .fill {
+            height: 100%;
+            background: var(--accent);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .log-output {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 11px;
+            max-height: 160px;
+            overflow-y: auto;
+            margin-top: 8px;
+            color: var(--text-muted);
+            white-space: pre-wrap;
+        }
+        .log-output .ok { color: var(--success); }
+        .log-output .err { color: var(--danger); }
+        .log-output .warn { color: var(--warning); }
+        .log-output .info { color: var(--accent); }
+
+        .config-section {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+        .config-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        .config-row label { color: var(--text-muted); }
+        .config-row input {
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 4px 8px;
+            color: var(--text);
+            font-size: 12px;
+            width: 200px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 16px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 11px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .model-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .model-actions { width: 100%; }
+            .model-actions .btn { flex: 1; }
+            .toolbar { flex-direction: column; }
+            .toolbar .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">⚙️</div>
+            <h1>OpenClaw Model Manager</h1>
+            <p class="tagline">Fetch, pull, verify, and manage Ollama models</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Status Bar -->
+        <div class="status-bar" id="statusBar">
+            <div class="spinner"></div>
+            <span id="statusText">Ready — connect to Ollama to begin</span>
+        </div>
+
+        <!-- Ollama Connection Config -->
+        <div class="section">
+            <div class="section-title">🔌 Ollama Connection</div>
+            <div class="config-row">
+                <label>Ollama Host</label>
+                <input type="text" id="ollamaHost" value="http://localhost:11434" placeholder="http://localhost:11434">
+            </div>
+            <div class="toolbar" style="margin-top:8px;">
+                <button class="btn btn-primary" id="btnConnect" onclick="connectOllama()">Connect</button>
+                <button class="btn btn-secondary" id="btnRefreshLocal" onclick="refreshLocalModels()" disabled>Refresh Local</button>
+            </div>
+        </div>
+
+        <!-- Model Tabs -->
+        <div class="section">
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab('available')" id="tabAvailable">
+                    Available <span class="count" id="countAvailable">0</span>
+                </div>
+                <div class="tab" onclick="switchTab('installed')" id="tabInstalled">
+                    Installed <span class="count" id="countInstalled">0</span>
+                </div>
+                <div class="tab" onclick="switchTab('active')" id="tabActive">
+                    Active <span class="count" id="countActive">0</span>
+                </div>
+            </div>
+
+            <!-- Search -->
+            <input type="text" class="search-box" id="searchBox" placeholder="Search models..." oninput="filterModels()">
+
+            <!-- Available Models Tab -->
+            <div id="panelAvailable">
+                <div class="toolbar">
+                    <button class="btn btn-primary" id="btnFetch" onclick="fetchModelList()">📥 Fetch from GitHub</button>
+                    <button class="btn btn-secondary" id="btnPullSelected" onclick="pullSelectedModels()" disabled>Pull Selected</button>
+                </div>
+                <div class="model-list" id="listAvailable">
+                    <div class="empty-state">Click "Fetch from GitHub" to load available models</div>
+                </div>
+            </div>
+
+            <!-- Installed Models Tab -->
+            <div id="panelInstalled" style="display:none;">
+                <div class="toolbar">
+                    <button class="btn btn-secondary" onclick="refreshLocalModels()">🔄 Refresh</button>
+                </div>
+                <div class="model-list" id="listInstalled">
+                    <div class="empty-state">No local models detected</div>
+                </div>
+            </div>
+
+            <!-- Active Models Tab -->
+            <div id="panelActive" style="display:none;">
+                <div class="model-list" id="listActive">
+                    <div class="empty-state">No models currently selected as active</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pull Panel -->
+        <div class="section" id="pullSection" style="display:none;">
+            <div class="section-title">⬇️ Pull Model</div>
+            <div class="pull-panel">
+                <h3 id="pullModelName">-</h3>
+                <div class="pull-input-row" id="pullInputRow" style="display:none;">
+                    <input type="text" id="customModelName" placeholder="e.g. llama3.2 or mistral:latest">
+                    <button class="btn btn-primary" onclick="pullCustomModel()">Pull</button>
+                </div>
+                <div class="progress-bar">
+                    <div class="fill" id="pullProgress"></div>
+                </div>
+                <div class="log-output" id="pullLog"></div>
+            </div>
+        </div>
+
+        <!-- Back to Configurator -->
+        <div class="section" style="text-align:center;">
+            <a href="configure.html" class="btn btn-secondary">← Back to Configurator</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            OpenClaw God Mode — Model Manager<br>
+            <a href="https://github.com/jlaiii/openclaw-god-mode" target="_blank">github.com/jlaiii/openclaw-god-mode</a>
+        </div>
+    </footer>
+
+    <script>
+        // ─── Configuration ───
+        const GITHUB_MODELS_URL = 'https://raw.githubusercontent.com/jlaiii/openclaw-god-mode/main/docs/models.json';
+        const DEFAULT_OLLAMA_HOST = 'http://localhost:11434';
+
+        // ─── State ───
+        let ollamaHost = localStorage.getItem('ollamaHost') || DEFAULT_OLLAMA_HOST;
+        let availableModels = [];
+        let installedModels = [];
+        let activeModels = JSON.parse(localStorage.getItem('activeModels') || '[]');
+        let selectedForPull = new Set();
+        let currentPullAbort = null;
+        let isConnected = false;
+
+        // ─── Init ───
+        document.getElementById('ollamaHost').value = ollamaHost;
+        loadActiveModels();
+        updateCounts();
+
+        // ─── Status ───
+        function setStatus(text, type = '') {
+            const bar = document.getElementById('statusBar');
+            const txt = document.getElementById('statusText');
+            txt.textContent = text;
+            bar.className = 'status-bar' + (type ? ' ' + type : '');
+            if (type === 'loading') bar.classList.add('loading');
+        }
+
+        function logPull(msg, cls = '') {
+            const el = document.getElementById('pullLog');
+            const line = document.createElement('div');
+            line.className = cls;
+            line.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+            el.appendChild(line);
+            el.scrollTop = el.scrollHeight;
+        }
+
+        // ─── Ollama API Helpers ───
+        async function ollamaGet(path) {
+            const res = await fetch(ollamaHost + path, { headers: { 'Accept': 'application/json' } });
+            if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+            return res.json();
+        }
+
+        async function ollamaPost(path, body) {
+            const res = await fetch(ollamaHost + path, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(body)
+            });
+            if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+            return res;
+        }
+
+        // ─── Connect ───
+        async function connectOllama() {
+            ollamaHost = document.getElementById('ollamaHost').value.trim() || DEFAULT_OLLAMA_HOST;
+            localStorage.setItem('ollamaHost', ollamaHost);
+            setStatus('Connecting to Ollama...', 'loading');
+
+            try {
+                const data = await ollamaGet('/api/tags');
+                installedModels = (data.models || []).map(m => ({
+                    name: m.name || m.model,
+                    size: m.size,
+                    modified: m.modified_at,
+                    digest: m.digest
+                }));
+                isConnected = true;
+                setStatus(`Connected — ${installedModels.length} model(s) installed`, 'success');
+                document.getElementById('btnRefreshLocal').disabled = false;
+                renderInstalled();
+                renderAvailable();
+                updateCounts();
+            } catch (err) {
+                isConnected = false;
+                setStatus(`Connection failed: ${err.message}`, 'error');
+                document.getElementById('btnRefreshLocal').disabled = true;
+            }
+        }
+
+        // ─── Fetch Available Models from GitHub ───
+        async function fetchModelList() {
+            setStatus('Fetching model list from GitHub...', 'loading');
+            document.getElementById('btnFetch').disabled = true;
+
+            try {
+                const res = await fetch(GITHUB_MODELS_URL, { cache: 'no-store' });
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                availableModels = (data.models || []).map(m => ({
+                    id: m.id || m.name,
+                    name: m.name || m.id,
+                    description: m.description || '',
+                    tags: m.tags || []
+                }));
+
+                // Merge with installed status
+                syncInstalledStatus();
+                renderAvailable();
+                setStatus(`Model list loaded — ${availableModels.length} models available`, 'success');
+            } catch (err) {
+                // Fallback: load from local cache or built-in list
+                const cached = localStorage.getItem('cachedModels');
+                if (cached) {
+                    availableModels = JSON.parse(cached);
+                    syncInstalledStatus();
+                    renderAvailable();
+                    setStatus(`Loaded ${availableModels.length} models from cache (GitHub fetch failed: ${err.message})`, 'warning');
+                } else {
+                    setStatus(`Failed to fetch models: ${err.message}`, 'error');
+                }
+            } finally {
+                document.getElementById('btnFetch').disabled = false;
+            }
+        }
+
+        function syncInstalledStatus() {
+            const installedNames = new Set(installedModels.map(m => m.name));
+            availableModels.forEach(m => {
+                m.installed = installedNames.has(m.id) || installedNames.has(m.id.split(':')[0]);
+            });
+        }
+
+        // ─── Refresh Local Models ───
+        async function refreshLocalModels() {
+            if (!isConnected) { setStatus('Not connected to Ollama', 'error'); return; }
+            setStatus('Refreshing local model list...', 'loading');
+
+            try {
+                const data = await ollamaGet('/api/tags');
+                installedModels = (data.models || []).map(m => ({
+                    name: m.name || m.model,
+                    size: m.size,
+                    modified: m.modified_at,
+                    digest: m.digest
+                }));
+                syncInstalledStatus();
+                renderInstalled();
+                renderAvailable();
+                setStatus(`Local models refreshed — ${installedModels.length} installed`, 'success');
+                updateCounts();
+            } catch (err) {
+                setStatus(`Refresh failed: ${err.message}`, 'error');
+            }
+        }
+
+        // ─── Pull Model ───
+        async function pullModel(modelName) {
+            if (!isConnected) { setStatus('Not connected to Ollama', 'error'); return; }
+            if (!modelName || typeof modelName !== 'string') {
+                setStatus('Invalid model name', 'error'); return;
+            }
+
+            const cleanName = modelName.trim().toLowerCase().replace(/[^a-z0-9._:\-]/g, '');
+            if (!cleanName) { setStatus('Invalid model name', 'error'); return; }
+
+            document.getElementById('pullSection').style.display = 'block';
+            document.getElementById('pullModelName').textContent = cleanName;
+            document.getElementById('pullLog').innerHTML = '';
+            document.getElementById('pullProgress').style.width = '0%';
+            setStatus(`Pulling ${cleanName}...`, 'loading');
+            logPull(`Starting pull: ${cleanName}`, 'info');
+
+            currentPullAbort = new AbortController();
+
+            try {
+                const res = await fetch(ollamaHost + '/api/pull', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: cleanName, stream: true }),
+                    signal: currentPullAbort.signal
+                });
+
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                if (!res.body) throw new Error('No response body');
+
+                const reader = res.body.getReader();
+                const decoder = new TextDecoder();
+                let buffer = '';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+
+                    buffer += decoder.decode(value, { stream: true });
+                    const lines = buffer.split('\n');
+                    buffer = lines.pop(); // keep incomplete line
+
+                    for (const line of lines) {
+                        if (!line.trim()) continue;
+                        try {
+                            const msg = JSON.parse(line);
+                            if (msg.status) logPull(msg.status);
+                            if (msg.completed && msg.total) {
+                                const pct = Math.round((msg.completed / msg.total) * 100);
+                                document.getElementById('pullProgress').style.width = pct + '%';
+                            }
+                            if (msg.error) throw new Error(msg.error);
+                        } catch (e) {
+                            if (e.message !== 'Unexpected end of JSON input') {
+                                logPull(line, 'warn');
+                            }
+                        }
+                    }
+                }
+
+                logPull('Pull complete — verifying...', 'ok');
+                await verifyModel(cleanName);
+            } catch (err) {
+                if (err.name === 'AbortError') {
+                    logPull('Pull cancelled', 'warn');
+                    setStatus('Pull cancelled', 'warning');
+                } else {
+                    logPull(`Pull failed: ${err.message}`, 'err');
+                    setStatus(`Pull failed: ${err.message}`, 'error');
+                }
+            } finally {
+                currentPullAbort = null;
+                document.getElementById('pullProgress').style.width = '100%';
+            }
+        }
+
+        async function pullCustomModel() {
+            const name = document.getElementById('customModelName').value.trim();
+            if (!name) { alert('Enter a model name'); return; }
+            await pullModel(name);
+        }
+
+        function pullSelectedModels() {
+            const names = Array.from(selectedForPull);
+            if (names.length === 0) { alert('Select at least one model'); return; }
+            // Pull sequentially
+            (async () => {
+                for (const name of names) {
+                    await pullModel(name);
+                }
+            })();
+        }
+
+        function cancelPull() {
+            if (currentPullAbort) {
+                currentPullAbort.abort();
+                currentPullAbort = null;
+            }
+        }
+
+        // ─── Verify Model ───
+        async function verifyModel(modelName) {
+            setStatus(`Verifying ${modelName}...`, 'loading');
+            try {
+                const data = await ollamaGet('/api/tags');
+                const models = data.models || [];
+                const found = models.some(m => (m.name || m.model) === modelName);
+
+                if (found) {
+                    logPull(`Verified: ${modelName} is installed locally`, 'ok');
+                    setStatus(`Model verified — ${modelName} ready`, 'success');
+                    // Update lists
+                    installedModels = models.map(m => ({
+                        name: m.name || m.model,
+                        size: m.size,
+                        modified: m.modified_at,
+                        digest: m.digest
+                    }));
+                    syncInstalledStatus();
+                    renderInstalled();
+                    renderAvailable();
+                    updateCounts();
+                    // Auto-select as active
+                    addActiveModel(modelName);
+                } else {
+                    logPull(`Verification failed: ${modelName} not found after pull`, 'err');
+                    setStatus(`Verification failed — ${modelName} missing`, 'error');
+                }
+            } catch (err) {
+                logPull(`Verification error: ${err.message}`, 'err');
+                setStatus(`Verification error: ${err.message}`, 'error');
+            }
+        }
+
+        // ─── Active Models ───
+        function addActiveModel(name) {
+            if (!activeModels.includes(name)) {
+                activeModels.push(name);
+                saveActiveModels();
+                renderActive();
+                updateCounts();
+            }
+        }
+
+        function removeActiveModel(name) {
+            activeModels = activeModels.filter(m => m !== name);
+            saveActiveModels();
+            renderActive();
+            updateCounts();
+        }
+
+        function saveActiveModels() {
+            localStorage.setItem('activeModels', JSON.stringify(activeModels));
+        }
+
+        function loadActiveModels() {
+            renderActive();
+        }
+
+        // ─── Rendering ───
+        function renderAvailable() {
+            const list = document.getElementById('listAvailable');
+            const term = document.getElementById('searchBox').value.toLowerCase();
+            const filtered = availableModels.filter(m =>
+                (m.name + ' ' + m.id).toLowerCase().includes(term)
+            );
+
+            if (filtered.length === 0) {
+                list.innerHTML = '<div class="empty-state">No models match your search</div>';
+                return;
+            }
+
+            list.innerHTML = filtered.map(m => {
+                const isSel = selectedForPull.has(m.id);
+                const tagClass = m.installed ? 'installed' : (m.pulling ? 'pulling' : '');
+                const tagText = m.installed ? 'Installed' : (m.pulling ? 'Pulling...' : '');
+                return `
+                    <div class="model-row ${isSel ? 'selected' : ''} ${m.installed ? 'installed' : ''}">
+                        <div class="model-info">
+                            <input type="checkbox" ${isSel ? 'checked' : ''}
+                                onchange="toggleSelect('${m.id.replace(/'/g, "\\'")}')"
+                                ${m.installed ? 'disabled' : ''}>
+                            <span class="model-name">${escapeHtml(m.name)}</span>
+                            ${tagText ? `<span class="model-tag ${tagClass}">${tagText}</span>` : ''}
+                        </div>
+                        <div class="model-actions">
+                            ${m.installed
+                                ? `<button class="btn btn-sm btn-secondary" onclick="removeModel('${m.id.replace(/'/g, "\\'")}')">Remove</button>`
+                                : `<button class="btn btn-sm btn-primary" onclick="pullModel('${m.id.replace(/'/g, "\\'")}')">Pull</button>`
+                            }
+                            <button class="btn btn-sm btn-secondary" onclick="addActiveModel('${m.id.replace(/'/g, "\\'")}')">Set Active</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('btnPullSelected').disabled = selectedForPull.size === 0;
+        }
+
+        function renderInstalled() {
+            const list = document.getElementById('listInstalled');
+            const term = document.getElementById('searchBox').value.toLowerCase();
+            const filtered = installedModels.filter(m => m.name.toLowerCase().includes(term));
+
+            if (filtered.length === 0) {
+                list.innerHTML = '<div class="empty-state">No local models installed</div>';
+                return;
+            }
+
+            list.innerHTML = filtered.map(m => `
+                <div class="model-row installed">
+                    <div class="model-info">
+                        <span class="model-name">${escapeHtml(m.name)}</span>
+                        <span class="model-tag installed">Installed</span>
+                        <span class="model-tag">${formatBytes(m.size)}</span>
+                    </div>
+                    <div class="model-actions">
+                        <button class="btn btn-sm btn-secondary" onclick="addActiveModel('${m.name.replace(/'/g, "\\'")}')">Set Active</button>
+                        <button class="btn btn-sm btn-danger" onclick="removeModel('${m.name.replace(/'/g, "\\'")}')">Remove</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderActive() {
+            const list = document.getElementById('listActive');
+            if (activeModels.length === 0) {
+                list.innerHTML = '<div class="empty-state">No active models selected</div>';
+                return;
+            }
+            list.innerHTML = activeModels.map(name => `
+                <div class="model-row selected">
+                    <div class="model-info">
+                        <span class="model-name">${escapeHtml(name)}</span>
+                        <span class="model-tag">Active</span>
+                    </div>
+                    <div class="model-actions">
+                        <button class="btn btn-sm btn-danger" onclick="removeActiveModel('${name.replace(/'/g, "\\'")}')">Remove</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateCounts() {
+            const term = document.getElementById('searchBox').value.toLowerCase();
+            document.getElementById('countAvailable').textContent = availableModels.filter(m =>
+                (m.name + ' ' + m.id).toLowerCase().includes(term)
+            ).length;
+            document.getElementById('countInstalled').textContent = installedModels.length;
+            document.getElementById('countActive').textContent = activeModels.length;
+        }
+
+        // ─── Tab Switching ───
+        function switchTab(tab) {
+            ['available', 'installed', 'active'].forEach(t => {
+                document.getElementById('panel' + t.charAt(0).toUpperCase() + t.slice(1)).style.display = t === tab ? 'block' : 'none';
+                document.getElementById('tab' + t.charAt(0).toUpperCase() + t.slice(1)).classList.toggle('active', t === tab);
+            });
+        }
+
+        // ─── Actions ───
+        function toggleSelect(id) {
+            if (selectedForPull.has(id)) selectedForPull.delete(id);
+            else selectedForPull.add(id);
+            renderAvailable();
+        }
+
+        async function removeModel(name) {
+            if (!confirm(`Remove model "${name}" from Ollama?`)) return;
+            setStatus(`Removing ${name}...`, 'loading');
+            try {
+                await ollamaPost('/api/delete', { name });
+                setStatus(`Removed ${name}`, 'success');
+                await refreshLocalModels();
+            } catch (err) {
+                setStatus(`Remove failed: ${err.message}`, 'error');
+            }
+        }
+
+        function filterModels() {
+            renderAvailable();
+            renderInstalled();
+            updateCounts();
+        }
+
+        // ─── Utilities ───
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function formatBytes(b) {
+            if (!b) return '0 B';
+            const sizes = ['B', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(b) / Math.log(1024));
+            return (b / Math.pow(1024, i)).toFixed(1) + ' ' + sizes[i];
+        }
+    </script>
+</body>
+</html>
