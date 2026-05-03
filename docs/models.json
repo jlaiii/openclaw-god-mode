@@ -1,235 +1,5000 @@
 {
   "lastUpdated": "2026-05-03",
   "source": "https://ollama.com/search",
+  "totalFamilies": 229,
+  "totalVariants": 832,
   "models": [
-    {"id": "alfred", "name": "alfred"},
-    {"id": "all-minilm", "name": "all-minilm"},
-    {"id": "athene-v2", "name": "athene-v2"},
-    {"id": "aya", "name": "aya"},
-    {"id": "aya-expanse", "name": "aya-expanse"},
-    {"id": "bakllava", "name": "bakllava"},
-    {"id": "bespoke-minicheck", "name": "bespoke-minicheck"},
-    {"id": "bge-large", "name": "bge-large"},
-    {"id": "bge-m3", "name": "bge-m3"},
-    {"id": "codebooga", "name": "codebooga"},
-    {"id": "codegeex4", "name": "codegeex4"},
-    {"id": "codegemma", "name": "codegemma"},
-    {"id": "codellama", "name": "codellama"},
-    {"id": "codeqwen", "name": "codeqwen"},
-    {"id": "codestral", "name": "codestral"},
-    {"id": "codeup", "name": "codeup"},
-    {"id": "cogito", "name": "cogito"},
-    {"id": "cogito-2.1", "name": "cogito-2.1"},
-    {"id": "command-a", "name": "command-a"},
-    {"id": "command-r", "name": "command-r"},
-    {"id": "command-r7b", "name": "command-r7b"},
-    {"id": "command-r7b-arabic", "name": "command-r7b-arabic"},
-    {"id": "command-r-plus", "name": "command-r-plus"},
-    {"id": "dbrx", "name": "dbrx"},
-    {"id": "deepcoder", "name": "deepcoder"},
-    {"id": "deepscaler", "name": "deepscaler"},
-    {"id": "deepseek-coder", "name": "deepseek-coder"},
-    {"id": "deepseek-coder-v2", "name": "deepseek-coder-v2"},
-    {"id": "deepseek-llm", "name": "deepseek-llm"},
-    {"id": "deepseek-ocr", "name": "deepseek-ocr"},
-    {"id": "deepseek-r1", "name": "deepseek-r1"},
-    {"id": "deepseek-v2", "name": "deepseek-v2"},
-    {"id": "deepseek-v2.5", "name": "deepseek-v2.5"},
-    {"id": "deepseek-v3", "name": "deepseek-v3"},
-    {"id": "deepseek-v3.1", "name": "deepseek-v3.1"},
-    {"id": "deepseek-v3.2", "name": "deepseek-v3.2"},
-    {"id": "deepseek-v4-flash", "name": "deepseek-v4-flash"},
-    {"id": "deepseek-v4-pro", "name": "deepseek-v4-pro"},
-    {"id": "devstral", "name": "devstral"},
-    {"id": "devstral-2", "name": "devstral-2"},
-    {"id": "devstral-small-2", "name": "devstral-small-2"},
-    {"id": "dolphin3", "name": "dolphin3"},
-    {"id": "dolphincoder", "name": "dolphincoder"},
-    {"id": "dolphin-llama3", "name": "dolphin-llama3"},
-    {"id": "dolphin-mistral", "name": "dolphin-mistral"},
-    {"id": "dolphin-mixtral", "name": "dolphin-mixtral"},
-    {"id": "dolphin-phi", "name": "dolphin-phi"},
-    {"id": "duckdb-nsql", "name": "duckdb-nsql"},
-    {"id": "embeddinggemma", "name": "embeddinggemma"},
-    {"id": "everythinglm", "name": "everythinglm"},
-    {"id": "exaone3.5", "name": "exaone3.5"},
-    {"id": "exaone-deep", "name": "exaone-deep"},
-    {"id": "falcon", "name": "falcon"},
-    {"id": "falcon2", "name": "falcon2"},
-    {"id": "falcon3", "name": "falcon3"},
-    {"id": "firefunction-v2", "name": "firefunction-v2"},
-    {"id": "functiongemma", "name": "functiongemma"},
-    {"id": "gemini-3-flash-preview", "name": "gemini-3-flash-preview"},
-    {"id": "gemma", "name": "gemma"},
-    {"id": "gemma2", "name": "gemma2"},
-    {"id": "gemma3", "name": "gemma3"},
-    {"id": "gemma3n", "name": "gemma3n"},
-    {"id": "gemma4", "name": "gemma4"},
-    {"id": "glm4", "name": "glm4"},
-    {"id": "glm-4.6", "name": "glm-4.6"},
-    {"id": "glm-4.7", "name": "glm-4.7"},
-    {"id": "glm-4.7-flash", "name": "glm-4.7-flash"},
-    {"id": "glm-5", "name": "glm-5"},
-    {"id": "glm-5.1", "name": "glm-5.1"},
-    {"id": "glm-ocr", "name": "glm-ocr"},
-    {"id": "goliath", "name": "goliath"},
-    {"id": "gpt-oss", "name": "gpt-oss"},
-    {"id": "gpt-oss-safeguard", "name": "gpt-oss-safeguard"},
-    {"id": "granite3.1-dense", "name": "granite3.1-dense"},
-    {"id": "granite3.1-moe", "name": "granite3.1-moe"},
-    {"id": "granite3.2", "name": "granite3.2"},
-    {"id": "granite3.2-vision", "name": "granite3.2-vision"},
-    {"id": "granite3.3", "name": "granite3.3"},
-    {"id": "granite3-dense", "name": "granite3-dense"},
-    {"id": "granite3-guardian", "name": "granite3-guardian"},
-    {"id": "granite3-moe", "name": "granite3-moe"},
-    {"id": "granite4", "name": "granite4"},
-    {"id": "granite4.1", "name": "granite4.1"},
-    {"id": "granite-code", "name": "granite-code"},
-    {"id": "granite-embedding", "name": "granite-embedding"},
-    {"id": "hermes3", "name": "hermes3"},
-    {"id": "internlm2", "name": "internlm2"},
-    {"id": "kimi-k2", "name": "kimi-k2"},
-    {"id": "kimi-k2.5", "name": "kimi-k2.5"},
-    {"id": "kimi-k2.6", "name": "kimi-k2.6"},
-    {"id": "kimi-k2-thinking", "name": "kimi-k2-thinking"},
-    {"id": "laguna-xs.2", "name": "laguna-xs.2"},
-    {"id": "lfm2", "name": "lfm2"},
-    {"id": "lfm2.5-thinking", "name": "lfm2.5-thinking"},
-    {"id": "llama2", "name": "llama2"},
-    {"id": "llama2-chinese", "name": "llama2-chinese"},
-    {"id": "llama2-uncensored", "name": "llama2-uncensored"},
-    {"id": "llama3", "name": "llama3"},
-    {"id": "llama3.1", "name": "llama3.1"},
-    {"id": "llama3.2", "name": "llama3.2"},
-    {"id": "llama3.2-vision", "name": "llama3.2-vision"},
-    {"id": "llama3.3", "name": "llama3.3"},
-    {"id": "llama3-chatqa", "name": "llama3-chatqa"},
-    {"id": "llama3-gradient", "name": "llama3-gradient"},
-    {"id": "llama3-groq-tool-use", "name": "llama3-groq-tool-use"},
-    {"id": "llama4", "name": "llama4"},
-    {"id": "llama-guard3", "name": "llama-guard3"},
-    {"id": "llama-pro", "name": "llama-pro"},
-    {"id": "llava", "name": "llava"},
-    {"id": "llava-llama3", "name": "llava-llama3"},
-    {"id": "llava-phi3", "name": "llava-phi3"},
-    {"id": "magicoder", "name": "magicoder"},
-    {"id": "magistral", "name": "magistral"},
-    {"id": "marco-o1", "name": "marco-o1"},
-    {"id": "mathstral", "name": "mathstral"},
-    {"id": "medgemma", "name": "medgemma"},
-    {"id": "medgemma1.5", "name": "medgemma1.5"},
-    {"id": "meditron", "name": "meditron"},
-    {"id": "medllama2", "name": "medllama2"},
-    {"id": "megadolphin", "name": "megadolphin"},
-    {"id": "minicpm-v", "name": "minicpm-v"},
-    {"id": "minimax-m2", "name": "minimax-m2"},
-    {"id": "minimax-m2.1", "name": "minimax-m2.1"},
-    {"id": "minimax-m2.5", "name": "minimax-m2.5"},
-    {"id": "minimax-m2.7", "name": "minimax-m2.7"},
-    {"id": "ministral-3", "name": "ministral-3"},
-    {"id": "mistral", "name": "mistral"},
-    {"id": "mistral-large", "name": "mistral-large"},
-    {"id": "mistral-large-3", "name": "mistral-large-3"},
-    {"id": "mistrallite", "name": "mistrallite"},
-    {"id": "mistral-medium-3.5", "name": "mistral-medium-3.5"},
-    {"id": "mistral-nemo", "name": "mistral-nemo"},
-    {"id": "mistral-openorca", "name": "mistral-openorca"},
-    {"id": "mistral-small", "name": "mistral-small"},
-    {"id": "mistral-small3.1", "name": "mistral-small3.1"},
-    {"id": "mistral-small3.2", "name": "mistral-small3.2"},
-    {"id": "mixtral", "name": "mixtral"},
-    {"id": "moondream", "name": "moondream"},
-    {"id": "mxbai-embed-large", "name": "mxbai-embed-large"},
-    {"id": "nemotron", "name": "nemotron"},
-    {"id": "nemotron3", "name": "nemotron3"},
-    {"id": "nemotron-3-nano", "name": "nemotron-3-nano"},
-    {"id": "nemotron-3-super", "name": "nemotron-3-super"},
-    {"id": "nemotron-cascade-2", "name": "nemotron-cascade-2"},
-    {"id": "nemotron-mini", "name": "nemotron-mini"},
-    {"id": "neural-chat", "name": "neural-chat"},
-    {"id": "nexusraven", "name": "nexusraven"},
-    {"id": "nomic-embed-text", "name": "nomic-embed-text"},
-    {"id": "nomic-embed-text-v2-moe", "name": "nomic-embed-text-v2-moe"},
-    {"id": "notus", "name": "notus"},
-    {"id": "notux", "name": "notux"},
-    {"id": "nous-hermes", "name": "nous-hermes"},
-    {"id": "nous-hermes2", "name": "nous-hermes2"},
-    {"id": "nous-hermes2-mixtral", "name": "nous-hermes2-mixtral"},
-    {"id": "nuextract", "name": "nuextract"},
-    {"id": "olmo2", "name": "olmo2"},
-    {"id": "olmo-3", "name": "olmo-3"},
-    {"id": "olmo-3.1", "name": "olmo-3.1"},
-    {"id": "openchat", "name": "openchat"},
-    {"id": "opencoder", "name": "opencoder"},
-    {"id": "openhermes", "name": "openhermes"},
-    {"id": "open-orca-platypus2", "name": "open-orca-platypus2"},
-    {"id": "openthinker", "name": "openthinker"},
-    {"id": "orca2", "name": "orca2"},
-    {"id": "orca-mini", "name": "orca-mini"},
-    {"id": "paraphrase-multilingual", "name": "paraphrase-multilingual"},
-    {"id": "phi", "name": "phi"},
-    {"id": "phi3", "name": "phi3"},
-    {"id": "phi3.5", "name": "phi3.5"},
-    {"id": "phi4", "name": "phi4"},
-    {"id": "phi4-mini", "name": "phi4-mini"},
-    {"id": "phi4-mini-reasoning", "name": "phi4-mini-reasoning"},
-    {"id": "phi4-reasoning", "name": "phi4-reasoning"},
-    {"id": "phind-codellama", "name": "phind-codellama"},
-    {"id": "qwen", "name": "qwen"},
-    {"id": "qwen2", "name": "qwen2"},
-    {"id": "qwen2.5", "name": "qwen2.5"},
-    {"id": "qwen2.5-coder", "name": "qwen2.5-coder"},
-    {"id": "qwen2.5vl", "name": "qwen2.5vl"},
-    {"id": "qwen2-math", "name": "qwen2-math"},
-    {"id": "qwen3", "name": "qwen3"},
-    {"id": "qwen3.5", "name": "qwen3.5"},
-    {"id": "qwen3.6", "name": "qwen3.6"},
-    {"id": "qwen3-coder", "name": "qwen3-coder"},
-    {"id": "qwen3-coder-next", "name": "qwen3-coder-next"},
-    {"id": "qwen3-embedding", "name": "qwen3-embedding"},
-    {"id": "qwen3-next", "name": "qwen3-next"},
-    {"id": "qwen3-vl", "name": "qwen3-vl"},
-    {"id": "qwq", "name": "qwq"},
-    {"id": "r1-1776", "name": "r1-1776"},
-    {"id": "reader-lm", "name": "reader-lm"},
-    {"id": "reflection", "name": "reflection"},
-    {"id": "rnj-1", "name": "rnj-1"},
-    {"id": "sailor2", "name": "sailor2"},
-    {"id": "samantha-mistral", "name": "samantha-mistral"},
-    {"id": "shieldgemma", "name": "shieldgemma"},
-    {"id": "smallthinker", "name": "smallthinker"},
-    {"id": "smollm", "name": "smollm"},
-    {"id": "smollm2", "name": "smollm2"},
-    {"id": "snowflake-arctic-embed", "name": "snowflake-arctic-embed"},
-    {"id": "snowflake-arctic-embed2", "name": "snowflake-arctic-embed2"},
-    {"id": "solar", "name": "solar"},
-    {"id": "solar-pro", "name": "solar-pro"},
-    {"id": "sqlcoder", "name": "sqlcoder"},
-    {"id": "stable-beluga", "name": "stable-beluga"},
-    {"id": "stable-code", "name": "stable-code"},
-    {"id": "stablelm2", "name": "stablelm2"},
-    {"id": "stablelm-zephyr", "name": "stablelm-zephyr"},
-    {"id": "starcoder", "name": "starcoder"},
-    {"id": "starcoder2", "name": "starcoder2"},
-    {"id": "starling-lm", "name": "starling-lm"},
-    {"id": "tinydolphin", "name": "tinydolphin"},
-    {"id": "tinyllama", "name": "tinyllama"},
-    {"id": "translategemma", "name": "translategemma"},
-    {"id": "tulu3", "name": "tulu3"},
-    {"id": "vicuna", "name": "vicuna"},
-    {"id": "wizardcoder", "name": "wizardcoder"},
-    {"id": "wizardlm", "name": "wizardlm"},
-    {"id": "wizardlm2", "name": "wizardlm2"},
-    {"id": "wizardlm-uncensored", "name": "wizardlm-uncensored"},
-    {"id": "wizard-math", "name": "wizard-math"},
-    {"id": "wizard-vicuna", "name": "wizard-vicuna"},
-    {"id": "wizard-vicuna-uncensored", "name": "wizard-vicuna-uncensored"},
-    {"id": "xwinlm", "name": "xwinlm"},
-    {"id": "yarn-llama2", "name": "yarn-llama2"},
-    {"id": "yarn-mistral", "name": "yarn-mistral"},
-    {"id": "yi", "name": "yi"},
-    {"id": "yi-coder", "name": "yi-coder"},
-    {"id": "zephyr", "name": "zephyr"}
+    {
+      "id": "alfred:40b",
+      "name": "alfred:40b",
+      "family": "alfred",
+      "cloud": false
+    },
+    {
+      "id": "alfred:latest",
+      "name": "alfred:latest",
+      "family": "alfred",
+      "cloud": false
+    },
+    {
+      "id": "all-minilm:22m",
+      "name": "all-minilm:22m",
+      "family": "all-minilm",
+      "cloud": false
+    },
+    {
+      "id": "all-minilm:33m",
+      "name": "all-minilm:33m",
+      "family": "all-minilm",
+      "cloud": false
+    },
+    {
+      "id": "all-minilm:latest",
+      "name": "all-minilm:latest",
+      "family": "all-minilm",
+      "cloud": false
+    },
+    {
+      "id": "athene-v2:72b",
+      "name": "athene-v2:72b",
+      "family": "athene-v2",
+      "cloud": false
+    },
+    {
+      "id": "athene-v2:latest",
+      "name": "athene-v2:latest",
+      "family": "athene-v2",
+      "cloud": false
+    },
+    {
+      "id": "aya:35b",
+      "name": "aya:35b",
+      "family": "aya",
+      "cloud": false
+    },
+    {
+      "id": "aya:8b",
+      "name": "aya:8b",
+      "family": "aya",
+      "cloud": false
+    },
+    {
+      "id": "aya:latest",
+      "name": "aya:latest",
+      "family": "aya",
+      "cloud": false
+    },
+    {
+      "id": "aya-expanse:32b",
+      "name": "aya-expanse:32b",
+      "family": "aya-expanse",
+      "cloud": false
+    },
+    {
+      "id": "aya-expanse:8b",
+      "name": "aya-expanse:8b",
+      "family": "aya-expanse",
+      "cloud": false
+    },
+    {
+      "id": "aya-expanse:latest",
+      "name": "aya-expanse:latest",
+      "family": "aya-expanse",
+      "cloud": false
+    },
+    {
+      "id": "bakllava:7b",
+      "name": "bakllava:7b",
+      "family": "bakllava",
+      "cloud": false
+    },
+    {
+      "id": "bakllava:latest",
+      "name": "bakllava:latest",
+      "family": "bakllava",
+      "cloud": false
+    },
+    {
+      "id": "bespoke-minicheck:7b",
+      "name": "bespoke-minicheck:7b",
+      "family": "bespoke-minicheck",
+      "cloud": false
+    },
+    {
+      "id": "bespoke-minicheck:latest",
+      "name": "bespoke-minicheck:latest",
+      "family": "bespoke-minicheck",
+      "cloud": false
+    },
+    {
+      "id": "bge-large:335m",
+      "name": "bge-large:335m",
+      "family": "bge-large",
+      "cloud": false
+    },
+    {
+      "id": "bge-large:latest",
+      "name": "bge-large:latest",
+      "family": "bge-large",
+      "cloud": false
+    },
+    {
+      "id": "bge-m3:567m",
+      "name": "bge-m3:567m",
+      "family": "bge-m3",
+      "cloud": false
+    },
+    {
+      "id": "bge-m3:latest",
+      "name": "bge-m3:latest",
+      "family": "bge-m3",
+      "cloud": false
+    },
+    {
+      "id": "codebooga:34b",
+      "name": "codebooga:34b",
+      "family": "codebooga",
+      "cloud": false
+    },
+    {
+      "id": "codebooga:latest",
+      "name": "codebooga:latest",
+      "family": "codebooga",
+      "cloud": false
+    },
+    {
+      "id": "codegeex4:9b",
+      "name": "codegeex4:9b",
+      "family": "codegeex4",
+      "cloud": false
+    },
+    {
+      "id": "codegeex4:latest",
+      "name": "codegeex4:latest",
+      "family": "codegeex4",
+      "cloud": false
+    },
+    {
+      "id": "codegemma:2b",
+      "name": "codegemma:2b",
+      "family": "codegemma",
+      "cloud": false
+    },
+    {
+      "id": "codegemma:7b",
+      "name": "codegemma:7b",
+      "family": "codegemma",
+      "cloud": false
+    },
+    {
+      "id": "codegemma:latest",
+      "name": "codegemma:latest",
+      "family": "codegemma",
+      "cloud": false
+    },
+    {
+      "id": "codellama:13b",
+      "name": "codellama:13b",
+      "family": "codellama",
+      "cloud": false
+    },
+    {
+      "id": "codellama:13b)",
+      "name": "codellama:13b)",
+      "family": "codellama",
+      "cloud": false
+    },
+    {
+      "id": "codellama:34b",
+      "name": "codellama:34b",
+      "family": "codellama",
+      "cloud": false
+    },
+    {
+      "id": "codellama:34b)",
+      "name": "codellama:34b)",
+      "family": "codellama",
+      "cloud": false
+    },
+    {
+      "id": "codellama:70b",
+      "name": "codellama:70b",
+      "family": "codellama",
+      "cloud": false
+    },
+    {
+      "id": "codellama:70b)",
+      "name": "codellama:70b)",
+      "family": "codellama",
+      "cloud": false
+    },
+    {
+      "id": "codellama:7b",
+      "name": "codellama:7b",
+      "family": "codellama",
+      "cloud": false
+    },
+    {
+      "id": "codellama:7b)",
+      "name": "codellama:7b)",
+      "family": "codellama",
+      "cloud": false
+    },
+    {
+      "id": "codellama:latest",
+      "name": "codellama:latest",
+      "family": "codellama",
+      "cloud": false
+    },
+    {
+      "id": "codeqwen:7b",
+      "name": "codeqwen:7b",
+      "family": "codeqwen",
+      "cloud": false
+    },
+    {
+      "id": "codeqwen:latest",
+      "name": "codeqwen:latest",
+      "family": "codeqwen",
+      "cloud": false
+    },
+    {
+      "id": "codestral:22b",
+      "name": "codestral:22b",
+      "family": "codestral",
+      "cloud": false
+    },
+    {
+      "id": "codestral:latest",
+      "name": "codestral:latest",
+      "family": "codestral",
+      "cloud": false
+    },
+    {
+      "id": "codeup:13b",
+      "name": "codeup:13b",
+      "family": "codeup",
+      "cloud": false
+    },
+    {
+      "id": "codeup:latest",
+      "name": "codeup:latest",
+      "family": "codeup",
+      "cloud": false
+    },
+    {
+      "id": "cogito:14b",
+      "name": "cogito:14b",
+      "family": "cogito",
+      "cloud": false
+    },
+    {
+      "id": "cogito:32b",
+      "name": "cogito:32b",
+      "family": "cogito",
+      "cloud": false
+    },
+    {
+      "id": "cogito:3b",
+      "name": "cogito:3b",
+      "family": "cogito",
+      "cloud": false
+    },
+    {
+      "id": "cogito:70b",
+      "name": "cogito:70b",
+      "family": "cogito",
+      "cloud": false
+    },
+    {
+      "id": "cogito:8b",
+      "name": "cogito:8b",
+      "family": "cogito",
+      "cloud": false
+    },
+    {
+      "id": "cogito:latest",
+      "name": "cogito:latest",
+      "family": "cogito",
+      "cloud": false
+    },
+    {
+      "id": "cogito-2.1:671b",
+      "name": "cogito-2.1:671b",
+      "family": "cogito-2.1",
+      "cloud": false
+    },
+    {
+      "id": "cogito-2.1:671b-cloud",
+      "name": "cogito-2.1:671b-cloud",
+      "family": "cogito-2.1",
+      "cloud": true
+    },
+    {
+      "id": "cogito-2.1:latest",
+      "name": "cogito-2.1:latest",
+      "family": "cogito-2.1",
+      "cloud": false
+    },
+    {
+      "id": "command-a:111b",
+      "name": "command-a:111b",
+      "family": "command-a",
+      "cloud": false
+    },
+    {
+      "id": "command-a:latest",
+      "name": "command-a:latest",
+      "family": "command-a",
+      "cloud": false
+    },
+    {
+      "id": "command-r:35b",
+      "name": "command-r:35b",
+      "family": "command-r",
+      "cloud": false
+    },
+    {
+      "id": "command-r:latest",
+      "name": "command-r:latest",
+      "family": "command-r",
+      "cloud": false
+    },
+    {
+      "id": "command-r-plus:104b",
+      "name": "command-r-plus:104b",
+      "family": "command-r-plus",
+      "cloud": false
+    },
+    {
+      "id": "command-r-plus:latest",
+      "name": "command-r-plus:latest",
+      "family": "command-r-plus",
+      "cloud": false
+    },
+    {
+      "id": "command-r7b:7b",
+      "name": "command-r7b:7b",
+      "family": "command-r7b",
+      "cloud": false
+    },
+    {
+      "id": "command-r7b:latest",
+      "name": "command-r7b:latest",
+      "family": "command-r7b",
+      "cloud": false
+    },
+    {
+      "id": "command-r7b-arabic:7b",
+      "name": "command-r7b-arabic:7b",
+      "family": "command-r7b-arabic",
+      "cloud": false
+    },
+    {
+      "id": "command-r7b-arabic:latest",
+      "name": "command-r7b-arabic:latest",
+      "family": "command-r7b-arabic",
+      "cloud": false
+    },
+    {
+      "id": "dbrx:132b",
+      "name": "dbrx:132b",
+      "family": "dbrx",
+      "cloud": false
+    },
+    {
+      "id": "dbrx:latest",
+      "name": "dbrx:latest",
+      "family": "dbrx",
+      "cloud": false
+    },
+    {
+      "id": "deepcoder:1.5b",
+      "name": "deepcoder:1.5b",
+      "family": "deepcoder",
+      "cloud": false
+    },
+    {
+      "id": "deepcoder:14b",
+      "name": "deepcoder:14b",
+      "family": "deepcoder",
+      "cloud": false
+    },
+    {
+      "id": "deepcoder:latest",
+      "name": "deepcoder:latest",
+      "family": "deepcoder",
+      "cloud": false
+    },
+    {
+      "id": "deepscaler:1.5b",
+      "name": "deepscaler:1.5b",
+      "family": "deepscaler",
+      "cloud": false
+    },
+    {
+      "id": "deepscaler:latest",
+      "name": "deepscaler:latest",
+      "family": "deepscaler",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-coder:1.3b",
+      "name": "deepseek-coder:1.3b",
+      "family": "deepseek-coder",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-coder:33b",
+      "name": "deepseek-coder:33b",
+      "family": "deepseek-coder",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-coder:6.7b",
+      "name": "deepseek-coder:6.7b",
+      "family": "deepseek-coder",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-coder:latest",
+      "name": "deepseek-coder:latest",
+      "family": "deepseek-coder",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-coder-v2:16b",
+      "name": "deepseek-coder-v2:16b",
+      "family": "deepseek-coder-v2",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-coder-v2:236b",
+      "name": "deepseek-coder-v2:236b",
+      "family": "deepseek-coder-v2",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-coder-v2:latest",
+      "name": "deepseek-coder-v2:latest",
+      "family": "deepseek-coder-v2",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-llm:67b",
+      "name": "deepseek-llm:67b",
+      "family": "deepseek-llm",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-llm:7b",
+      "name": "deepseek-llm:7b",
+      "family": "deepseek-llm",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-llm:latest",
+      "name": "deepseek-llm:latest",
+      "family": "deepseek-llm",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-ocr:3b",
+      "name": "deepseek-ocr:3b",
+      "family": "deepseek-ocr",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-ocr:latest",
+      "name": "deepseek-ocr:latest",
+      "family": "deepseek-ocr",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-r1:1.5b",
+      "name": "deepseek-r1:1.5b",
+      "family": "deepseek-r1",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-r1:14b",
+      "name": "deepseek-r1:14b",
+      "family": "deepseek-r1",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-r1:32b",
+      "name": "deepseek-r1:32b",
+      "family": "deepseek-r1",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-r1:671b",
+      "name": "deepseek-r1:671b",
+      "family": "deepseek-r1",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-r1:70b",
+      "name": "deepseek-r1:70b",
+      "family": "deepseek-r1",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-r1:7b",
+      "name": "deepseek-r1:7b",
+      "family": "deepseek-r1",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-r1:8b",
+      "name": "deepseek-r1:8b",
+      "family": "deepseek-r1",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-r1:latest",
+      "name": "deepseek-r1:latest",
+      "family": "deepseek-r1",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-v2:16b",
+      "name": "deepseek-v2:16b",
+      "family": "deepseek-v2",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-v2:236b",
+      "name": "deepseek-v2:236b",
+      "family": "deepseek-v2",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-v2:latest",
+      "name": "deepseek-v2:latest",
+      "family": "deepseek-v2",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-v2.5:236b",
+      "name": "deepseek-v2.5:236b",
+      "family": "deepseek-v2.5",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-v2.5:latest",
+      "name": "deepseek-v2.5:latest",
+      "family": "deepseek-v2.5",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-v3:671b",
+      "name": "deepseek-v3:671b",
+      "family": "deepseek-v3",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-v3:latest",
+      "name": "deepseek-v3:latest",
+      "family": "deepseek-v3",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-v3.1:671b",
+      "name": "deepseek-v3.1:671b",
+      "family": "deepseek-v3.1",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-v3.1:671b-cloud",
+      "name": "deepseek-v3.1:671b-cloud",
+      "family": "deepseek-v3.1",
+      "cloud": true
+    },
+    {
+      "id": "deepseek-v3.1:latest",
+      "name": "deepseek-v3.1:latest",
+      "family": "deepseek-v3.1",
+      "cloud": false
+    },
+    {
+      "id": "deepseek-v3.2:cloud",
+      "name": "deepseek-v3.2:cloud",
+      "family": "deepseek-v3.2",
+      "cloud": true
+    },
+    {
+      "id": "deepseek-v4-flash:cloud",
+      "name": "deepseek-v4-flash:cloud",
+      "family": "deepseek-v4-flash",
+      "cloud": true
+    },
+    {
+      "id": "deepseek-v4-pro:cloud",
+      "name": "deepseek-v4-pro:cloud",
+      "family": "deepseek-v4-pro",
+      "cloud": true
+    },
+    {
+      "id": "devstral:24b",
+      "name": "devstral:24b",
+      "family": "devstral",
+      "cloud": false
+    },
+    {
+      "id": "devstral:latest",
+      "name": "devstral:latest",
+      "family": "devstral",
+      "cloud": false
+    },
+    {
+      "id": "devstral-2:123b",
+      "name": "devstral-2:123b",
+      "family": "devstral-2",
+      "cloud": false
+    },
+    {
+      "id": "devstral-2:123b-cloud",
+      "name": "devstral-2:123b-cloud",
+      "family": "devstral-2",
+      "cloud": true
+    },
+    {
+      "id": "devstral-2:latest",
+      "name": "devstral-2:latest",
+      "family": "devstral-2",
+      "cloud": false
+    },
+    {
+      "id": "devstral-small-2:24b",
+      "name": "devstral-small-2:24b",
+      "family": "devstral-small-2",
+      "cloud": false
+    },
+    {
+      "id": "devstral-small-2:24b-cloud",
+      "name": "devstral-small-2:24b-cloud",
+      "family": "devstral-small-2",
+      "cloud": true
+    },
+    {
+      "id": "devstral-small-2:latest",
+      "name": "devstral-small-2:latest",
+      "family": "devstral-small-2",
+      "cloud": false
+    },
+    {
+      "id": "dolphin-llama3:70b",
+      "name": "dolphin-llama3:70b",
+      "family": "dolphin-llama3",
+      "cloud": false
+    },
+    {
+      "id": "dolphin-llama3:8b",
+      "name": "dolphin-llama3:8b",
+      "family": "dolphin-llama3",
+      "cloud": false
+    },
+    {
+      "id": "dolphin-llama3:latest",
+      "name": "dolphin-llama3:latest",
+      "family": "dolphin-llama3",
+      "cloud": false
+    },
+    {
+      "id": "dolphin-mistral:7b",
+      "name": "dolphin-mistral:7b",
+      "family": "dolphin-mistral",
+      "cloud": false
+    },
+    {
+      "id": "dolphin-mistral:latest",
+      "name": "dolphin-mistral:latest",
+      "family": "dolphin-mistral",
+      "cloud": false
+    },
+    {
+      "id": "dolphin-mixtral:8x22b",
+      "name": "dolphin-mixtral:8x22b",
+      "family": "dolphin-mixtral",
+      "cloud": false
+    },
+    {
+      "id": "dolphin-mixtral:8x7b",
+      "name": "dolphin-mixtral:8x7b",
+      "family": "dolphin-mixtral",
+      "cloud": false
+    },
+    {
+      "id": "dolphin-mixtral:latest",
+      "name": "dolphin-mixtral:latest",
+      "family": "dolphin-mixtral",
+      "cloud": false
+    },
+    {
+      "id": "dolphin-phi:2.7b",
+      "name": "dolphin-phi:2.7b",
+      "family": "dolphin-phi",
+      "cloud": false
+    },
+    {
+      "id": "dolphin-phi:latest",
+      "name": "dolphin-phi:latest",
+      "family": "dolphin-phi",
+      "cloud": false
+    },
+    {
+      "id": "dolphin3:8b",
+      "name": "dolphin3:8b",
+      "family": "dolphin3",
+      "cloud": false
+    },
+    {
+      "id": "dolphin3:latest",
+      "name": "dolphin3:latest",
+      "family": "dolphin3",
+      "cloud": false
+    },
+    {
+      "id": "dolphincoder:15b",
+      "name": "dolphincoder:15b",
+      "family": "dolphincoder",
+      "cloud": false
+    },
+    {
+      "id": "dolphincoder:7b",
+      "name": "dolphincoder:7b",
+      "family": "dolphincoder",
+      "cloud": false
+    },
+    {
+      "id": "dolphincoder:latest",
+      "name": "dolphincoder:latest",
+      "family": "dolphincoder",
+      "cloud": false
+    },
+    {
+      "id": "duckdb-nsql:7b",
+      "name": "duckdb-nsql:7b",
+      "family": "duckdb-nsql",
+      "cloud": false
+    },
+    {
+      "id": "duckdb-nsql:latest",
+      "name": "duckdb-nsql:latest",
+      "family": "duckdb-nsql",
+      "cloud": false
+    },
+    {
+      "id": "embeddinggemma:300m",
+      "name": "embeddinggemma:300m",
+      "family": "embeddinggemma",
+      "cloud": false
+    },
+    {
+      "id": "embeddinggemma:latest",
+      "name": "embeddinggemma:latest",
+      "family": "embeddinggemma",
+      "cloud": false
+    },
+    {
+      "id": "everythinglm:13b",
+      "name": "everythinglm:13b",
+      "family": "everythinglm",
+      "cloud": false
+    },
+    {
+      "id": "everythinglm:latest",
+      "name": "everythinglm:latest",
+      "family": "everythinglm",
+      "cloud": false
+    },
+    {
+      "id": "exaone-deep:2.4b",
+      "name": "exaone-deep:2.4b",
+      "family": "exaone-deep",
+      "cloud": false
+    },
+    {
+      "id": "exaone-deep:32b",
+      "name": "exaone-deep:32b",
+      "family": "exaone-deep",
+      "cloud": false
+    },
+    {
+      "id": "exaone-deep:7.8b",
+      "name": "exaone-deep:7.8b",
+      "family": "exaone-deep",
+      "cloud": false
+    },
+    {
+      "id": "exaone-deep:latest",
+      "name": "exaone-deep:latest",
+      "family": "exaone-deep",
+      "cloud": false
+    },
+    {
+      "id": "exaone3.5:2.4b",
+      "name": "exaone3.5:2.4b",
+      "family": "exaone3.5",
+      "cloud": false
+    },
+    {
+      "id": "exaone3.5:32b",
+      "name": "exaone3.5:32b",
+      "family": "exaone3.5",
+      "cloud": false
+    },
+    {
+      "id": "exaone3.5:7.8b",
+      "name": "exaone3.5:7.8b",
+      "family": "exaone3.5",
+      "cloud": false
+    },
+    {
+      "id": "exaone3.5:latest",
+      "name": "exaone3.5:latest",
+      "family": "exaone3.5",
+      "cloud": false
+    },
+    {
+      "id": "falcon:180b",
+      "name": "falcon:180b",
+      "family": "falcon",
+      "cloud": false
+    },
+    {
+      "id": "falcon:180b)",
+      "name": "falcon:180b)",
+      "family": "falcon",
+      "cloud": false
+    },
+    {
+      "id": "falcon:40b",
+      "name": "falcon:40b",
+      "family": "falcon",
+      "cloud": false
+    },
+    {
+      "id": "falcon:40b)",
+      "name": "falcon:40b)",
+      "family": "falcon",
+      "cloud": false
+    },
+    {
+      "id": "falcon:7b",
+      "name": "falcon:7b",
+      "family": "falcon",
+      "cloud": false
+    },
+    {
+      "id": "falcon:7b)",
+      "name": "falcon:7b)",
+      "family": "falcon",
+      "cloud": false
+    },
+    {
+      "id": "falcon:latest",
+      "name": "falcon:latest",
+      "family": "falcon",
+      "cloud": false
+    },
+    {
+      "id": "falcon2:11b",
+      "name": "falcon2:11b",
+      "family": "falcon2",
+      "cloud": false
+    },
+    {
+      "id": "falcon2:latest",
+      "name": "falcon2:latest",
+      "family": "falcon2",
+      "cloud": false
+    },
+    {
+      "id": "falcon3:10b",
+      "name": "falcon3:10b",
+      "family": "falcon3",
+      "cloud": false
+    },
+    {
+      "id": "falcon3:1b",
+      "name": "falcon3:1b",
+      "family": "falcon3",
+      "cloud": false
+    },
+    {
+      "id": "falcon3:3b",
+      "name": "falcon3:3b",
+      "family": "falcon3",
+      "cloud": false
+    },
+    {
+      "id": "falcon3:7b",
+      "name": "falcon3:7b",
+      "family": "falcon3",
+      "cloud": false
+    },
+    {
+      "id": "falcon3:latest",
+      "name": "falcon3:latest",
+      "family": "falcon3",
+      "cloud": false
+    },
+    {
+      "id": "firefunction-v2:70b",
+      "name": "firefunction-v2:70b",
+      "family": "firefunction-v2",
+      "cloud": false
+    },
+    {
+      "id": "firefunction-v2:latest",
+      "name": "firefunction-v2:latest",
+      "family": "firefunction-v2",
+      "cloud": false
+    },
+    {
+      "id": "functiongemma:270m",
+      "name": "functiongemma:270m",
+      "family": "functiongemma",
+      "cloud": false
+    },
+    {
+      "id": "functiongemma:latest",
+      "name": "functiongemma:latest",
+      "family": "functiongemma",
+      "cloud": false
+    },
+    {
+      "id": "gemini-3-flash-preview:cloud",
+      "name": "gemini-3-flash-preview:cloud",
+      "family": "gemini-3-flash-preview",
+      "cloud": true
+    },
+    {
+      "id": "gemini-3-flash-preview:latest",
+      "name": "gemini-3-flash-preview:latest",
+      "family": "gemini-3-flash-preview",
+      "cloud": false
+    },
+    {
+      "id": "gemma:2b",
+      "name": "gemma:2b",
+      "family": "gemma",
+      "cloud": false
+    },
+    {
+      "id": "gemma:7b",
+      "name": "gemma:7b",
+      "family": "gemma",
+      "cloud": false
+    },
+    {
+      "id": "gemma:latest",
+      "name": "gemma:latest",
+      "family": "gemma",
+      "cloud": false
+    },
+    {
+      "id": "gemma2:27b",
+      "name": "gemma2:27b",
+      "family": "gemma2",
+      "cloud": false
+    },
+    {
+      "id": "gemma2:2b",
+      "name": "gemma2:2b",
+      "family": "gemma2",
+      "cloud": false
+    },
+    {
+      "id": "gemma2:9b",
+      "name": "gemma2:9b",
+      "family": "gemma2",
+      "cloud": false
+    },
+    {
+      "id": "gemma2:latest",
+      "name": "gemma2:latest",
+      "family": "gemma2",
+      "cloud": false
+    },
+    {
+      "id": "gemma3:12b",
+      "name": "gemma3:12b",
+      "family": "gemma3",
+      "cloud": false
+    },
+    {
+      "id": "gemma3:12b-cloud",
+      "name": "gemma3:12b-cloud",
+      "family": "gemma3",
+      "cloud": true
+    },
+    {
+      "id": "gemma3:1b",
+      "name": "gemma3:1b",
+      "family": "gemma3",
+      "cloud": false
+    },
+    {
+      "id": "gemma3:270m",
+      "name": "gemma3:270m",
+      "family": "gemma3",
+      "cloud": false
+    },
+    {
+      "id": "gemma3:27b",
+      "name": "gemma3:27b",
+      "family": "gemma3",
+      "cloud": false
+    },
+    {
+      "id": "gemma3:27b-cloud",
+      "name": "gemma3:27b-cloud",
+      "family": "gemma3",
+      "cloud": true
+    },
+    {
+      "id": "gemma3:4b",
+      "name": "gemma3:4b",
+      "family": "gemma3",
+      "cloud": false
+    },
+    {
+      "id": "gemma3:4b-cloud",
+      "name": "gemma3:4b-cloud",
+      "family": "gemma3",
+      "cloud": true
+    },
+    {
+      "id": "gemma3:latest",
+      "name": "gemma3:latest",
+      "family": "gemma3",
+      "cloud": false
+    },
+    {
+      "id": "gemma3n:e2b",
+      "name": "gemma3n:e2b",
+      "family": "gemma3n",
+      "cloud": false
+    },
+    {
+      "id": "gemma3n:e4b",
+      "name": "gemma3n:e4b",
+      "family": "gemma3n",
+      "cloud": false
+    },
+    {
+      "id": "gemma3n:latest",
+      "name": "gemma3n:latest",
+      "family": "gemma3n",
+      "cloud": false
+    },
+    {
+      "id": "gemma4:26b",
+      "name": "gemma4:26b",
+      "family": "gemma4",
+      "cloud": false
+    },
+    {
+      "id": "gemma4:31b",
+      "name": "gemma4:31b",
+      "family": "gemma4",
+      "cloud": false
+    },
+    {
+      "id": "gemma4:31b-cloud",
+      "name": "gemma4:31b-cloud",
+      "family": "gemma4",
+      "cloud": true
+    },
+    {
+      "id": "gemma4:e2b",
+      "name": "gemma4:e2b",
+      "family": "gemma4",
+      "cloud": false
+    },
+    {
+      "id": "gemma4:e4b",
+      "name": "gemma4:e4b",
+      "family": "gemma4",
+      "cloud": false
+    },
+    {
+      "id": "gemma4:latest",
+      "name": "gemma4:latest",
+      "family": "gemma4",
+      "cloud": false
+    },
+    {
+      "id": "glm-4.6:cloud",
+      "name": "glm-4.6:cloud",
+      "family": "glm-4.6",
+      "cloud": true
+    },
+    {
+      "id": "glm-4.7:cloud",
+      "name": "glm-4.7:cloud",
+      "family": "glm-4.7",
+      "cloud": true
+    },
+    {
+      "id": "glm-4.7-flash:bf16",
+      "name": "glm-4.7-flash:bf16",
+      "family": "glm-4.7-flash",
+      "cloud": false
+    },
+    {
+      "id": "glm-4.7-flash:latest",
+      "name": "glm-4.7-flash:latest",
+      "family": "glm-4.7-flash",
+      "cloud": false
+    },
+    {
+      "id": "glm-4.7-flash:q4_K_M",
+      "name": "glm-4.7-flash:q4_K_M",
+      "family": "glm-4.7-flash",
+      "cloud": false
+    },
+    {
+      "id": "glm-4.7-flash:q8_0",
+      "name": "glm-4.7-flash:q8_0",
+      "family": "glm-4.7-flash",
+      "cloud": false
+    },
+    {
+      "id": "glm-5:cloud",
+      "name": "glm-5:cloud",
+      "family": "glm-5",
+      "cloud": true
+    },
+    {
+      "id": "glm-5.1:cloud",
+      "name": "glm-5.1:cloud",
+      "family": "glm-5.1",
+      "cloud": true
+    },
+    {
+      "id": "glm-ocr:bf16",
+      "name": "glm-ocr:bf16",
+      "family": "glm-ocr",
+      "cloud": false
+    },
+    {
+      "id": "glm-ocr:latest",
+      "name": "glm-ocr:latest",
+      "family": "glm-ocr",
+      "cloud": false
+    },
+    {
+      "id": "glm-ocr:q8_0",
+      "name": "glm-ocr:q8_0",
+      "family": "glm-ocr",
+      "cloud": false
+    },
+    {
+      "id": "glm4:9b",
+      "name": "glm4:9b",
+      "family": "glm4",
+      "cloud": false
+    },
+    {
+      "id": "glm4:latest",
+      "name": "glm4:latest",
+      "family": "glm4",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-fp16",
+      "name": "goliath:120b-fp16",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q2_K",
+      "name": "goliath:120b-q2_K",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q3_K_L",
+      "name": "goliath:120b-q3_K_L",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q3_K_M",
+      "name": "goliath:120b-q3_K_M",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q3_K_S",
+      "name": "goliath:120b-q3_K_S",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q4_0",
+      "name": "goliath:120b-q4_0",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q4_1",
+      "name": "goliath:120b-q4_1",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q4_K_M",
+      "name": "goliath:120b-q4_K_M",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q4_K_S",
+      "name": "goliath:120b-q4_K_S",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q5_0",
+      "name": "goliath:120b-q5_0",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q5_1",
+      "name": "goliath:120b-q5_1",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q5_K_M",
+      "name": "goliath:120b-q5_K_M",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q5_K_S",
+      "name": "goliath:120b-q5_K_S",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q6_K",
+      "name": "goliath:120b-q6_K",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:120b-q8_0",
+      "name": "goliath:120b-q8_0",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "goliath:latest",
+      "name": "goliath:latest",
+      "family": "goliath",
+      "cloud": false
+    },
+    {
+      "id": "gpt-oss:120b",
+      "name": "gpt-oss:120b",
+      "family": "gpt-oss",
+      "cloud": false
+    },
+    {
+      "id": "gpt-oss:120b-cloud",
+      "name": "gpt-oss:120b-cloud",
+      "family": "gpt-oss",
+      "cloud": true
+    },
+    {
+      "id": "gpt-oss:20b",
+      "name": "gpt-oss:20b",
+      "family": "gpt-oss",
+      "cloud": false
+    },
+    {
+      "id": "gpt-oss:20b-cloud",
+      "name": "gpt-oss:20b-cloud",
+      "family": "gpt-oss",
+      "cloud": true
+    },
+    {
+      "id": "gpt-oss:latest",
+      "name": "gpt-oss:latest",
+      "family": "gpt-oss",
+      "cloud": false
+    },
+    {
+      "id": "gpt-oss-safeguard:120b",
+      "name": "gpt-oss-safeguard:120b",
+      "family": "gpt-oss-safeguard",
+      "cloud": false
+    },
+    {
+      "id": "gpt-oss-safeguard:20b",
+      "name": "gpt-oss-safeguard:20b",
+      "family": "gpt-oss-safeguard",
+      "cloud": false
+    },
+    {
+      "id": "gpt-oss-safeguard:latest",
+      "name": "gpt-oss-safeguard:latest",
+      "family": "gpt-oss-safeguard",
+      "cloud": false
+    },
+    {
+      "id": "granite-code:20b",
+      "name": "granite-code:20b",
+      "family": "granite-code",
+      "cloud": false
+    },
+    {
+      "id": "granite-code:34b",
+      "name": "granite-code:34b",
+      "family": "granite-code",
+      "cloud": false
+    },
+    {
+      "id": "granite-code:3b",
+      "name": "granite-code:3b",
+      "family": "granite-code",
+      "cloud": false
+    },
+    {
+      "id": "granite-code:8b",
+      "name": "granite-code:8b",
+      "family": "granite-code",
+      "cloud": false
+    },
+    {
+      "id": "granite-code:latest",
+      "name": "granite-code:latest",
+      "family": "granite-code",
+      "cloud": false
+    },
+    {
+      "id": "granite-embedding:278m",
+      "name": "granite-embedding:278m",
+      "family": "granite-embedding",
+      "cloud": false
+    },
+    {
+      "id": "granite-embedding:30m",
+      "name": "granite-embedding:30m",
+      "family": "granite-embedding",
+      "cloud": false
+    },
+    {
+      "id": "granite-embedding:latest",
+      "name": "granite-embedding:latest",
+      "family": "granite-embedding",
+      "cloud": false
+    },
+    {
+      "id": "granite3-dense:2b",
+      "name": "granite3-dense:2b",
+      "family": "granite3-dense",
+      "cloud": false
+    },
+    {
+      "id": "granite3-dense:8b",
+      "name": "granite3-dense:8b",
+      "family": "granite3-dense",
+      "cloud": false
+    },
+    {
+      "id": "granite3-dense:latest",
+      "name": "granite3-dense:latest",
+      "family": "granite3-dense",
+      "cloud": false
+    },
+    {
+      "id": "granite3-guardian:2b",
+      "name": "granite3-guardian:2b",
+      "family": "granite3-guardian",
+      "cloud": false
+    },
+    {
+      "id": "granite3-guardian:8b",
+      "name": "granite3-guardian:8b",
+      "family": "granite3-guardian",
+      "cloud": false
+    },
+    {
+      "id": "granite3-guardian:latest",
+      "name": "granite3-guardian:latest",
+      "family": "granite3-guardian",
+      "cloud": false
+    },
+    {
+      "id": "granite3-moe:1b",
+      "name": "granite3-moe:1b",
+      "family": "granite3-moe",
+      "cloud": false
+    },
+    {
+      "id": "granite3-moe:3b",
+      "name": "granite3-moe:3b",
+      "family": "granite3-moe",
+      "cloud": false
+    },
+    {
+      "id": "granite3-moe:latest",
+      "name": "granite3-moe:latest",
+      "family": "granite3-moe",
+      "cloud": false
+    },
+    {
+      "id": "granite3.1-dense:2b",
+      "name": "granite3.1-dense:2b",
+      "family": "granite3.1-dense",
+      "cloud": false
+    },
+    {
+      "id": "granite3.1-dense:8b",
+      "name": "granite3.1-dense:8b",
+      "family": "granite3.1-dense",
+      "cloud": false
+    },
+    {
+      "id": "granite3.1-dense:latest",
+      "name": "granite3.1-dense:latest",
+      "family": "granite3.1-dense",
+      "cloud": false
+    },
+    {
+      "id": "granite3.1-moe:1b",
+      "name": "granite3.1-moe:1b",
+      "family": "granite3.1-moe",
+      "cloud": false
+    },
+    {
+      "id": "granite3.1-moe:3b",
+      "name": "granite3.1-moe:3b",
+      "family": "granite3.1-moe",
+      "cloud": false
+    },
+    {
+      "id": "granite3.1-moe:latest",
+      "name": "granite3.1-moe:latest",
+      "family": "granite3.1-moe",
+      "cloud": false
+    },
+    {
+      "id": "granite3.2:2b",
+      "name": "granite3.2:2b",
+      "family": "granite3.2",
+      "cloud": false
+    },
+    {
+      "id": "granite3.2:8b",
+      "name": "granite3.2:8b",
+      "family": "granite3.2",
+      "cloud": false
+    },
+    {
+      "id": "granite3.2:latest",
+      "name": "granite3.2:latest",
+      "family": "granite3.2",
+      "cloud": false
+    },
+    {
+      "id": "granite3.2-vision:2b",
+      "name": "granite3.2-vision:2b",
+      "family": "granite3.2-vision",
+      "cloud": false
+    },
+    {
+      "id": "granite3.2-vision:latest",
+      "name": "granite3.2-vision:latest",
+      "family": "granite3.2-vision",
+      "cloud": false
+    },
+    {
+      "id": "granite3.3:2b",
+      "name": "granite3.3:2b",
+      "family": "granite3.3",
+      "cloud": false
+    },
+    {
+      "id": "granite3.3:8b",
+      "name": "granite3.3:8b",
+      "family": "granite3.3",
+      "cloud": false
+    },
+    {
+      "id": "granite3.3:latest",
+      "name": "granite3.3:latest",
+      "family": "granite3.3",
+      "cloud": false
+    },
+    {
+      "id": "granite4:1b",
+      "name": "granite4:1b",
+      "family": "granite4",
+      "cloud": false
+    },
+    {
+      "id": "granite4:350m",
+      "name": "granite4:350m",
+      "family": "granite4",
+      "cloud": false
+    },
+    {
+      "id": "granite4:3b",
+      "name": "granite4:3b",
+      "family": "granite4",
+      "cloud": false
+    },
+    {
+      "id": "granite4:latest",
+      "name": "granite4:latest",
+      "family": "granite4",
+      "cloud": false
+    },
+    {
+      "id": "granite4.1:30b",
+      "name": "granite4.1:30b",
+      "family": "granite4.1",
+      "cloud": false
+    },
+    {
+      "id": "granite4.1:3b",
+      "name": "granite4.1:3b",
+      "family": "granite4.1",
+      "cloud": false
+    },
+    {
+      "id": "granite4.1:8b",
+      "name": "granite4.1:8b",
+      "family": "granite4.1",
+      "cloud": false
+    },
+    {
+      "id": "hermes3:3b",
+      "name": "hermes3:3b",
+      "family": "hermes3",
+      "cloud": false
+    },
+    {
+      "id": "hermes3:405b",
+      "name": "hermes3:405b",
+      "family": "hermes3",
+      "cloud": false
+    },
+    {
+      "id": "hermes3:70b",
+      "name": "hermes3:70b",
+      "family": "hermes3",
+      "cloud": false
+    },
+    {
+      "id": "hermes3:8b",
+      "name": "hermes3:8b",
+      "family": "hermes3",
+      "cloud": false
+    },
+    {
+      "id": "hermes3:latest",
+      "name": "hermes3:latest",
+      "family": "hermes3",
+      "cloud": false
+    },
+    {
+      "id": "internlm2:1.8b",
+      "name": "internlm2:1.8b",
+      "family": "internlm2",
+      "cloud": false
+    },
+    {
+      "id": "internlm2:1m",
+      "name": "internlm2:1m",
+      "family": "internlm2",
+      "cloud": false
+    },
+    {
+      "id": "internlm2:20b",
+      "name": "internlm2:20b",
+      "family": "internlm2",
+      "cloud": false
+    },
+    {
+      "id": "internlm2:7b",
+      "name": "internlm2:7b",
+      "family": "internlm2",
+      "cloud": false
+    },
+    {
+      "id": "internlm2:latest",
+      "name": "internlm2:latest",
+      "family": "internlm2",
+      "cloud": false
+    },
+    {
+      "id": "kimi-k2:1t-cloud",
+      "name": "kimi-k2:1t-cloud",
+      "family": "kimi-k2",
+      "cloud": true
+    },
+    {
+      "id": "kimi-k2-thinking:cloud",
+      "name": "kimi-k2-thinking:cloud",
+      "family": "kimi-k2-thinking",
+      "cloud": true
+    },
+    {
+      "id": "kimi-k2.5:cloud",
+      "name": "kimi-k2.5:cloud",
+      "family": "kimi-k2.5",
+      "cloud": true
+    },
+    {
+      "id": "kimi-k2.6:cloud",
+      "name": "kimi-k2.6:cloud",
+      "family": "kimi-k2.6",
+      "cloud": true
+    },
+    {
+      "id": "laguna-xs.2:bf16",
+      "name": "laguna-xs.2:bf16",
+      "family": "laguna-xs.2",
+      "cloud": false
+    },
+    {
+      "id": "laguna-xs.2:latest",
+      "name": "laguna-xs.2:latest",
+      "family": "laguna-xs.2",
+      "cloud": false
+    },
+    {
+      "id": "laguna-xs.2:mlx-bf16",
+      "name": "laguna-xs.2:mlx-bf16",
+      "family": "laguna-xs.2",
+      "cloud": false
+    },
+    {
+      "id": "laguna-xs.2:mxfp8",
+      "name": "laguna-xs.2:mxfp8",
+      "family": "laguna-xs.2",
+      "cloud": false
+    },
+    {
+      "id": "laguna-xs.2:nvfp4",
+      "name": "laguna-xs.2:nvfp4",
+      "family": "laguna-xs.2",
+      "cloud": false
+    },
+    {
+      "id": "laguna-xs.2:q4_K_M",
+      "name": "laguna-xs.2:q4_K_M",
+      "family": "laguna-xs.2",
+      "cloud": false
+    },
+    {
+      "id": "laguna-xs.2:q8_0",
+      "name": "laguna-xs.2:q8_0",
+      "family": "laguna-xs.2",
+      "cloud": false
+    },
+    {
+      "id": "lfm2:24b",
+      "name": "lfm2:24b",
+      "family": "lfm2",
+      "cloud": false
+    },
+    {
+      "id": "lfm2:latest",
+      "name": "lfm2:latest",
+      "family": "lfm2",
+      "cloud": false
+    },
+    {
+      "id": "lfm2.5-thinking:1.2b",
+      "name": "lfm2.5-thinking:1.2b",
+      "family": "lfm2.5-thinking",
+      "cloud": false
+    },
+    {
+      "id": "lfm2.5-thinking:latest",
+      "name": "lfm2.5-thinking:latest",
+      "family": "lfm2.5-thinking",
+      "cloud": false
+    },
+    {
+      "id": "llama-guard3:1b",
+      "name": "llama-guard3:1b",
+      "family": "llama-guard3",
+      "cloud": false
+    },
+    {
+      "id": "llama-guard3:8b",
+      "name": "llama-guard3:8b",
+      "family": "llama-guard3",
+      "cloud": false
+    },
+    {
+      "id": "llama-guard3:latest",
+      "name": "llama-guard3:latest",
+      "family": "llama-guard3",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-fp16",
+      "name": "llama-pro:8b-instruct-fp16",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q2_K",
+      "name": "llama-pro:8b-instruct-q2_K",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q3_K_L",
+      "name": "llama-pro:8b-instruct-q3_K_L",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q3_K_M",
+      "name": "llama-pro:8b-instruct-q3_K_M",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q3_K_S",
+      "name": "llama-pro:8b-instruct-q3_K_S",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q4_0",
+      "name": "llama-pro:8b-instruct-q4_0",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q4_1",
+      "name": "llama-pro:8b-instruct-q4_1",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q4_K_M",
+      "name": "llama-pro:8b-instruct-q4_K_M",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q4_K_S",
+      "name": "llama-pro:8b-instruct-q4_K_S",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q5_0",
+      "name": "llama-pro:8b-instruct-q5_0",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q5_1",
+      "name": "llama-pro:8b-instruct-q5_1",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q5_K_M",
+      "name": "llama-pro:8b-instruct-q5_K_M",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q5_K_S",
+      "name": "llama-pro:8b-instruct-q5_K_S",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q6_K",
+      "name": "llama-pro:8b-instruct-q6_K",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-instruct-q8_0",
+      "name": "llama-pro:8b-instruct-q8_0",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-fp16",
+      "name": "llama-pro:8b-text-fp16",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q2_K",
+      "name": "llama-pro:8b-text-q2_K",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q3_K_L",
+      "name": "llama-pro:8b-text-q3_K_L",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q3_K_M",
+      "name": "llama-pro:8b-text-q3_K_M",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q3_K_S",
+      "name": "llama-pro:8b-text-q3_K_S",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q4_0",
+      "name": "llama-pro:8b-text-q4_0",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q4_1",
+      "name": "llama-pro:8b-text-q4_1",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q4_K_M",
+      "name": "llama-pro:8b-text-q4_K_M",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q4_K_S",
+      "name": "llama-pro:8b-text-q4_K_S",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q5_0",
+      "name": "llama-pro:8b-text-q5_0",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q5_1",
+      "name": "llama-pro:8b-text-q5_1",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q5_K_M",
+      "name": "llama-pro:8b-text-q5_K_M",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q5_K_S",
+      "name": "llama-pro:8b-text-q5_K_S",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q6_K",
+      "name": "llama-pro:8b-text-q6_K",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:8b-text-q8_0",
+      "name": "llama-pro:8b-text-q8_0",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:instruct",
+      "name": "llama-pro:instruct",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:latest",
+      "name": "llama-pro:latest",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama-pro:text",
+      "name": "llama-pro:text",
+      "family": "llama-pro",
+      "cloud": false
+    },
+    {
+      "id": "llama2:13b",
+      "name": "llama2:13b",
+      "family": "llama2",
+      "cloud": false
+    },
+    {
+      "id": "llama2:70b",
+      "name": "llama2:70b",
+      "family": "llama2",
+      "cloud": false
+    },
+    {
+      "id": "llama2:7b",
+      "name": "llama2:7b",
+      "family": "llama2",
+      "cloud": false
+    },
+    {
+      "id": "llama2:latest",
+      "name": "llama2:latest",
+      "family": "llama2",
+      "cloud": false
+    },
+    {
+      "id": "llama2-chinese:13b",
+      "name": "llama2-chinese:13b",
+      "family": "llama2-chinese",
+      "cloud": false
+    },
+    {
+      "id": "llama2-chinese:7b",
+      "name": "llama2-chinese:7b",
+      "family": "llama2-chinese",
+      "cloud": false
+    },
+    {
+      "id": "llama2-chinese:latest",
+      "name": "llama2-chinese:latest",
+      "family": "llama2-chinese",
+      "cloud": false
+    },
+    {
+      "id": "llama2-uncensored:70b",
+      "name": "llama2-uncensored:70b",
+      "family": "llama2-uncensored",
+      "cloud": false
+    },
+    {
+      "id": "llama2-uncensored:7b",
+      "name": "llama2-uncensored:7b",
+      "family": "llama2-uncensored",
+      "cloud": false
+    },
+    {
+      "id": "llama2-uncensored:latest",
+      "name": "llama2-uncensored:latest",
+      "family": "llama2-uncensored",
+      "cloud": false
+    },
+    {
+      "id": "llama3:70b",
+      "name": "llama3:70b",
+      "family": "llama3",
+      "cloud": false
+    },
+    {
+      "id": "llama3:8b",
+      "name": "llama3:8b",
+      "family": "llama3",
+      "cloud": false
+    },
+    {
+      "id": "llama3:latest",
+      "name": "llama3:latest",
+      "family": "llama3",
+      "cloud": false
+    },
+    {
+      "id": "llama3-chatqa:70b",
+      "name": "llama3-chatqa:70b",
+      "family": "llama3-chatqa",
+      "cloud": false
+    },
+    {
+      "id": "llama3-chatqa:8b",
+      "name": "llama3-chatqa:8b",
+      "family": "llama3-chatqa",
+      "cloud": false
+    },
+    {
+      "id": "llama3-chatqa:latest",
+      "name": "llama3-chatqa:latest",
+      "family": "llama3-chatqa",
+      "cloud": false
+    },
+    {
+      "id": "llama3-gradient:70b",
+      "name": "llama3-gradient:70b",
+      "family": "llama3-gradient",
+      "cloud": false
+    },
+    {
+      "id": "llama3-gradient:8b",
+      "name": "llama3-gradient:8b",
+      "family": "llama3-gradient",
+      "cloud": false
+    },
+    {
+      "id": "llama3-gradient:latest",
+      "name": "llama3-gradient:latest",
+      "family": "llama3-gradient",
+      "cloud": false
+    },
+    {
+      "id": "llama3-groq-tool-use:70b",
+      "name": "llama3-groq-tool-use:70b",
+      "family": "llama3-groq-tool-use",
+      "cloud": false
+    },
+    {
+      "id": "llama3-groq-tool-use:8b",
+      "name": "llama3-groq-tool-use:8b",
+      "family": "llama3-groq-tool-use",
+      "cloud": false
+    },
+    {
+      "id": "llama3-groq-tool-use:latest",
+      "name": "llama3-groq-tool-use:latest",
+      "family": "llama3-groq-tool-use",
+      "cloud": false
+    },
+    {
+      "id": "llama3.1:405b",
+      "name": "llama3.1:405b",
+      "family": "llama3.1",
+      "cloud": false
+    },
+    {
+      "id": "llama3.1:70b",
+      "name": "llama3.1:70b",
+      "family": "llama3.1",
+      "cloud": false
+    },
+    {
+      "id": "llama3.1:8b",
+      "name": "llama3.1:8b",
+      "family": "llama3.1",
+      "cloud": false
+    },
+    {
+      "id": "llama3.1:latest",
+      "name": "llama3.1:latest",
+      "family": "llama3.1",
+      "cloud": false
+    },
+    {
+      "id": "llama3.2:1b",
+      "name": "llama3.2:1b",
+      "family": "llama3.2",
+      "cloud": false
+    },
+    {
+      "id": "llama3.2:3b",
+      "name": "llama3.2:3b",
+      "family": "llama3.2",
+      "cloud": false
+    },
+    {
+      "id": "llama3.2:latest",
+      "name": "llama3.2:latest",
+      "family": "llama3.2",
+      "cloud": false
+    },
+    {
+      "id": "llama3.2-vision:11b",
+      "name": "llama3.2-vision:11b",
+      "family": "llama3.2-vision",
+      "cloud": false
+    },
+    {
+      "id": "llama3.2-vision:90b",
+      "name": "llama3.2-vision:90b",
+      "family": "llama3.2-vision",
+      "cloud": false
+    },
+    {
+      "id": "llama3.2-vision:latest",
+      "name": "llama3.2-vision:latest",
+      "family": "llama3.2-vision",
+      "cloud": false
+    },
+    {
+      "id": "llama3.3:70b",
+      "name": "llama3.3:70b",
+      "family": "llama3.3",
+      "cloud": false
+    },
+    {
+      "id": "llama3.3:latest",
+      "name": "llama3.3:latest",
+      "family": "llama3.3",
+      "cloud": false
+    },
+    {
+      "id": "llama4:128x17b",
+      "name": "llama4:128x17b",
+      "family": "llama4",
+      "cloud": false
+    },
+    {
+      "id": "llama4:16x17b",
+      "name": "llama4:16x17b",
+      "family": "llama4",
+      "cloud": false
+    },
+    {
+      "id": "llama4:latest",
+      "name": "llama4:latest",
+      "family": "llama4",
+      "cloud": false
+    },
+    {
+      "id": "llava:13b",
+      "name": "llava:13b",
+      "family": "llava",
+      "cloud": false
+    },
+    {
+      "id": "llava:34b",
+      "name": "llava:34b",
+      "family": "llava",
+      "cloud": false
+    },
+    {
+      "id": "llava:7b",
+      "name": "llava:7b",
+      "family": "llava",
+      "cloud": false
+    },
+    {
+      "id": "llava:latest",
+      "name": "llava:latest",
+      "family": "llava",
+      "cloud": false
+    },
+    {
+      "id": "llava-llama3:8b",
+      "name": "llava-llama3:8b",
+      "family": "llava-llama3",
+      "cloud": false
+    },
+    {
+      "id": "llava-llama3:latest",
+      "name": "llava-llama3:latest",
+      "family": "llava-llama3",
+      "cloud": false
+    },
+    {
+      "id": "llava-phi3:3.8b",
+      "name": "llava-phi3:3.8b",
+      "family": "llava-phi3",
+      "cloud": false
+    },
+    {
+      "id": "llava-phi3:latest",
+      "name": "llava-phi3:latest",
+      "family": "llava-phi3",
+      "cloud": false
+    },
+    {
+      "id": "magicoder:7b",
+      "name": "magicoder:7b",
+      "family": "magicoder",
+      "cloud": false
+    },
+    {
+      "id": "magicoder:latest",
+      "name": "magicoder:latest",
+      "family": "magicoder",
+      "cloud": false
+    },
+    {
+      "id": "magistral:24b",
+      "name": "magistral:24b",
+      "family": "magistral",
+      "cloud": false
+    },
+    {
+      "id": "magistral:latest",
+      "name": "magistral:latest",
+      "family": "magistral",
+      "cloud": false
+    },
+    {
+      "id": "marco-o1:7b",
+      "name": "marco-o1:7b",
+      "family": "marco-o1",
+      "cloud": false
+    },
+    {
+      "id": "marco-o1:latest",
+      "name": "marco-o1:latest",
+      "family": "marco-o1",
+      "cloud": false
+    },
+    {
+      "id": "mathstral:7b",
+      "name": "mathstral:7b",
+      "family": "mathstral",
+      "cloud": false
+    },
+    {
+      "id": "mathstral:latest",
+      "name": "mathstral:latest",
+      "family": "mathstral",
+      "cloud": false
+    },
+    {
+      "id": "medgemma:27b",
+      "name": "medgemma:27b",
+      "family": "medgemma",
+      "cloud": false
+    },
+    {
+      "id": "medgemma:4b",
+      "name": "medgemma:4b",
+      "family": "medgemma",
+      "cloud": false
+    },
+    {
+      "id": "medgemma:latest",
+      "name": "medgemma:latest",
+      "family": "medgemma",
+      "cloud": false
+    },
+    {
+      "id": "medgemma1.5:4b",
+      "name": "medgemma1.5:4b",
+      "family": "medgemma1.5",
+      "cloud": false
+    },
+    {
+      "id": "medgemma1.5:latest",
+      "name": "medgemma1.5:latest",
+      "family": "medgemma1.5",
+      "cloud": false
+    },
+    {
+      "id": "meditron:70b",
+      "name": "meditron:70b",
+      "family": "meditron",
+      "cloud": false
+    },
+    {
+      "id": "meditron:7b",
+      "name": "meditron:7b",
+      "family": "meditron",
+      "cloud": false
+    },
+    {
+      "id": "meditron:latest",
+      "name": "meditron:latest",
+      "family": "meditron",
+      "cloud": false
+    },
+    {
+      "id": "medllama2:7b",
+      "name": "medllama2:7b",
+      "family": "medllama2",
+      "cloud": false
+    },
+    {
+      "id": "medllama2:latest",
+      "name": "medllama2:latest",
+      "family": "medllama2",
+      "cloud": false
+    },
+    {
+      "id": "megadolphin:120b",
+      "name": "megadolphin:120b",
+      "family": "megadolphin",
+      "cloud": false
+    },
+    {
+      "id": "megadolphin:latest",
+      "name": "megadolphin:latest",
+      "family": "megadolphin",
+      "cloud": false
+    },
+    {
+      "id": "minicpm-v:8b",
+      "name": "minicpm-v:8b",
+      "family": "minicpm-v",
+      "cloud": false
+    },
+    {
+      "id": "minicpm-v:latest",
+      "name": "minicpm-v:latest",
+      "family": "minicpm-v",
+      "cloud": false
+    },
+    {
+      "id": "minimax-m2:cloud",
+      "name": "minimax-m2:cloud",
+      "family": "minimax-m2",
+      "cloud": true
+    },
+    {
+      "id": "minimax-m2.1:cloud",
+      "name": "minimax-m2.1:cloud",
+      "family": "minimax-m2.1",
+      "cloud": true
+    },
+    {
+      "id": "minimax-m2.5:cloud",
+      "name": "minimax-m2.5:cloud",
+      "family": "minimax-m2.5",
+      "cloud": true
+    },
+    {
+      "id": "minimax-m2.7:cloud",
+      "name": "minimax-m2.7:cloud",
+      "family": "minimax-m2.7",
+      "cloud": true
+    },
+    {
+      "id": "ministral-3:14b",
+      "name": "ministral-3:14b",
+      "family": "ministral-3",
+      "cloud": false
+    },
+    {
+      "id": "ministral-3:14b-cloud",
+      "name": "ministral-3:14b-cloud",
+      "family": "ministral-3",
+      "cloud": true
+    },
+    {
+      "id": "ministral-3:3b",
+      "name": "ministral-3:3b",
+      "family": "ministral-3",
+      "cloud": false
+    },
+    {
+      "id": "ministral-3:3b-cloud",
+      "name": "ministral-3:3b-cloud",
+      "family": "ministral-3",
+      "cloud": true
+    },
+    {
+      "id": "ministral-3:8b",
+      "name": "ministral-3:8b",
+      "family": "ministral-3",
+      "cloud": false
+    },
+    {
+      "id": "ministral-3:8b-cloud",
+      "name": "ministral-3:8b-cloud",
+      "family": "ministral-3",
+      "cloud": true
+    },
+    {
+      "id": "ministral-3:latest",
+      "name": "ministral-3:latest",
+      "family": "ministral-3",
+      "cloud": false
+    },
+    {
+      "id": "mistral:7b",
+      "name": "mistral:7b",
+      "family": "mistral",
+      "cloud": false
+    },
+    {
+      "id": "mistral:latest",
+      "name": "mistral:latest",
+      "family": "mistral",
+      "cloud": false
+    },
+    {
+      "id": "mistral-large:123b",
+      "name": "mistral-large:123b",
+      "family": "mistral-large",
+      "cloud": false
+    },
+    {
+      "id": "mistral-large:latest",
+      "name": "mistral-large:latest",
+      "family": "mistral-large",
+      "cloud": false
+    },
+    {
+      "id": "mistral-large-3:675b-cloud",
+      "name": "mistral-large-3:675b-cloud",
+      "family": "mistral-large-3",
+      "cloud": true
+    },
+    {
+      "id": "mistral-medium-3.5:128b",
+      "name": "mistral-medium-3.5:128b",
+      "family": "mistral-medium-3.5",
+      "cloud": false
+    },
+    {
+      "id": "mistral-medium-3.5:latest",
+      "name": "mistral-medium-3.5:latest",
+      "family": "mistral-medium-3.5",
+      "cloud": false
+    },
+    {
+      "id": "mistral-nemo:12b",
+      "name": "mistral-nemo:12b",
+      "family": "mistral-nemo",
+      "cloud": false
+    },
+    {
+      "id": "mistral-nemo:latest",
+      "name": "mistral-nemo:latest",
+      "family": "mistral-nemo",
+      "cloud": false
+    },
+    {
+      "id": "mistral-openorca:7b",
+      "name": "mistral-openorca:7b",
+      "family": "mistral-openorca",
+      "cloud": false
+    },
+    {
+      "id": "mistral-openorca:latest",
+      "name": "mistral-openorca:latest",
+      "family": "mistral-openorca",
+      "cloud": false
+    },
+    {
+      "id": "mistral-small:22b",
+      "name": "mistral-small:22b",
+      "family": "mistral-small",
+      "cloud": false
+    },
+    {
+      "id": "mistral-small:24b",
+      "name": "mistral-small:24b",
+      "family": "mistral-small",
+      "cloud": false
+    },
+    {
+      "id": "mistral-small:latest",
+      "name": "mistral-small:latest",
+      "family": "mistral-small",
+      "cloud": false
+    },
+    {
+      "id": "mistral-small3.1:24b",
+      "name": "mistral-small3.1:24b",
+      "family": "mistral-small3.1",
+      "cloud": false
+    },
+    {
+      "id": "mistral-small3.1:latest",
+      "name": "mistral-small3.1:latest",
+      "family": "mistral-small3.1",
+      "cloud": false
+    },
+    {
+      "id": "mistral-small3.2:24b",
+      "name": "mistral-small3.2:24b",
+      "family": "mistral-small3.2",
+      "cloud": false
+    },
+    {
+      "id": "mistral-small3.2:latest",
+      "name": "mistral-small3.2:latest",
+      "family": "mistral-small3.2",
+      "cloud": false
+    },
+    {
+      "id": "mistrallite:7b",
+      "name": "mistrallite:7b",
+      "family": "mistrallite",
+      "cloud": false
+    },
+    {
+      "id": "mistrallite:latest",
+      "name": "mistrallite:latest",
+      "family": "mistrallite",
+      "cloud": false
+    },
+    {
+      "id": "mixtral:8x22b",
+      "name": "mixtral:8x22b",
+      "family": "mixtral",
+      "cloud": false
+    },
+    {
+      "id": "mixtral:8x7b",
+      "name": "mixtral:8x7b",
+      "family": "mixtral",
+      "cloud": false
+    },
+    {
+      "id": "mixtral:latest",
+      "name": "mixtral:latest",
+      "family": "mixtral",
+      "cloud": false
+    },
+    {
+      "id": "moondream:1.8b",
+      "name": "moondream:1.8b",
+      "family": "moondream",
+      "cloud": false
+    },
+    {
+      "id": "moondream:latest",
+      "name": "moondream:latest",
+      "family": "moondream",
+      "cloud": false
+    },
+    {
+      "id": "mxbai-embed-large:335m",
+      "name": "mxbai-embed-large:335m",
+      "family": "mxbai-embed-large",
+      "cloud": false
+    },
+    {
+      "id": "mxbai-embed-large:latest",
+      "name": "mxbai-embed-large:latest",
+      "family": "mxbai-embed-large",
+      "cloud": false
+    },
+    {
+      "id": "nemotron:70b",
+      "name": "nemotron:70b",
+      "family": "nemotron",
+      "cloud": false
+    },
+    {
+      "id": "nemotron:latest",
+      "name": "nemotron:latest",
+      "family": "nemotron",
+      "cloud": false
+    },
+    {
+      "id": "nemotron-3-nano:30b",
+      "name": "nemotron-3-nano:30b",
+      "family": "nemotron-3-nano",
+      "cloud": false
+    },
+    {
+      "id": "nemotron-3-nano:30b-cloud",
+      "name": "nemotron-3-nano:30b-cloud",
+      "family": "nemotron-3-nano",
+      "cloud": true
+    },
+    {
+      "id": "nemotron-3-nano:4b",
+      "name": "nemotron-3-nano:4b",
+      "family": "nemotron-3-nano",
+      "cloud": false
+    },
+    {
+      "id": "nemotron-3-nano:latest",
+      "name": "nemotron-3-nano:latest",
+      "family": "nemotron-3-nano",
+      "cloud": false
+    },
+    {
+      "id": "nemotron-3-super:120b",
+      "name": "nemotron-3-super:120b",
+      "family": "nemotron-3-super",
+      "cloud": false
+    },
+    {
+      "id": "nemotron-3-super:cloud",
+      "name": "nemotron-3-super:cloud",
+      "family": "nemotron-3-super",
+      "cloud": true
+    },
+    {
+      "id": "nemotron-3-super:latest",
+      "name": "nemotron-3-super:latest",
+      "family": "nemotron-3-super",
+      "cloud": false
+    },
+    {
+      "id": "nemotron-cascade-2:30b",
+      "name": "nemotron-cascade-2:30b",
+      "family": "nemotron-cascade-2",
+      "cloud": false
+    },
+    {
+      "id": "nemotron-cascade-2:latest",
+      "name": "nemotron-cascade-2:latest",
+      "family": "nemotron-cascade-2",
+      "cloud": false
+    },
+    {
+      "id": "nemotron-mini:4b",
+      "name": "nemotron-mini:4b",
+      "family": "nemotron-mini",
+      "cloud": false
+    },
+    {
+      "id": "nemotron-mini:latest",
+      "name": "nemotron-mini:latest",
+      "family": "nemotron-mini",
+      "cloud": false
+    },
+    {
+      "id": "nemotron3:33b",
+      "name": "nemotron3:33b",
+      "family": "nemotron3",
+      "cloud": false
+    },
+    {
+      "id": "neural-chat:7b",
+      "name": "neural-chat:7b",
+      "family": "neural-chat",
+      "cloud": false
+    },
+    {
+      "id": "neural-chat:latest",
+      "name": "neural-chat:latest",
+      "family": "neural-chat",
+      "cloud": false
+    },
+    {
+      "id": "nexusraven:13b",
+      "name": "nexusraven:13b",
+      "family": "nexusraven",
+      "cloud": false
+    },
+    {
+      "id": "nexusraven:latest",
+      "name": "nexusraven:latest",
+      "family": "nexusraven",
+      "cloud": false
+    },
+    {
+      "id": "nomic-embed-text:137m-v1.5-fp16",
+      "name": "nomic-embed-text:137m-v1.5-fp16",
+      "family": "nomic-embed-text",
+      "cloud": false
+    },
+    {
+      "id": "nomic-embed-text:latest",
+      "name": "nomic-embed-text:latest",
+      "family": "nomic-embed-text",
+      "cloud": false
+    },
+    {
+      "id": "nomic-embed-text:v1.5",
+      "name": "nomic-embed-text:v1.5",
+      "family": "nomic-embed-text",
+      "cloud": false
+    },
+    {
+      "id": "nomic-embed-text-v2-moe:latest",
+      "name": "nomic-embed-text-v2-moe:latest",
+      "family": "nomic-embed-text-v2-moe",
+      "cloud": false
+    },
+    {
+      "id": "notus:7b",
+      "name": "notus:7b",
+      "family": "notus",
+      "cloud": false
+    },
+    {
+      "id": "notus:latest",
+      "name": "notus:latest",
+      "family": "notus",
+      "cloud": false
+    },
+    {
+      "id": "notux:8x7b",
+      "name": "notux:8x7b",
+      "family": "notux",
+      "cloud": false
+    },
+    {
+      "id": "notux:latest",
+      "name": "notux:latest",
+      "family": "notux",
+      "cloud": false
+    },
+    {
+      "id": "nous-hermes:13b",
+      "name": "nous-hermes:13b",
+      "family": "nous-hermes",
+      "cloud": false
+    },
+    {
+      "id": "nous-hermes:7b",
+      "name": "nous-hermes:7b",
+      "family": "nous-hermes",
+      "cloud": false
+    },
+    {
+      "id": "nous-hermes:latest",
+      "name": "nous-hermes:latest",
+      "family": "nous-hermes",
+      "cloud": false
+    },
+    {
+      "id": "nous-hermes2:10.7b",
+      "name": "nous-hermes2:10.7b",
+      "family": "nous-hermes2",
+      "cloud": false
+    },
+    {
+      "id": "nous-hermes2:34b",
+      "name": "nous-hermes2:34b",
+      "family": "nous-hermes2",
+      "cloud": false
+    },
+    {
+      "id": "nous-hermes2:latest",
+      "name": "nous-hermes2:latest",
+      "family": "nous-hermes2",
+      "cloud": false
+    },
+    {
+      "id": "nous-hermes2-mixtral:8x7b",
+      "name": "nous-hermes2-mixtral:8x7b",
+      "family": "nous-hermes2-mixtral",
+      "cloud": false
+    },
+    {
+      "id": "nous-hermes2-mixtral:latest",
+      "name": "nous-hermes2-mixtral:latest",
+      "family": "nous-hermes2-mixtral",
+      "cloud": false
+    },
+    {
+      "id": "nuextract:3.8b",
+      "name": "nuextract:3.8b",
+      "family": "nuextract",
+      "cloud": false
+    },
+    {
+      "id": "nuextract:latest",
+      "name": "nuextract:latest",
+      "family": "nuextract",
+      "cloud": false
+    },
+    {
+      "id": "olmo-3:32b",
+      "name": "olmo-3:32b",
+      "family": "olmo-3",
+      "cloud": false
+    },
+    {
+      "id": "olmo-3:7b",
+      "name": "olmo-3:7b",
+      "family": "olmo-3",
+      "cloud": false
+    },
+    {
+      "id": "olmo-3:latest",
+      "name": "olmo-3:latest",
+      "family": "olmo-3",
+      "cloud": false
+    },
+    {
+      "id": "olmo-3.1:32b",
+      "name": "olmo-3.1:32b",
+      "family": "olmo-3.1",
+      "cloud": false
+    },
+    {
+      "id": "olmo-3.1:latest",
+      "name": "olmo-3.1:latest",
+      "family": "olmo-3.1",
+      "cloud": false
+    },
+    {
+      "id": "olmo2:13b",
+      "name": "olmo2:13b",
+      "family": "olmo2",
+      "cloud": false
+    },
+    {
+      "id": "olmo2:7b",
+      "name": "olmo2:7b",
+      "family": "olmo2",
+      "cloud": false
+    },
+    {
+      "id": "olmo2:latest",
+      "name": "olmo2:latest",
+      "family": "olmo2",
+      "cloud": false
+    },
+    {
+      "id": "open-orca-platypus2:13b",
+      "name": "open-orca-platypus2:13b",
+      "family": "open-orca-platypus2",
+      "cloud": false
+    },
+    {
+      "id": "open-orca-platypus2:latest",
+      "name": "open-orca-platypus2:latest",
+      "family": "open-orca-platypus2",
+      "cloud": false
+    },
+    {
+      "id": "openchat:7b",
+      "name": "openchat:7b",
+      "family": "openchat",
+      "cloud": false
+    },
+    {
+      "id": "openchat:latest",
+      "name": "openchat:latest",
+      "family": "openchat",
+      "cloud": false
+    },
+    {
+      "id": "opencoder:1.5b",
+      "name": "opencoder:1.5b",
+      "family": "opencoder",
+      "cloud": false
+    },
+    {
+      "id": "opencoder:8b",
+      "name": "opencoder:8b",
+      "family": "opencoder",
+      "cloud": false
+    },
+    {
+      "id": "opencoder:latest",
+      "name": "opencoder:latest",
+      "family": "opencoder",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-fp16",
+      "name": "openhermes:7b-mistral-v2-fp16",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q2_K",
+      "name": "openhermes:7b-mistral-v2-q2_K",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q3_K_L",
+      "name": "openhermes:7b-mistral-v2-q3_K_L",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q3_K_M",
+      "name": "openhermes:7b-mistral-v2-q3_K_M",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q3_K_S",
+      "name": "openhermes:7b-mistral-v2-q3_K_S",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q4_0",
+      "name": "openhermes:7b-mistral-v2-q4_0",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q4_1",
+      "name": "openhermes:7b-mistral-v2-q4_1",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q4_K_M",
+      "name": "openhermes:7b-mistral-v2-q4_K_M",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q4_K_S",
+      "name": "openhermes:7b-mistral-v2-q4_K_S",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q5_0",
+      "name": "openhermes:7b-mistral-v2-q5_0",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q5_1",
+      "name": "openhermes:7b-mistral-v2-q5_1",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q5_K_M",
+      "name": "openhermes:7b-mistral-v2-q5_K_M",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q5_K_S",
+      "name": "openhermes:7b-mistral-v2-q5_K_S",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q6_K",
+      "name": "openhermes:7b-mistral-v2-q6_K",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2-q8_0",
+      "name": "openhermes:7b-mistral-v2-q8_0",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-fp16",
+      "name": "openhermes:7b-mistral-v2.5-fp16",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q2_K",
+      "name": "openhermes:7b-mistral-v2.5-q2_K",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q3_K_L",
+      "name": "openhermes:7b-mistral-v2.5-q3_K_L",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q3_K_M",
+      "name": "openhermes:7b-mistral-v2.5-q3_K_M",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q3_K_S",
+      "name": "openhermes:7b-mistral-v2.5-q3_K_S",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q4_0",
+      "name": "openhermes:7b-mistral-v2.5-q4_0",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q4_1",
+      "name": "openhermes:7b-mistral-v2.5-q4_1",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q4_K_M",
+      "name": "openhermes:7b-mistral-v2.5-q4_K_M",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q4_K_S",
+      "name": "openhermes:7b-mistral-v2.5-q4_K_S",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q5_0",
+      "name": "openhermes:7b-mistral-v2.5-q5_0",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q5_1",
+      "name": "openhermes:7b-mistral-v2.5-q5_1",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q5_K_M",
+      "name": "openhermes:7b-mistral-v2.5-q5_K_M",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q5_K_S",
+      "name": "openhermes:7b-mistral-v2.5-q5_K_S",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q6_K",
+      "name": "openhermes:7b-mistral-v2.5-q6_K",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-mistral-v2.5-q8_0",
+      "name": "openhermes:7b-mistral-v2.5-q8_0",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-v2",
+      "name": "openhermes:7b-v2",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:7b-v2.5",
+      "name": "openhermes:7b-v2.5",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:latest",
+      "name": "openhermes:latest",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:v2",
+      "name": "openhermes:v2",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openhermes:v2.5",
+      "name": "openhermes:v2.5",
+      "family": "openhermes",
+      "cloud": false
+    },
+    {
+      "id": "openthinker:32b",
+      "name": "openthinker:32b",
+      "family": "openthinker",
+      "cloud": false
+    },
+    {
+      "id": "openthinker:7b",
+      "name": "openthinker:7b",
+      "family": "openthinker",
+      "cloud": false
+    },
+    {
+      "id": "openthinker:latest",
+      "name": "openthinker:latest",
+      "family": "openthinker",
+      "cloud": false
+    },
+    {
+      "id": "orca-mini:13b",
+      "name": "orca-mini:13b",
+      "family": "orca-mini",
+      "cloud": false
+    },
+    {
+      "id": "orca-mini:3b",
+      "name": "orca-mini:3b",
+      "family": "orca-mini",
+      "cloud": false
+    },
+    {
+      "id": "orca-mini:70b",
+      "name": "orca-mini:70b",
+      "family": "orca-mini",
+      "cloud": false
+    },
+    {
+      "id": "orca-mini:7b",
+      "name": "orca-mini:7b",
+      "family": "orca-mini",
+      "cloud": false
+    },
+    {
+      "id": "orca-mini:latest",
+      "name": "orca-mini:latest",
+      "family": "orca-mini",
+      "cloud": false
+    },
+    {
+      "id": "orca2:13b",
+      "name": "orca2:13b",
+      "family": "orca2",
+      "cloud": false
+    },
+    {
+      "id": "orca2:7b",
+      "name": "orca2:7b",
+      "family": "orca2",
+      "cloud": false
+    },
+    {
+      "id": "orca2:latest",
+      "name": "orca2:latest",
+      "family": "orca2",
+      "cloud": false
+    },
+    {
+      "id": "paraphrase-multilingual:278m",
+      "name": "paraphrase-multilingual:278m",
+      "family": "paraphrase-multilingual",
+      "cloud": false
+    },
+    {
+      "id": "paraphrase-multilingual:latest",
+      "name": "paraphrase-multilingual:latest",
+      "family": "paraphrase-multilingual",
+      "cloud": false
+    },
+    {
+      "id": "phi:2.7b",
+      "name": "phi:2.7b",
+      "family": "phi",
+      "cloud": false
+    },
+    {
+      "id": "phi:latest",
+      "name": "phi:latest",
+      "family": "phi",
+      "cloud": false
+    },
+    {
+      "id": "phi3:14b",
+      "name": "phi3:14b",
+      "family": "phi3",
+      "cloud": false
+    },
+    {
+      "id": "phi3:3.8b",
+      "name": "phi3:3.8b",
+      "family": "phi3",
+      "cloud": false
+    },
+    {
+      "id": "phi3:latest",
+      "name": "phi3:latest",
+      "family": "phi3",
+      "cloud": false
+    },
+    {
+      "id": "phi3:latest/blobs/fa8235e5b48fENSE",
+      "name": "phi3:latest/blobs/fa8235e5b48fENSE",
+      "family": "phi3",
+      "cloud": false
+    },
+    {
+      "id": "phi3:latest/blobs/fa8235e5b48fENSE).",
+      "name": "phi3:latest/blobs/fa8235e5b48fENSE).",
+      "family": "phi3",
+      "cloud": false
+    },
+    {
+      "id": "phi3:medium",
+      "name": "phi3:medium",
+      "family": "phi3",
+      "cloud": false
+    },
+    {
+      "id": "phi3:medium)",
+      "name": "phi3:medium)",
+      "family": "phi3",
+      "cloud": false
+    },
+    {
+      "id": "phi3:mini",
+      "name": "phi3:mini",
+      "family": "phi3",
+      "cloud": false
+    },
+    {
+      "id": "phi3:mini)",
+      "name": "phi3:mini)",
+      "family": "phi3",
+      "cloud": false
+    },
+    {
+      "id": "phi3.5:3.8b",
+      "name": "phi3.5:3.8b",
+      "family": "phi3.5",
+      "cloud": false
+    },
+    {
+      "id": "phi3.5:latest",
+      "name": "phi3.5:latest",
+      "family": "phi3.5",
+      "cloud": false
+    },
+    {
+      "id": "phi4:14b",
+      "name": "phi4:14b",
+      "family": "phi4",
+      "cloud": false
+    },
+    {
+      "id": "phi4:latest",
+      "name": "phi4:latest",
+      "family": "phi4",
+      "cloud": false
+    },
+    {
+      "id": "phi4-mini:3.8b",
+      "name": "phi4-mini:3.8b",
+      "family": "phi4-mini",
+      "cloud": false
+    },
+    {
+      "id": "phi4-mini:latest",
+      "name": "phi4-mini:latest",
+      "family": "phi4-mini",
+      "cloud": false
+    },
+    {
+      "id": "phi4-mini-reasoning:3.8b",
+      "name": "phi4-mini-reasoning:3.8b",
+      "family": "phi4-mini-reasoning",
+      "cloud": false
+    },
+    {
+      "id": "phi4-mini-reasoning:latest",
+      "name": "phi4-mini-reasoning:latest",
+      "family": "phi4-mini-reasoning",
+      "cloud": false
+    },
+    {
+      "id": "phi4-reasoning:14b",
+      "name": "phi4-reasoning:14b",
+      "family": "phi4-reasoning",
+      "cloud": false
+    },
+    {
+      "id": "phi4-reasoning:latest",
+      "name": "phi4-reasoning:latest",
+      "family": "phi4-reasoning",
+      "cloud": false
+    },
+    {
+      "id": "phind-codellama:34b",
+      "name": "phind-codellama:34b",
+      "family": "phind-codellama",
+      "cloud": false
+    },
+    {
+      "id": "phind-codellama:latest",
+      "name": "phind-codellama:latest",
+      "family": "phind-codellama",
+      "cloud": false
+    },
+    {
+      "id": "qwen:0.5b",
+      "name": "qwen:0.5b",
+      "family": "qwen",
+      "cloud": false
+    },
+    {
+      "id": "qwen:1.8b",
+      "name": "qwen:1.8b",
+      "family": "qwen",
+      "cloud": false
+    },
+    {
+      "id": "qwen:110b",
+      "name": "qwen:110b",
+      "family": "qwen",
+      "cloud": false
+    },
+    {
+      "id": "qwen:14b",
+      "name": "qwen:14b",
+      "family": "qwen",
+      "cloud": false
+    },
+    {
+      "id": "qwen:32b",
+      "name": "qwen:32b",
+      "family": "qwen",
+      "cloud": false
+    },
+    {
+      "id": "qwen:4b",
+      "name": "qwen:4b",
+      "family": "qwen",
+      "cloud": false
+    },
+    {
+      "id": "qwen:72b",
+      "name": "qwen:72b",
+      "family": "qwen",
+      "cloud": false
+    },
+    {
+      "id": "qwen:7b",
+      "name": "qwen:7b",
+      "family": "qwen",
+      "cloud": false
+    },
+    {
+      "id": "qwen:latest",
+      "name": "qwen:latest",
+      "family": "qwen",
+      "cloud": false
+    },
+    {
+      "id": "qwen2:0.5b",
+      "name": "qwen2:0.5b",
+      "family": "qwen2",
+      "cloud": false
+    },
+    {
+      "id": "qwen2:1.5b",
+      "name": "qwen2:1.5b",
+      "family": "qwen2",
+      "cloud": false
+    },
+    {
+      "id": "qwen2:72b",
+      "name": "qwen2:72b",
+      "family": "qwen2",
+      "cloud": false
+    },
+    {
+      "id": "qwen2:7b",
+      "name": "qwen2:7b",
+      "family": "qwen2",
+      "cloud": false
+    },
+    {
+      "id": "qwen2:latest",
+      "name": "qwen2:latest",
+      "family": "qwen2",
+      "cloud": false
+    },
+    {
+      "id": "qwen2-math:1.5b",
+      "name": "qwen2-math:1.5b",
+      "family": "qwen2-math",
+      "cloud": false
+    },
+    {
+      "id": "qwen2-math:72b",
+      "name": "qwen2-math:72b",
+      "family": "qwen2-math",
+      "cloud": false
+    },
+    {
+      "id": "qwen2-math:7b",
+      "name": "qwen2-math:7b",
+      "family": "qwen2-math",
+      "cloud": false
+    },
+    {
+      "id": "qwen2-math:latest",
+      "name": "qwen2-math:latest",
+      "family": "qwen2-math",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5:0.5b",
+      "name": "qwen2.5:0.5b",
+      "family": "qwen2.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5:1.5b",
+      "name": "qwen2.5:1.5b",
+      "family": "qwen2.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5:14b",
+      "name": "qwen2.5:14b",
+      "family": "qwen2.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5:32b",
+      "name": "qwen2.5:32b",
+      "family": "qwen2.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5:3b",
+      "name": "qwen2.5:3b",
+      "family": "qwen2.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5:72b",
+      "name": "qwen2.5:72b",
+      "family": "qwen2.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5:7b",
+      "name": "qwen2.5:7b",
+      "family": "qwen2.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5:latest",
+      "name": "qwen2.5:latest",
+      "family": "qwen2.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5-coder:0.5b",
+      "name": "qwen2.5-coder:0.5b",
+      "family": "qwen2.5-coder",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5-coder:1.5b",
+      "name": "qwen2.5-coder:1.5b",
+      "family": "qwen2.5-coder",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5-coder:14b",
+      "name": "qwen2.5-coder:14b",
+      "family": "qwen2.5-coder",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5-coder:32b",
+      "name": "qwen2.5-coder:32b",
+      "family": "qwen2.5-coder",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5-coder:3b",
+      "name": "qwen2.5-coder:3b",
+      "family": "qwen2.5-coder",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5-coder:7b",
+      "name": "qwen2.5-coder:7b",
+      "family": "qwen2.5-coder",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5-coder:latest",
+      "name": "qwen2.5-coder:latest",
+      "family": "qwen2.5-coder",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5vl:32b",
+      "name": "qwen2.5vl:32b",
+      "family": "qwen2.5vl",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5vl:3b",
+      "name": "qwen2.5vl:3b",
+      "family": "qwen2.5vl",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5vl:72b",
+      "name": "qwen2.5vl:72b",
+      "family": "qwen2.5vl",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5vl:7b",
+      "name": "qwen2.5vl:7b",
+      "family": "qwen2.5vl",
+      "cloud": false
+    },
+    {
+      "id": "qwen2.5vl:latest",
+      "name": "qwen2.5vl:latest",
+      "family": "qwen2.5vl",
+      "cloud": false
+    },
+    {
+      "id": "qwen3:0.6b",
+      "name": "qwen3:0.6b",
+      "family": "qwen3",
+      "cloud": false
+    },
+    {
+      "id": "qwen3:1.7b",
+      "name": "qwen3:1.7b",
+      "family": "qwen3",
+      "cloud": false
+    },
+    {
+      "id": "qwen3:14b",
+      "name": "qwen3:14b",
+      "family": "qwen3",
+      "cloud": false
+    },
+    {
+      "id": "qwen3:235b",
+      "name": "qwen3:235b",
+      "family": "qwen3",
+      "cloud": false
+    },
+    {
+      "id": "qwen3:30b",
+      "name": "qwen3:30b",
+      "family": "qwen3",
+      "cloud": false
+    },
+    {
+      "id": "qwen3:32b",
+      "name": "qwen3:32b",
+      "family": "qwen3",
+      "cloud": false
+    },
+    {
+      "id": "qwen3:4b",
+      "name": "qwen3:4b",
+      "family": "qwen3",
+      "cloud": false
+    },
+    {
+      "id": "qwen3:8b",
+      "name": "qwen3:8b",
+      "family": "qwen3",
+      "cloud": false
+    },
+    {
+      "id": "qwen3:latest",
+      "name": "qwen3:latest",
+      "family": "qwen3",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-coder:30b",
+      "name": "qwen3-coder:30b",
+      "family": "qwen3-coder",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-coder:480b",
+      "name": "qwen3-coder:480b",
+      "family": "qwen3-coder",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-coder:480b-cloud",
+      "name": "qwen3-coder:480b-cloud",
+      "family": "qwen3-coder",
+      "cloud": true
+    },
+    {
+      "id": "qwen3-coder:latest",
+      "name": "qwen3-coder:latest",
+      "family": "qwen3-coder",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-coder-next:cloud",
+      "name": "qwen3-coder-next:cloud",
+      "family": "qwen3-coder-next",
+      "cloud": true
+    },
+    {
+      "id": "qwen3-coder-next:latest",
+      "name": "qwen3-coder-next:latest",
+      "family": "qwen3-coder-next",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-coder-next:q4_K_M",
+      "name": "qwen3-coder-next:q4_K_M",
+      "family": "qwen3-coder-next",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-coder-next:q8_0",
+      "name": "qwen3-coder-next:q8_0",
+      "family": "qwen3-coder-next",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-embedding:0.6b",
+      "name": "qwen3-embedding:0.6b",
+      "family": "qwen3-embedding",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-embedding:4b",
+      "name": "qwen3-embedding:4b",
+      "family": "qwen3-embedding",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-embedding:8b",
+      "name": "qwen3-embedding:8b",
+      "family": "qwen3-embedding",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-embedding:latest",
+      "name": "qwen3-embedding:latest",
+      "family": "qwen3-embedding",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-next:80b",
+      "name": "qwen3-next:80b",
+      "family": "qwen3-next",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-next:80b-cloud",
+      "name": "qwen3-next:80b-cloud",
+      "family": "qwen3-next",
+      "cloud": true
+    },
+    {
+      "id": "qwen3-next:latest",
+      "name": "qwen3-next:latest",
+      "family": "qwen3-next",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-vl:235b",
+      "name": "qwen3-vl:235b",
+      "family": "qwen3-vl",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-vl:235b-cloud",
+      "name": "qwen3-vl:235b-cloud",
+      "family": "qwen3-vl",
+      "cloud": true
+    },
+    {
+      "id": "qwen3-vl:235b-instruct-cloud",
+      "name": "qwen3-vl:235b-instruct-cloud",
+      "family": "qwen3-vl",
+      "cloud": true
+    },
+    {
+      "id": "qwen3-vl:2b",
+      "name": "qwen3-vl:2b",
+      "family": "qwen3-vl",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-vl:30b",
+      "name": "qwen3-vl:30b",
+      "family": "qwen3-vl",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-vl:32b",
+      "name": "qwen3-vl:32b",
+      "family": "qwen3-vl",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-vl:4b",
+      "name": "qwen3-vl:4b",
+      "family": "qwen3-vl",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-vl:8b",
+      "name": "qwen3-vl:8b",
+      "family": "qwen3-vl",
+      "cloud": false
+    },
+    {
+      "id": "qwen3-vl:latest",
+      "name": "qwen3-vl:latest",
+      "family": "qwen3-vl",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.5:0.8b",
+      "name": "qwen3.5:0.8b",
+      "family": "qwen3.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.5:122b",
+      "name": "qwen3.5:122b",
+      "family": "qwen3.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.5:27b",
+      "name": "qwen3.5:27b",
+      "family": "qwen3.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.5:2b",
+      "name": "qwen3.5:2b",
+      "family": "qwen3.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.5:35b",
+      "name": "qwen3.5:35b",
+      "family": "qwen3.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.5:397b-cloud",
+      "name": "qwen3.5:397b-cloud",
+      "family": "qwen3.5",
+      "cloud": true
+    },
+    {
+      "id": "qwen3.5:4b",
+      "name": "qwen3.5:4b",
+      "family": "qwen3.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.5:9b",
+      "name": "qwen3.5:9b",
+      "family": "qwen3.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.5:cloud",
+      "name": "qwen3.5:cloud",
+      "family": "qwen3.5",
+      "cloud": true
+    },
+    {
+      "id": "qwen3.5:latest",
+      "name": "qwen3.5:latest",
+      "family": "qwen3.5",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.6:27b",
+      "name": "qwen3.6:27b",
+      "family": "qwen3.6",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.6:27b-coding-bf16",
+      "name": "qwen3.6:27b-coding-bf16",
+      "family": "qwen3.6",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.6:27b-coding-mxfp8",
+      "name": "qwen3.6:27b-coding-mxfp8",
+      "family": "qwen3.6",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.6:27b-coding-nvfp4",
+      "name": "qwen3.6:27b-coding-nvfp4",
+      "family": "qwen3.6",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.6:27b-mlx-bf16",
+      "name": "qwen3.6:27b-mlx-bf16",
+      "family": "qwen3.6",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.6:35b",
+      "name": "qwen3.6:35b",
+      "family": "qwen3.6",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.6:35b-a3b-coding-bf16",
+      "name": "qwen3.6:35b-a3b-coding-bf16",
+      "family": "qwen3.6",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.6:35b-a3b-coding-mxfp8",
+      "name": "qwen3.6:35b-a3b-coding-mxfp8",
+      "family": "qwen3.6",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.6:35b-a3b-coding-nvfp4",
+      "name": "qwen3.6:35b-a3b-coding-nvfp4",
+      "family": "qwen3.6",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.6:35b-a3b-mlx-bf16",
+      "name": "qwen3.6:35b-a3b-mlx-bf16",
+      "family": "qwen3.6",
+      "cloud": false
+    },
+    {
+      "id": "qwen3.6:latest",
+      "name": "qwen3.6:latest",
+      "family": "qwen3.6",
+      "cloud": false
+    },
+    {
+      "id": "qwq:32b",
+      "name": "qwq:32b",
+      "family": "qwq",
+      "cloud": false
+    },
+    {
+      "id": "qwq:latest",
+      "name": "qwq:latest",
+      "family": "qwq",
+      "cloud": false
+    },
+    {
+      "id": "r1-1776:671b",
+      "name": "r1-1776:671b",
+      "family": "r1-1776",
+      "cloud": false
+    },
+    {
+      "id": "r1-1776:70b",
+      "name": "r1-1776:70b",
+      "family": "r1-1776",
+      "cloud": false
+    },
+    {
+      "id": "r1-1776:latest",
+      "name": "r1-1776:latest",
+      "family": "r1-1776",
+      "cloud": false
+    },
+    {
+      "id": "reader-lm:0.5b",
+      "name": "reader-lm:0.5b",
+      "family": "reader-lm",
+      "cloud": false
+    },
+    {
+      "id": "reader-lm:1.5b",
+      "name": "reader-lm:1.5b",
+      "family": "reader-lm",
+      "cloud": false
+    },
+    {
+      "id": "reader-lm:latest",
+      "name": "reader-lm:latest",
+      "family": "reader-lm",
+      "cloud": false
+    },
+    {
+      "id": "reflection:70b",
+      "name": "reflection:70b",
+      "family": "reflection",
+      "cloud": false
+    },
+    {
+      "id": "reflection:latest",
+      "name": "reflection:latest",
+      "family": "reflection",
+      "cloud": false
+    },
+    {
+      "id": "rnj-1:8b",
+      "name": "rnj-1:8b",
+      "family": "rnj-1",
+      "cloud": false
+    },
+    {
+      "id": "rnj-1:8b-cloud",
+      "name": "rnj-1:8b-cloud",
+      "family": "rnj-1",
+      "cloud": true
+    },
+    {
+      "id": "rnj-1:latest",
+      "name": "rnj-1:latest",
+      "family": "rnj-1",
+      "cloud": false
+    },
+    {
+      "id": "sailor2:1b",
+      "name": "sailor2:1b",
+      "family": "sailor2",
+      "cloud": false
+    },
+    {
+      "id": "sailor2:20b",
+      "name": "sailor2:20b",
+      "family": "sailor2",
+      "cloud": false
+    },
+    {
+      "id": "sailor2:8b",
+      "name": "sailor2:8b",
+      "family": "sailor2",
+      "cloud": false
+    },
+    {
+      "id": "sailor2:latest",
+      "name": "sailor2:latest",
+      "family": "sailor2",
+      "cloud": false
+    },
+    {
+      "id": "samantha-mistral:7b",
+      "name": "samantha-mistral:7b",
+      "family": "samantha-mistral",
+      "cloud": false
+    },
+    {
+      "id": "samantha-mistral:latest",
+      "name": "samantha-mistral:latest",
+      "family": "samantha-mistral",
+      "cloud": false
+    },
+    {
+      "id": "shieldgemma:27b",
+      "name": "shieldgemma:27b",
+      "family": "shieldgemma",
+      "cloud": false
+    },
+    {
+      "id": "shieldgemma:2b",
+      "name": "shieldgemma:2b",
+      "family": "shieldgemma",
+      "cloud": false
+    },
+    {
+      "id": "shieldgemma:9b",
+      "name": "shieldgemma:9b",
+      "family": "shieldgemma",
+      "cloud": false
+    },
+    {
+      "id": "shieldgemma:latest",
+      "name": "shieldgemma:latest",
+      "family": "shieldgemma",
+      "cloud": false
+    },
+    {
+      "id": "smallthinker:3b",
+      "name": "smallthinker:3b",
+      "family": "smallthinker",
+      "cloud": false
+    },
+    {
+      "id": "smallthinker:latest",
+      "name": "smallthinker:latest",
+      "family": "smallthinker",
+      "cloud": false
+    },
+    {
+      "id": "smollm:1.7b",
+      "name": "smollm:1.7b",
+      "family": "smollm",
+      "cloud": false
+    },
+    {
+      "id": "smollm:135m",
+      "name": "smollm:135m",
+      "family": "smollm",
+      "cloud": false
+    },
+    {
+      "id": "smollm:360m",
+      "name": "smollm:360m",
+      "family": "smollm",
+      "cloud": false
+    },
+    {
+      "id": "smollm:latest",
+      "name": "smollm:latest",
+      "family": "smollm",
+      "cloud": false
+    },
+    {
+      "id": "smollm2:1.7b",
+      "name": "smollm2:1.7b",
+      "family": "smollm2",
+      "cloud": false
+    },
+    {
+      "id": "smollm2:135m",
+      "name": "smollm2:135m",
+      "family": "smollm2",
+      "cloud": false
+    },
+    {
+      "id": "smollm2:360m",
+      "name": "smollm2:360m",
+      "family": "smollm2",
+      "cloud": false
+    },
+    {
+      "id": "smollm2:latest",
+      "name": "smollm2:latest",
+      "family": "smollm2",
+      "cloud": false
+    },
+    {
+      "id": "snowflake-arctic-embed:110m",
+      "name": "snowflake-arctic-embed:110m",
+      "family": "snowflake-arctic-embed",
+      "cloud": false
+    },
+    {
+      "id": "snowflake-arctic-embed:137m",
+      "name": "snowflake-arctic-embed:137m",
+      "family": "snowflake-arctic-embed",
+      "cloud": false
+    },
+    {
+      "id": "snowflake-arctic-embed:22m",
+      "name": "snowflake-arctic-embed:22m",
+      "family": "snowflake-arctic-embed",
+      "cloud": false
+    },
+    {
+      "id": "snowflake-arctic-embed:335m",
+      "name": "snowflake-arctic-embed:335m",
+      "family": "snowflake-arctic-embed",
+      "cloud": false
+    },
+    {
+      "id": "snowflake-arctic-embed:33m",
+      "name": "snowflake-arctic-embed:33m",
+      "family": "snowflake-arctic-embed",
+      "cloud": false
+    },
+    {
+      "id": "snowflake-arctic-embed:latest",
+      "name": "snowflake-arctic-embed:latest",
+      "family": "snowflake-arctic-embed",
+      "cloud": false
+    },
+    {
+      "id": "snowflake-arctic-embed2:568m",
+      "name": "snowflake-arctic-embed2:568m",
+      "family": "snowflake-arctic-embed2",
+      "cloud": false
+    },
+    {
+      "id": "snowflake-arctic-embed2:latest",
+      "name": "snowflake-arctic-embed2:latest",
+      "family": "snowflake-arctic-embed2",
+      "cloud": false
+    },
+    {
+      "id": "solar:10.7b",
+      "name": "solar:10.7b",
+      "family": "solar",
+      "cloud": false
+    },
+    {
+      "id": "solar:latest",
+      "name": "solar:latest",
+      "family": "solar",
+      "cloud": false
+    },
+    {
+      "id": "solar-pro:22b",
+      "name": "solar-pro:22b",
+      "family": "solar-pro",
+      "cloud": false
+    },
+    {
+      "id": "solar-pro:latest",
+      "name": "solar-pro:latest",
+      "family": "solar-pro",
+      "cloud": false
+    },
+    {
+      "id": "sqlcoder:15b",
+      "name": "sqlcoder:15b",
+      "family": "sqlcoder",
+      "cloud": false
+    },
+    {
+      "id": "sqlcoder:7b",
+      "name": "sqlcoder:7b",
+      "family": "sqlcoder",
+      "cloud": false
+    },
+    {
+      "id": "sqlcoder:latest",
+      "name": "sqlcoder:latest",
+      "family": "sqlcoder",
+      "cloud": false
+    },
+    {
+      "id": "stable-beluga:13b",
+      "name": "stable-beluga:13b",
+      "family": "stable-beluga",
+      "cloud": false
+    },
+    {
+      "id": "stable-beluga:70b",
+      "name": "stable-beluga:70b",
+      "family": "stable-beluga",
+      "cloud": false
+    },
+    {
+      "id": "stable-beluga:7b",
+      "name": "stable-beluga:7b",
+      "family": "stable-beluga",
+      "cloud": false
+    },
+    {
+      "id": "stable-beluga:latest",
+      "name": "stable-beluga:latest",
+      "family": "stable-beluga",
+      "cloud": false
+    },
+    {
+      "id": "stable-code:3b",
+      "name": "stable-code:3b",
+      "family": "stable-code",
+      "cloud": false
+    },
+    {
+      "id": "stable-code:latest",
+      "name": "stable-code:latest",
+      "family": "stable-code",
+      "cloud": false
+    },
+    {
+      "id": "stablelm-zephyr:3b",
+      "name": "stablelm-zephyr:3b",
+      "family": "stablelm-zephyr",
+      "cloud": false
+    },
+    {
+      "id": "stablelm-zephyr:latest",
+      "name": "stablelm-zephyr:latest",
+      "family": "stablelm-zephyr",
+      "cloud": false
+    },
+    {
+      "id": "stablelm2:1.6b",
+      "name": "stablelm2:1.6b",
+      "family": "stablelm2",
+      "cloud": false
+    },
+    {
+      "id": "stablelm2:12b",
+      "name": "stablelm2:12b",
+      "family": "stablelm2",
+      "cloud": false
+    },
+    {
+      "id": "stablelm2:latest",
+      "name": "stablelm2:latest",
+      "family": "stablelm2",
+      "cloud": false
+    },
+    {
+      "id": "starcoder:15b",
+      "name": "starcoder:15b",
+      "family": "starcoder",
+      "cloud": false
+    },
+    {
+      "id": "starcoder:1b",
+      "name": "starcoder:1b",
+      "family": "starcoder",
+      "cloud": false
+    },
+    {
+      "id": "starcoder:3b",
+      "name": "starcoder:3b",
+      "family": "starcoder",
+      "cloud": false
+    },
+    {
+      "id": "starcoder:7b",
+      "name": "starcoder:7b",
+      "family": "starcoder",
+      "cloud": false
+    },
+    {
+      "id": "starcoder:latest",
+      "name": "starcoder:latest",
+      "family": "starcoder",
+      "cloud": false
+    },
+    {
+      "id": "starcoder2:15b",
+      "name": "starcoder2:15b",
+      "family": "starcoder2",
+      "cloud": false
+    },
+    {
+      "id": "starcoder2:3b",
+      "name": "starcoder2:3b",
+      "family": "starcoder2",
+      "cloud": false
+    },
+    {
+      "id": "starcoder2:7b",
+      "name": "starcoder2:7b",
+      "family": "starcoder2",
+      "cloud": false
+    },
+    {
+      "id": "starcoder2:latest",
+      "name": "starcoder2:latest",
+      "family": "starcoder2",
+      "cloud": false
+    },
+    {
+      "id": "starling-lm:7b",
+      "name": "starling-lm:7b",
+      "family": "starling-lm",
+      "cloud": false
+    },
+    {
+      "id": "starling-lm:latest",
+      "name": "starling-lm:latest",
+      "family": "starling-lm",
+      "cloud": false
+    },
+    {
+      "id": "tinydolphin:1.1b",
+      "name": "tinydolphin:1.1b",
+      "family": "tinydolphin",
+      "cloud": false
+    },
+    {
+      "id": "tinydolphin:latest",
+      "name": "tinydolphin:latest",
+      "family": "tinydolphin",
+      "cloud": false
+    },
+    {
+      "id": "tinyllama:1.1b",
+      "name": "tinyllama:1.1b",
+      "family": "tinyllama",
+      "cloud": false
+    },
+    {
+      "id": "tinyllama:latest",
+      "name": "tinyllama:latest",
+      "family": "tinyllama",
+      "cloud": false
+    },
+    {
+      "id": "translategemma:12b",
+      "name": "translategemma:12b",
+      "family": "translategemma",
+      "cloud": false
+    },
+    {
+      "id": "translategemma:27b",
+      "name": "translategemma:27b",
+      "family": "translategemma",
+      "cloud": false
+    },
+    {
+      "id": "translategemma:4b",
+      "name": "translategemma:4b",
+      "family": "translategemma",
+      "cloud": false
+    },
+    {
+      "id": "translategemma:latest",
+      "name": "translategemma:latest",
+      "family": "translategemma",
+      "cloud": false
+    },
+    {
+      "id": "tulu3:70b",
+      "name": "tulu3:70b",
+      "family": "tulu3",
+      "cloud": false
+    },
+    {
+      "id": "tulu3:8b",
+      "name": "tulu3:8b",
+      "family": "tulu3",
+      "cloud": false
+    },
+    {
+      "id": "tulu3:latest",
+      "name": "tulu3:latest",
+      "family": "tulu3",
+      "cloud": false
+    },
+    {
+      "id": "vicuna:13b",
+      "name": "vicuna:13b",
+      "family": "vicuna",
+      "cloud": false
+    },
+    {
+      "id": "vicuna:33b",
+      "name": "vicuna:33b",
+      "family": "vicuna",
+      "cloud": false
+    },
+    {
+      "id": "vicuna:7b",
+      "name": "vicuna:7b",
+      "family": "vicuna",
+      "cloud": false
+    },
+    {
+      "id": "vicuna:latest",
+      "name": "vicuna:latest",
+      "family": "vicuna",
+      "cloud": false
+    },
+    {
+      "id": "wizard-math:13b",
+      "name": "wizard-math:13b",
+      "family": "wizard-math",
+      "cloud": false
+    },
+    {
+      "id": "wizard-math:70b",
+      "name": "wizard-math:70b",
+      "family": "wizard-math",
+      "cloud": false
+    },
+    {
+      "id": "wizard-math:7b",
+      "name": "wizard-math:7b",
+      "family": "wizard-math",
+      "cloud": false
+    },
+    {
+      "id": "wizard-math:latest",
+      "name": "wizard-math:latest",
+      "family": "wizard-math",
+      "cloud": false
+    },
+    {
+      "id": "wizard-vicuna:13b",
+      "name": "wizard-vicuna:13b",
+      "family": "wizard-vicuna",
+      "cloud": false
+    },
+    {
+      "id": "wizard-vicuna:latest",
+      "name": "wizard-vicuna:latest",
+      "family": "wizard-vicuna",
+      "cloud": false
+    },
+    {
+      "id": "wizard-vicuna-uncensored:13b",
+      "name": "wizard-vicuna-uncensored:13b",
+      "family": "wizard-vicuna-uncensored",
+      "cloud": false
+    },
+    {
+      "id": "wizard-vicuna-uncensored:30b",
+      "name": "wizard-vicuna-uncensored:30b",
+      "family": "wizard-vicuna-uncensored",
+      "cloud": false
+    },
+    {
+      "id": "wizard-vicuna-uncensored:7b",
+      "name": "wizard-vicuna-uncensored:7b",
+      "family": "wizard-vicuna-uncensored",
+      "cloud": false
+    },
+    {
+      "id": "wizard-vicuna-uncensored:latest",
+      "name": "wizard-vicuna-uncensored:latest",
+      "family": "wizard-vicuna-uncensored",
+      "cloud": false
+    },
+    {
+      "id": "wizardcoder:33b",
+      "name": "wizardcoder:33b",
+      "family": "wizardcoder",
+      "cloud": false
+    },
+    {
+      "id": "wizardcoder:latest",
+      "name": "wizardcoder:latest",
+      "family": "wizardcoder",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-fp16",
+      "name": "wizardlm:13b-fp16",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-fp16",
+      "name": "wizardlm:13b-llama2-fp16",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q2_K",
+      "name": "wizardlm:13b-llama2-q2_K",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q3_K_L",
+      "name": "wizardlm:13b-llama2-q3_K_L",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q3_K_M",
+      "name": "wizardlm:13b-llama2-q3_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q3_K_S",
+      "name": "wizardlm:13b-llama2-q3_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q4_0",
+      "name": "wizardlm:13b-llama2-q4_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q4_1",
+      "name": "wizardlm:13b-llama2-q4_1",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q4_K_M",
+      "name": "wizardlm:13b-llama2-q4_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q4_K_S",
+      "name": "wizardlm:13b-llama2-q4_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q5_0",
+      "name": "wizardlm:13b-llama2-q5_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q5_1",
+      "name": "wizardlm:13b-llama2-q5_1",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q5_K_M",
+      "name": "wizardlm:13b-llama2-q5_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q5_K_S",
+      "name": "wizardlm:13b-llama2-q5_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q6_K",
+      "name": "wizardlm:13b-llama2-q6_K",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-llama2-q8_0",
+      "name": "wizardlm:13b-llama2-q8_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q2_K",
+      "name": "wizardlm:13b-q2_K",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q3_K_L",
+      "name": "wizardlm:13b-q3_K_L",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q3_K_M",
+      "name": "wizardlm:13b-q3_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q3_K_S",
+      "name": "wizardlm:13b-q3_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q4_0",
+      "name": "wizardlm:13b-q4_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q4_1",
+      "name": "wizardlm:13b-q4_1",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q4_K_M",
+      "name": "wizardlm:13b-q4_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q4_K_S",
+      "name": "wizardlm:13b-q4_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q5_0",
+      "name": "wizardlm:13b-q5_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q5_1",
+      "name": "wizardlm:13b-q5_1",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q5_K_M",
+      "name": "wizardlm:13b-q5_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q5_K_S",
+      "name": "wizardlm:13b-q5_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q6_K",
+      "name": "wizardlm:13b-q6_K",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:13b-q8_0",
+      "name": "wizardlm:13b-q8_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-fp16",
+      "name": "wizardlm:30b-fp16",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q2_K",
+      "name": "wizardlm:30b-q2_K",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q3_K_L",
+      "name": "wizardlm:30b-q3_K_L",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q3_K_M",
+      "name": "wizardlm:30b-q3_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q3_K_S",
+      "name": "wizardlm:30b-q3_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q4_0",
+      "name": "wizardlm:30b-q4_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q4_1",
+      "name": "wizardlm:30b-q4_1",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q4_K_M",
+      "name": "wizardlm:30b-q4_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q4_K_S",
+      "name": "wizardlm:30b-q4_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q5_0",
+      "name": "wizardlm:30b-q5_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q5_1",
+      "name": "wizardlm:30b-q5_1",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q5_K_M",
+      "name": "wizardlm:30b-q5_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q5_K_S",
+      "name": "wizardlm:30b-q5_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q6_K",
+      "name": "wizardlm:30b-q6_K",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:30b-q8_0",
+      "name": "wizardlm:30b-q8_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q2_K",
+      "name": "wizardlm:70b-llama2-q2_K",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q3_K_L",
+      "name": "wizardlm:70b-llama2-q3_K_L",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q3_K_M",
+      "name": "wizardlm:70b-llama2-q3_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q3_K_S",
+      "name": "wizardlm:70b-llama2-q3_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q4_0",
+      "name": "wizardlm:70b-llama2-q4_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q4_1",
+      "name": "wizardlm:70b-llama2-q4_1",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q4_K_M",
+      "name": "wizardlm:70b-llama2-q4_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q4_K_S",
+      "name": "wizardlm:70b-llama2-q4_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q5_0",
+      "name": "wizardlm:70b-llama2-q5_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q5_K_M",
+      "name": "wizardlm:70b-llama2-q5_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q5_K_S",
+      "name": "wizardlm:70b-llama2-q5_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q6_K",
+      "name": "wizardlm:70b-llama2-q6_K",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:70b-llama2-q8_0",
+      "name": "wizardlm:70b-llama2-q8_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-fp16",
+      "name": "wizardlm:7b-fp16",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q2_K",
+      "name": "wizardlm:7b-q2_K",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q3_K_L",
+      "name": "wizardlm:7b-q3_K_L",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q3_K_M",
+      "name": "wizardlm:7b-q3_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q3_K_S",
+      "name": "wizardlm:7b-q3_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q4_0",
+      "name": "wizardlm:7b-q4_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q4_1",
+      "name": "wizardlm:7b-q4_1",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q4_K_M",
+      "name": "wizardlm:7b-q4_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q4_K_S",
+      "name": "wizardlm:7b-q4_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q5_0",
+      "name": "wizardlm:7b-q5_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q5_1",
+      "name": "wizardlm:7b-q5_1",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q5_K_M",
+      "name": "wizardlm:7b-q5_K_M",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q5_K_S",
+      "name": "wizardlm:7b-q5_K_S",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q6_K",
+      "name": "wizardlm:7b-q6_K",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm:7b-q8_0",
+      "name": "wizardlm:7b-q8_0",
+      "family": "wizardlm",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm-uncensored:13b",
+      "name": "wizardlm-uncensored:13b",
+      "family": "wizardlm-uncensored",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm-uncensored:latest",
+      "name": "wizardlm-uncensored:latest",
+      "family": "wizardlm-uncensored",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm2:7b",
+      "name": "wizardlm2:7b",
+      "family": "wizardlm2",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm2:8x22b",
+      "name": "wizardlm2:8x22b",
+      "family": "wizardlm2",
+      "cloud": false
+    },
+    {
+      "id": "wizardlm2:latest",
+      "name": "wizardlm2:latest",
+      "family": "wizardlm2",
+      "cloud": false
+    },
+    {
+      "id": "xwinlm:13b",
+      "name": "xwinlm:13b",
+      "family": "xwinlm",
+      "cloud": false
+    },
+    {
+      "id": "xwinlm:7b",
+      "name": "xwinlm:7b",
+      "family": "xwinlm",
+      "cloud": false
+    },
+    {
+      "id": "xwinlm:latest",
+      "name": "xwinlm:latest",
+      "family": "xwinlm",
+      "cloud": false
+    },
+    {
+      "id": "yarn-llama2:13b",
+      "name": "yarn-llama2:13b",
+      "family": "yarn-llama2",
+      "cloud": false
+    },
+    {
+      "id": "yarn-llama2:7b",
+      "name": "yarn-llama2:7b",
+      "family": "yarn-llama2",
+      "cloud": false
+    },
+    {
+      "id": "yarn-llama2:latest",
+      "name": "yarn-llama2:latest",
+      "family": "yarn-llama2",
+      "cloud": false
+    },
+    {
+      "id": "yarn-mistral:7b",
+      "name": "yarn-mistral:7b",
+      "family": "yarn-mistral",
+      "cloud": false
+    },
+    {
+      "id": "yarn-mistral:latest",
+      "name": "yarn-mistral:latest",
+      "family": "yarn-mistral",
+      "cloud": false
+    },
+    {
+      "id": "yi:34b",
+      "name": "yi:34b",
+      "family": "yi",
+      "cloud": false
+    },
+    {
+      "id": "yi:6b",
+      "name": "yi:6b",
+      "family": "yi",
+      "cloud": false
+    },
+    {
+      "id": "yi:9b",
+      "name": "yi:9b",
+      "family": "yi",
+      "cloud": false
+    },
+    {
+      "id": "yi:latest",
+      "name": "yi:latest",
+      "family": "yi",
+      "cloud": false
+    },
+    {
+      "id": "yi-coder:1.5b",
+      "name": "yi-coder:1.5b",
+      "family": "yi-coder",
+      "cloud": false
+    },
+    {
+      "id": "yi-coder:9b",
+      "name": "yi-coder:9b",
+      "family": "yi-coder",
+      "cloud": false
+    },
+    {
+      "id": "yi-coder:latest",
+      "name": "yi-coder:latest",
+      "family": "yi-coder",
+      "cloud": false
+    },
+    {
+      "id": "zephyr:141b",
+      "name": "zephyr:141b",
+      "family": "zephyr",
+      "cloud": false
+    },
+    {
+      "id": "zephyr:7b",
+      "name": "zephyr:7b",
+      "family": "zephyr",
+      "cloud": false
+    },
+    {
+      "id": "zephyr:latest",
+      "name": "zephyr:latest",
+      "family": "zephyr",
+      "cloud": false
+    }
   ]
 }

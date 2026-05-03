@@ -4,9 +4,8 @@ One-command setup for [OpenClaw](https://github.com/openclaw/openclaw) + [Ollama
 
 [![Linux](https://img.shields.io/badge/Linux-✓-brightgreen?style=flat-square&logo=linux)](./linux)
 [![Windows](https://img.shields.io/badge/Windows-✓-blue?style=flat-square&logo=windows)](./windows)
-[![Docker](https://img.shields.io/badge/Docker-WIP-yellow?style=flat-square&logo=docker)](./docker)
 
-📖 **[Documentation Site](https://jlaiii.github.io/openclaw-god-mode)**
+📖 **[Configurator](https://jlaiii.github.io/openclaw-god-mode/configure.html)** · **[Model Manager](https://jlaiii.github.io/openclaw-god-mode/models.html)**
 
 ---
 
@@ -33,6 +32,10 @@ cd openclaw-god-mode\windows
 
 **Requires:** Windows 10/11, PowerShell 5.1+ (Run as Administrator)
 
+### ⚡ Web Configurator
+
+Generate your install command with a GUI: [jlaiii.github.io/openclaw-god-mode/configure.html](https://jlaiii.github.io/openclaw-god-mode/configure.html)
+
 ---
 
 ## What It Does
@@ -43,10 +46,10 @@ cd openclaw-god-mode\windows
 4. **Installs Ollama** — Official installer, starts service
 5. **Pulls default model** — `kimi-k2.6:cloud` with retry logic
 6. **Installs OpenClaw** — `npm install -g openclaw`
-7. **Configures workspace** — Creates `~/.openclaw/` with defaults
+7. **Configures workspace** — Creates `~/.openclaw/` with multi-agent config
 8. **Prompts for tokens** — Discord, Telegram, admin ID + extra whitelist users
-9. **Enables both channels** — Discord + Telegram active
-10. **Sets up systemd service** — Runs OpenClaw as root, auto-starts on boot
+9. **Enables channels** — Discord + Telegram (configurable per agent)
+10. **Sets up systemd service** — User service, auto-starts on boot
 11. **Verifies system access** — Tests shell, packages, network, file write
 12. **Prints setup guide** — Discord intents, invite URL, BotFather steps
 
@@ -68,7 +71,7 @@ OpenClaw's default install is designed to be safe, sandboxed, and limited:
 
 | Default OpenClaw Safety | What This Script Changes |
 |------------------------|--------------------------|
-| User-level execution | **Runs as root** via systemd service |
+| User-level execution | **User systemd service** with passwordless `sudo` |
 | Device auth required | `dangerouslyDisableDeviceAuth: true` — web UI has no login gate |
 | Prompts for approval | Passwordless `sudo` (`NOPASSWD: *** — no human in the loop |
 | Limited file access | Full read/write access to **entire filesystem** |
@@ -106,12 +109,14 @@ OpenClaw's default install is designed to be safe, sandboxed, and limited:
 |---------|-------------|
 | 🚀 **One-Command Setup** | Single script installs everything and configures bots |
 | 🔒 **Whitelist Security** | DMs enabled but restricted to whitelisted Discord IDs only |
-| 🤖 **Dual Channels** | Discord + Telegram both configured and active |
-| ☁️ **Cloud & Local Models** | Defaults to `kimi-k2.6:cloud`, syncs catalog from ollama.com |
+| 🤖 **Dual Channels** | Discord + Telegram both configurable per agent |
+| ☁️ **Cloud & Local Models** | Defaults to `kimi-k2.6:cloud`, 229 models in catalog |
 | 🖥️ **Cross-Platform** | Native scripts for Linux and Windows |
-| ⚙️ **System-Level Control** | Passwordless `sudo`, systemd service as root, full system access |
+| ⚙️ **System-Level Control** | Passwordless `sudo`, systemd user service, full system access |
 | 🔄 **Idempotent** | Safe to run multiple times — detects existing installs and skips duplicates |
 | 📝 **Multi-User Whitelist** | Add multiple Discord users during install or edit config later |
+| 🤖 **Multi-Agent** | Multiple agents with different models + channels via configurator |
+| 📦 **Model Manager** | Web UI to fetch, pull, verify, and manage Ollama models |
 
 ---
 
@@ -139,18 +144,18 @@ discord:
 
 The Linux installer configures full non-interactive system control:
 
-- **Passwordless sudo** — Creates `/etc/sudoers.d/99-openclaw-$USER` with `NOPASSWD: *** checks for duplicates, validates syntax
-- **Systemd service** — `openclaw.service` runs as `root`, auto-starts on boot
+- **Passwordless sudo** — Creates `/etc/sudoers.d/99-openclaw-$USER` with `NOPASSWD: ALL`. Checks for duplicates, validates syntax
+- **systemd user service** — `openclaw-gateway.service` auto-starts on boot
 - **Access verification** — Tests shell execution, package manager, network, file write
 - **Idempotent** — Won't duplicate sudoers entries or overwrite existing service configs
 
 Start/stop the service:
 
 ```bash
-sudo systemctl start openclaw     # Start now
-sudo systemctl stop openclaw      # Stop
-sudo systemctl enable openclaw    # Enable on boot (already done)
-sudo systemctl status openclaw    # Check status
+systemctl --user start openclaw-gateway.service   # Start now
+systemctl --user stop openclaw-gateway.service    # Stop
+systemctl --user enable openclaw-gateway.service  # Enable on boot (already done)
+systemctl --user status openclaw-gateway.service  # Check status
 ```
 
 ---
@@ -171,30 +176,29 @@ ADMIN_DISCORD_ID=your_discord_user_id
 
 ```bash
 # Manual start (foreground)
-openclaw gateway start
+openclaw gateway run
 
-# Or use systemd (background, root privileges)
-sudo systemctl start openclaw
+# Or use systemd (background)
+systemctl --user start openclaw-gateway.service
 ```
 
 ### 3. Verify
 
 ```bash
-openclaw status          # Gateway status
-ollama list              # Installed models
-sudo systemctl status openclaw  # Service status
+openclaw status                    # Gateway status
+ollama list                        # Installed models
+systemctl --user status openclaw-gateway.service  # Service status
 ```
 
 ---
 
 ## Model Catalog
 
-The installer syncs models from [ollama.com/search?c=cloud](https://ollama.com/search?c=cloud). Switch models by editing `~/.openclaw/config/gateway.yaml`:
+The installer pulls `kimi-k2.6:cloud` by default. The web Model Manager syncs 229 models from [ollama.com/search](https://ollama.com/search). Switch models by editing `~/.openclaw/openclaw.json` or via the Model Manager.
 
 ```yaml
 # Cloud models (no local GPU needed)
 model: ollama/kimi-k2.6:cloud
-model: ollama/qwen2.5:cloud
 
 # Local models (requires GPU/CPU)
 model: ollama/llama3.2
@@ -203,6 +207,43 @@ model: ollama/phi4
 ```
 
 Pull new models: `ollama pull <model>`
+
+---
+
+## Model Manager
+
+A web UI for managing Ollama models:
+
+- **Fetch** available models from GitHub-hosted catalog
+- **Connect** to your Ollama instance (configurable host)
+- **Pull** models with streaming progress
+- **Verify** models after pull via `/api/tags`
+- **Select active** models for OpenClaw agents
+- **Remove** models from local Ollama
+
+Open it at: [jlaiii.github.io/openclaw-god-mode/models.html](https://jlaiii.github.io/openclaw-god-mode/models.html)
+
+Or run locally after clone:
+```bash
+cd openclaw-god-mode/docs
+python3 -m http.server 8080
+# Open http://localhost:8080/models.html
+```
+
+---
+
+## Configurator
+
+Generate install commands with a GUI:
+
+- Add multiple agents with different models
+- Set fallback models per agent
+- Configure Discord + Telegram per agent
+- Pick identity presets (default, hacker, devops, custom)
+- Set bind mode, guild lock, extra users
+- Shareable URL with all settings encoded
+
+Open it at: [jlaiii.github.io/openclaw-god-mode/configure.html](https://jlaiii.github.io/openclaw-god-mode/configure.html)
 
 ---
 

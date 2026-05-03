@@ -19,11 +19,7 @@
             --code-bg: #21262d;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
@@ -32,30 +28,16 @@
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
-        /* Header */
         header {
             border-bottom: 1px solid var(--border);
             padding: 40px 0;
             text-align: center;
         }
 
-        .logo {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
+        .logo { font-size: 48px; margin-bottom: 10px; }
+        h1 { font-size: 32px; font-weight: 600; margin-bottom: 12px; }
         .tagline {
             font-size: 18px;
             color: var(--text-muted);
@@ -86,7 +68,6 @@
 
         .badge.linux { color: var(--success); border-color: var(--success); }
         .badge.windows { color: var(--accent); border-color: var(--accent); }
-        .badge.docker { color: var(--warning); border-color: var(--warning); }
 
         .btn-group {
             display: flex;
@@ -113,30 +94,17 @@
             background: var(--accent);
             color: var(--bg);
         }
-
-        .btn-primary:hover {
-            background: var(--accent-hover);
-        }
+        .btn-primary:hover { background: var(--accent-hover); }
 
         .btn-secondary {
             background: var(--bg-secondary);
             color: var(--text);
             border: 1px solid var(--border);
         }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-        .btn-secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* Main content */
-        main {
-            padding: 40px 0;
-        }
-
-        section {
-            margin-bottom: 48px;
-        }
+        main { padding: 40px 0; }
+        section { margin-bottom: 48px; }
 
         h2 {
             font-size: 24px;
@@ -153,12 +121,8 @@
             color: var(--accent);
         }
 
-        p {
-            margin-bottom: 14px;
-            color: var(--text);
-        }
+        p { margin-bottom: 14px; color: var(--text); }
 
-        /* Features */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -173,24 +137,10 @@
             padding: 24px;
         }
 
-        .feature-icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
+        .feature-icon { font-size: 32px; margin-bottom: 12px; }
+        .feature h4 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+        .feature p { font-size: 14px; color: var(--text-muted); margin: 0; }
 
-        .feature h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .feature p {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        /* Code blocks */
         pre {
             background: var(--code-bg);
             border: 1px solid var(--border);
@@ -239,13 +189,8 @@
             padding: 4px 8px;
             border-radius: 4px;
         }
+        .copy-btn:hover { color: var(--text); background: var(--border); }
 
-        .copy-btn:hover {
-            color: var(--text);
-            background: var(--border);
-        }
-
-        /* Tabs */
         .tabs {
             display: flex;
             gap: 4px;
@@ -264,35 +209,15 @@
             border-bottom: 2px solid transparent;
             transition: all 0.2s;
         }
+        .tab:hover { color: var(--text); }
+        .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-        .tab:hover {
-            color: var(--text);
-        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
 
-        .tab.active {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-        }
+        ul, ol { margin: 12px 0 20px 24px; }
+        li { margin-bottom: 8px; color: var(--text); }
 
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* Lists */
-        ul, ol {
-            margin: 12px 0 20px 24px;
-        }
-
-        li {
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-
-        /* Table */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -312,11 +237,8 @@
             color: var(--text-muted);
         }
 
-        td {
-            font-size: 14px;
-        }
+        td { font-size: 14px; }
 
-        /* Footer */
         footer {
             border-top: 1px solid var(--border);
             padding: 30px 0;
@@ -325,16 +247,9 @@
             font-size: 13px;
         }
 
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+        footer a { color: var(--accent); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Warning box */
         .warning-box {
             background: var(--bg-secondary);
             border: 1px solid var(--danger);
@@ -343,25 +258,12 @@
             padding: 24px;
             margin: 24px 0;
         }
-        .warning-box h3 {
-            color: var(--danger);
-            margin-top: 0;
-        }
-        .warning-box table {
-            margin: 16px 0;
-        }
-        .warning-box td:first-child {
-            color: var(--text-muted);
-            width: 40%;
-        }
-        .warning-box td:last-child {
-            color: var(--danger);
-        }
-        .warning-box .safe {
-            color: var(--success);
-        }
+        .warning-box h3 { color: var(--danger); margin-top: 0; }
+        .warning-box table { margin: 16px 0; }
+        .warning-box td:first-child { color: var(--text-muted); width: 40%; }
+        .warning-box td:last-child { color: var(--danger); }
+        .warning-box .safe { color: var(--success); }
 
-        /* Responsive */
         @media (max-width: 600px) {
             h1 { font-size: 24px; }
             .logo { font-size: 36px; }
@@ -380,17 +282,16 @@
             <div class="badges">
                 <span class="badge linux">🐧 Linux</span>
                 <span class="badge windows">🪟 Windows</span>
-                <span class="badge docker">🐳 Docker</span>
             </div>
             <div class="btn-group">
-                <a href="https://github.com/jlaiii/openclaw-god-mode" class="btn btn-primary">
+                <a href="https://github.com/jlaiii/openclaw-god-mode" class="btn btn-primary" target="_blank">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
                     GitHub
                 </a>
                 <a href="configure.html" class="btn btn-primary" style="background: var(--success);">
                     ⚡ Quick Configurator
                 </a>
-                <a href="#install" class="btn btn-secondary">📥 Manual Install</a>
+                <a href="models.html" class="btn btn-secondary">🤖 Model Manager</a>
             </div>
         </div>
     </header>
@@ -400,7 +301,7 @@
         <section class="warning-box">
             <h3>⚠️ WARNING: This Is NOT For Everyone</h3>
             <p>This project removes nearly every safety guardrail OpenClaw ships with by default. It is designed for advanced users who want <strong>maximum, unrestricted system control</strong> from their AI agent. If you do not understand the implications below, <strong>do not use this installer</strong>.</p>
-            
+
             <h3>What This Installer Actually Does</h3>
             <p>OpenClaw's default install is designed to be safe, sandboxed, and limited:</p>
             <ul>
@@ -411,7 +312,7 @@
             </ul>
             <p><strong>This installer strips all of that away:</strong></p>
             <table>
-                <tr><td>User-level execution</td><td>Runs as <strong>root</strong> via systemd service</td></tr>
+                <tr><td>User-level execution</td><td>User systemd service with passwordless <code>sudo</code></td></tr>
                 <tr><td>Device auth required</td><td><code>dangerouslyDisableDeviceAuth: true</code> — web UI has no login gate</td></tr>
                 <tr><td>Prompts for approval</td><td>Passwordless <code>sudo</code> (<code>NOPASSWD: *** — no human in the loop</td></tr>
                 <tr><td>Limited file access</td><td>Full read/write access to <strong>entire filesystem</strong></td></tr>
@@ -419,7 +320,7 @@
                 <tr><td>Network restricted</td><td>Unrestricted network access</td></tr>
                 <tr><td>Sandbox model</td><td><strong>Root shell model</strong> — AI can modify system configs, create users, wipe drives</td></tr>
             </table>
-            
+
             <h3>What This Means in Practice</h3>
             <ul>
                 <li>The AI agent can <code>sudo rm -rf /</code> without any prompt</li>
@@ -428,7 +329,7 @@
                 <li>Anyone with bot access (even whitelisted users) can issue destructive commands</li>
                 <li><strong>There is no audit trail or approval step</strong></li>
             </ul>
-            
+
             <h3>Who Should Use This</h3>
             <ul>
                 <li>Dedicated, isolated machine or VM — not your daily driver</li>
@@ -436,7 +337,7 @@
                 <li>You understand a compromised token = full system compromise</li>
                 <li>You have <strong>backups</strong> and a <strong>recovery plan</strong></li>
             </ul>
-            
+
             <h3>Who Should NOT Use This</h3>
             <ul>
                 <li>Anyone running OpenClaw on their personal machine</li>
@@ -444,8 +345,8 @@
                 <li>Anyone sharing the bot with people they do not absolutely trust</li>
                 <li>Anyone without isolated infrastructure</li>
             </ul>
-            
-            <p><strong>Use the official OpenClaw install instead:</strong> <a href="https://github.com/openclaw/openclaw" class="safe">https://github.com/openclaw/openclaw</a></p>
+
+            <p><strong>Use the official OpenClaw install instead:</strong> <a href="https://github.com/openclaw/openclaw" class="safe" target="_blank">https://github.com/openclaw/openclaw</a></p>
         </section>
 
         <!-- Features -->
@@ -455,7 +356,7 @@
                 <div class="feature">
                     <div class="feature-icon">🚀</div>
                     <h4>Zero to Running</h4>
-                    <p>One script installs Ollama, OpenClaw, pulls a default model, and configures your bots. No manual steps.</p>
+                    <p>One script installs Ollama, OpenClaw, pulls a model, and configures your bots. No manual steps.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🔒</div>
@@ -465,27 +366,27 @@
                 <div class="feature">
                     <div class="feature-icon">⚙️</div>
                     <h4>System-Level Control</h4>
-                    <p>Passwordless sudo, systemd service as root, auto-starts on boot. Full non-interactive automation.</p>
+                    <p>Passwordless sudo, systemd user service, auto-starts on boot. Full non-interactive automation.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🤖</div>
                     <h4>Discord + Telegram</h4>
-                    <p>Configure both bots with minimal prompts. Auto-generates invite URLs and setup guides.</p>
+                    <p>Configure both bots with minimal prompts. Multi-agent support via the configurator.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">☁️</div>
                     <h4>Cloud & Local Models</h4>
-                    <p>Defaults to kimi-k2.6:cloud. Syncs model catalog from ollama.com for easy switching.</p>
+                    <p>Defaults to kimi-k2.6:cloud. 229 models in catalog via the web Model Manager.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🖥️</div>
                     <h4>Cross-Platform</h4>
-                    <p>Native scripts for Linux (apt/dnf/pacman) and Windows (winget/MSI). Docker coming soon.</p>
+                    <p>Native scripts for Linux (apt/dnf/pacman) and Windows (PowerShell/winget).</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">⚡</div>
-                    <h4>Auto-Updates</h4>
-                    <p>Checks for Ollama and OpenClaw updates. Idempotent — safe to run multiple times.</p>
+                    <h4>Configurator + Model Manager</h4>
+                    <p>Web UIs for generating install commands and managing Ollama models without terminal.</p>
                 </div>
             </div>
         </section>
@@ -494,14 +395,14 @@
         <section id="install">
             <h2>Quick Start</h2>
             <p style="background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 8px; padding: 12px 16px; font-size: 14px; margin-bottom: 16px;">
-                💡 <strong>New:</strong> Try the <a href="configure.html" style="color: var(--accent); font-weight: 600;">⚡ Quick Configurator</a> to generate your install command with a few clicks — no typing config by hand.
+                💡 <strong>New:</strong> Try the <a href="configure.html" style="color: var(--accent); font-weight: 600;">⚡ Quick Configurator</a> to generate your install command with a few clicks.
+                Or use the <a href="models.html" style="color: var(--accent); font-weight: 600;">🤖 Model Manager</a> to pull and manage Ollama models.
             </p>
             <p>Pick your platform. The script handles everything else.</p>
 
             <div class="tabs">
                 <button class="tab active" onclick="showTab('linux')">🐧 Linux</button>
                 <button class="tab" onclick="showTab('windows')">🪟 Windows</button>
-                <button class="tab" onclick="showTab('docker')">🐳 Docker</button>
             </div>
 
             <div id="linux" class="tab-content active">
@@ -526,10 +427,6 @@ cd openclaw-god-mode\windows
 .\install.ps1</code></pre>
                 <p><strong>Requires:</strong> Windows 10/11, PowerShell 5.1+ (Run as Administrator)</p>
             </div>
-
-            <div id="docker" class="tab-content">
-                <p>🚧 Docker support is coming soon. Track progress on <a href="https://github.com/jlaiii/openclaw-god-mode/issues">GitHub Issues</a>.</p>
-            </div>
         </section>
 
         <!-- What It Does -->
@@ -542,10 +439,10 @@ cd openclaw-god-mode\windows
                 <li><strong>Installs Ollama</strong> — Downloads official installer, starts service</li>
                 <li><strong>Pulls default model</strong> — <code>kimi-k2.6:cloud</code> with retry logic</li>
                 <li><strong>Installs OpenClaw</strong> — <code>npm install -g openclaw</code></li>
-                <li><strong>Configures workspace</strong> — Creates <code>~/.openclaw/</code> with templates</li>
+                <li><strong>Configures workspace</strong> — Creates <code>~/.openclaw/</code> with multi-agent config</li>
                 <li><strong>Prompts for tokens</strong> — Discord, Telegram, admin ID + extra whitelist users</li>
-                <li><strong>Enables both channels</strong> — Discord + Telegram active</li>
-                <li><strong>Sets up systemd service</strong> — Runs OpenClaw as root, auto-starts on boot</li>
+                <li><strong>Enables channels</strong> — Discord + Telegram (configurable per agent)</li>
+                <li><strong>Sets up systemd service</strong> — User service, auto-starts on boot</li>
                 <li><strong>Verifies system access</strong> — Tests shell, packages, network, file write</li>
                 <li><strong>Prints setup guide</strong> — Discord intents, invite URL, BotFather steps</li>
             </ol>
@@ -555,41 +452,13 @@ cd openclaw-god-mode\windows
         <section>
             <h2>Discord Security Model</h2>
             <table>
-                <tr>
-                    <th>Feature</th>
-                    <th>Setting</th>
-                    <th>How It Works</th>
-                </tr>
-                <tr>
-                    <td>DMs</td>
-                    <td><code>allowDMs: true</code></td>
-                    <td>✅ Enabled — only whitelisted Discord IDs can DM</td>
-                </tr>
-                <tr>
-                    <td>Groups</td>
-                    <td><code>allowGroups: true</code></td>
-                    <td>✅ Enabled — works in all servers (or whitelisted guild)</td>
-                </tr>
-                <tr>
-                    <td>Whitelist</td>
-                    <td>Multi-user</td>
-                    <td>You + any extra users added during setup</td>
-                </tr>
-                <tr>
-                    <td>Guild lock</td>
-                    <td>Optional</td>
-                    <td>Restrict to specific server, or leave open</td>
-                </tr>
-                <tr>
-                    <td>Token storage</td>
-                    <td><code>.env</code> file</td>
-                    <td>Auto-.gitignored, never committed</td>
-                </tr>
-                <tr>
-                    <td>Device auth</td>
-                    <td>Disabled</td>
-                    <td><code>dangerouslyDisableDeviceAuth: true</code> for local use</td>
-                </tr>
+                <tr><th>Feature</th><th>Setting</th><th>How It Works</th></tr>
+                <tr><td>DMs</td><td><code>allowDMs: true</code></td><td>✅ Enabled — only whitelisted Discord IDs can DM</td></tr>
+                <tr><td>Groups</td><td><code>allowGroups: true</code></td><td>✅ Enabled — works in all servers (or whitelisted guild)</td></tr>
+                <tr><td>Whitelist</td><td>Multi-user</td><td>You + any extra users added during setup</td></tr>
+                <tr><td>Guild lock</td><td>Optional</td><td>Restrict to specific server, or leave open</td></tr>
+                <tr><td>Token storage</td><td><code>.env</code> file</td><td>Auto-.gitignored, never committed</td></tr>
+                <tr><td>Device auth</td><td>Disabled</td><td><code>dangerouslyDisableDeviceAuth: true</code> for local use</td></tr>
             </table>
             <p>Add more whitelisted users anytime by editing <code>~/.openclaw/config/gateway.yaml</code>:</p>
             <div class="code-header">
@@ -600,34 +469,13 @@ cd openclaw-god-mode\windows
   allowedUsers: [123456789, 987654321, 555555555]</code></pre>
         </section>
 
-        <!-- Model Catalog -->
-        <section>
-            <h2>Model Catalog</h2>
-            <p>The installer syncs available models from <a href="https://ollama.com/search?c=cloud">ollama.com/search?c=cloud</a>. After install, switch models by editing <code>~/.openclaw/config/gateway.yaml</code>:</p>
-
-            <div class="code-header">
-                <span class="code-label">yaml</span>
-                <button class="copy-btn" onclick="copy(this)">Copy</button>
-            </div>
-            <pre><code># Cloud models (no local GPU needed)
-model: ollama/kimi-k2.6:cloud
-model: ollama/qwen2.5:cloud
-
-# Local models (requires GPU/CPU power)
-model: ollama/llama3.2
-model: ollama/mistral
-model: ollama/phi4</code></pre>
-
-            <p>Pull new models anytime: <code>ollama pull &lt;model&gt;</code></p>
-        </section>
-
         <!-- System Setup -->
         <section>
             <h2>System-Level Setup</h2>
             <p>The Linux installer configures full non-interactive system control:</p>
             <ul>
                 <li><strong>Passwordless sudo</strong> — Creates <code>/etc/sudoers.d/99-openclaw-$USER</code> with <code>NOPASSWD: *** checks for duplicates, validates syntax</li>
-                <li><strong>systemd service</strong> — <code>openclaw.service</code> runs as <code>root</code>, auto-starts on boot</li>
+                <li><strong>systemd user service</strong> — <code>openclaw-gateway.service</code> auto-starts on boot</li>
                 <li><strong>Access verification</strong> — Tests shell execution, package manager, network, file write</li>
                 <li><strong>Idempotent</strong> — Won't duplicate sudoers entries or overwrite existing service configs</li>
             </ul>
@@ -636,10 +484,30 @@ model: ollama/phi4</code></pre>
                 <span class="code-label">bash</span>
                 <button class="copy-btn" onclick="copy(this)">Copy</button>
             </div>
-            <pre><code>sudo systemctl start openclaw     # Start now
-sudo systemctl stop openclaw      # Stop
-sudo systemctl enable openclaw    # Enable on boot (already done)
-sudo systemctl status openclaw    # Check status</code></pre>
+            <pre><code>systemctl --user start openclaw-gateway.service   # Start now
+systemctl --user stop openclaw-gateway.service    # Stop
+systemctl --user enable openclaw-gateway.service  # Enable on boot (already done)
+systemctl --user status openclaw-gateway.service  # Check status</code></pre>
+        </section>
+
+        <!-- Model Catalog -->
+        <section>
+            <h2>Model Catalog</h2>
+            <p>The installer pulls <code>kimi-k2.6:cloud</code> by default. The <a href="models.html">Model Manager</a> syncs 229 models from <a href="https://ollama.com/search" target="_blank">ollama.com/search</a>. Switch models by editing <code>~/.openclaw/openclaw.json</code> or via the Model Manager.</p>
+
+            <div class="code-header">
+                <span class="code-label">yaml</span>
+                <button class="copy-btn" onclick="copy(this)">Copy</button>
+            </div>
+            <pre><code># Cloud models (no local GPU needed)
+model: ollama/kimi-k2.6:cloud
+
+# Local models (requires GPU/CPU power)
+model: ollama/llama3.2
+model: ollama/mistral
+model: ollama/phi4</code></pre>
+
+            <p>Pull new models anytime: <code>ollama pull &lt;model&gt;</code> or use the <a href="models.html">Model Manager</a>.</p>
         </section>
 
         <!-- Post-Install -->
@@ -662,19 +530,19 @@ ADMIN_DISCORD_ID=your_discord_user_id</code></pre>
                 <button class="copy-btn" onclick="copy(this)">Copy</button>
             </div>
             <pre><code># Manual start (foreground)
-openclaw gateway start
+openclaw gateway run
 
-# Or use systemd (background, root privileges)
-sudo systemctl start openclaw</code></pre>
+# Or use systemd (background)
+systemctl --user start openclaw-gateway.service</code></pre>
 
             <h3>3. Verify</h3>
             <div class="code-header">
                 <span class="code-label">bash / powershell</span>
                 <button class="copy-btn" onclick="copy(this)">Copy</button>
             </div>
-            <pre><code>openclaw status          # Gateway status
-ollama list              # Installed models
-sudo systemctl status openclaw  # Service status</code></pre>
+            <pre><code>openclaw status                    # Gateway status
+ollama list                        # Installed models
+systemctl --user status openclaw-gateway.service  # Service status</code></pre>
         </section>
 
         <!-- Roadmap -->
@@ -682,34 +550,24 @@ sudo systemctl status openclaw  # Service status</code></pre>
             <h2>Roadmap</h2>
             <ul>
                 <li><strong>Docker Compose</strong> — One-liner containerized deployment</li>
-                <li><strong>Systemd service</strong> — Auto-start on boot</li>
+                <li><strong>Windows service auto-start</strong> — Native service registration</li>
                 <li><strong>TUI wizard</strong> — Interactive menu with whiptail/dialog</li>
-                <li><strong>Auto-update</strong> — <code>./update.sh</code> to refresh OpenClaw + Ollama</li>
+                <li><strong>Auto-update</strong> — Script to refresh OpenClaw + Ollama</li>
                 <li><strong>Backup/restore</strong> — Config migration between machines</li>
-                <li><strong>Model picker</strong> — Interactive catalog browser at install time</li>
             </ul>
         </section>
 
         <!-- Contribute -->
         <section>
             <h2>Contributing</h2>
-            <p>Found a bug or want to add a feature? Open an issue or PR on <a href="https://github.com/jlaiii/openclaw-god-mode">GitHub</a>.</p>
-            <div class="code-header">
-                <span class="code-label">bash</span>
-                <button class="copy-btn" onclick="copy(this)">Copy</button>
-            </div>
-            <pre><code>git clone https://github.com/jlaiii/openclaw-god-mode.git
-cd openclaw-god-mode
-# make changes
-git commit -am "feat: description"
-git push origin main</code></pre>
+            <p>Found a bug or want to add a feature? Open an issue or PR on <a href="https://github.com/jlaiii/openclaw-god-mode" target="_blank">GitHub</a>.</p>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>Built by <a href="https://github.com/jlaiii">@jlaiii</a> · OpenClaw God Mode is not affiliated with OpenClaw or Ollama</p>
-            <p><a href="https://github.com/jlaiii/openclaw-god-mode">⭐ Star on GitHub</a></p>
+            <p>Built by <a href="https://github.com/jlaiii" target="_blank">@jlaiii</a> · OpenClaw God Mode is not affiliated with OpenClaw or Ollama</p>
+            <p><a href="https://github.com/jlaiii/openclaw-god-mode" target="_blank">⭐ Star on GitHub</a></p>
         </div>
     </footer>
 
@@ -731,4 +589,3 @@ git push origin main</code></pre>
     </script>
 </body>
 </html>
-<!-- built Sat May  2 11:33:28 PM UTC 2026 -->

@@ -497,20 +497,37 @@
                     tags: m.tags || []
                 }));
 
-                // Merge with installed status
+                // Deduplicate by id
+                const seen = new Set();
+                availableModels = availableModels.filter(m => {
+                    if (seen.has(m.id)) return false;
+                    seen.add(m.id);
+                    return true;
+                });
+
+                // Cache for offline use
+                try {
+                    localStorage.setItem('cachedModels', JSON.stringify(availableModels));
+                } catch (e) {
+                    // Storage full — ignore
+                }
+
                 syncInstalledStatus();
                 renderAvailable();
                 setStatus(`Model list loaded — ${availableModels.length} models available`, 'success');
             } catch (err) {
-                // Fallback: load from local cache or built-in list
                 const cached = localStorage.getItem('cachedModels');
                 if (cached) {
-                    availableModels = JSON.parse(cached);
-                    syncInstalledStatus();
-                    renderAvailable();
-                    setStatus(`Loaded ${availableModels.length} models from cache (GitHub fetch failed: ${err.message})`, 'warning');
+                    try {
+                        availableModels = JSON.parse(cached);
+                        syncInstalledStatus();
+                        renderAvailable();
+                        setStatus(`Loaded ${availableModels.length} models from cache (GitHub fetch failed: ${err.message})`, 'warning');
+                    } catch (e) {
+                        setStatus(`Failed to parse cached models: ${e.message}`, 'error');
+                    }
                 } else {
-                    setStatus(`Failed to fetch models: ${err.message}`, 'error');
+                    setStatus(`Failed to fetch models: ${err.message}. Check network and try again.`, 'error');
                 }
             } finally {
                 document.getElementById('btnFetch').disabled = false;
@@ -554,8 +571,8 @@
                 setStatus('Invalid model name', 'error'); return;
             }
 
-            const cleanName = modelName.trim().toLowerCase().replace(/[^a-z0-9._:\-]/g, '');
-            if (!cleanName) { setStatus('Invalid model name', 'error'); return; }
+            const cleanName = modelName.trim().replace(/[^a-zA-Z0-9._:\/-]/g, '');
+            if (!cleanName) { setStatus('Invalid model name: only letters, numbers, dots, slashes, colons, and hyphens allowed', 'error'); return; }
 
             document.getElementById('pullSection').style.display = 'block';
             document.getElementById('pullModelName').textContent = cleanName;
