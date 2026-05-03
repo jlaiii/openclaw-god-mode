@@ -528,7 +528,6 @@
         function addDefaultAgent() {
             agents = [{
                 id: 'main',
-                name: 'NanoBot',
                 model: 'ollama/kimi-k2.6:cloud',
                 channels: ['discord', 'telegram']
             }];
@@ -559,7 +558,6 @@
             if (data.ag && data.ag.length > 0) {
                 agents = data.ag.map(a => ({
                     id: a.id || 'agent-' + Math.random().toString(36).substr(2, 5),
-                    name: a.n || 'Agent',
                     model: a.m || 'ollama/kimi-k2.6:cloud',
                     channels: a.c || ['discord']
                 }));
@@ -584,7 +582,6 @@
                 bm: document.getElementById('bindMode').value,
                 ag: agents.map(a => ({
                     id: a.id,
-                    n: a.name,
                     m: a.model,
                     c: a.channels
                 }))
@@ -605,24 +602,24 @@
                     </div>
                     <div class="agent-grid">
                         <div class="form-group">
-                            <label>Agent ID</label>
+                            <label>Agent ID <span class="hint">e.g. main, helper, coder</span></label>
                             <input type="text" value="${agent.id}" onchange="updateAgent(${index}, 'id', this.value)" placeholder="main">
                         </div>
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" value="${agent.name}" onchange="updateAgent(${index}, 'name', this.value)" placeholder="NanoBot">
+                            <label>Model</label>
+                            <select onchange="updateAgent(${index}, 'model', this.value)">
+                                ${MODELS.map(m => `<option value="${m.id}" ${agent.model === m.id ? 'selected' : ''}>${m.name}</option>`).join('')}
+                                <option value="custom" ${!MODELS.find(m => m.id === agent.model) ? 'selected' : ''}>Custom...</option>
+                            </select>
                         </div>
                     </div>
+                    ${!MODELS.find(m => m.id === agent.model) ? `
                     <div class="form-group" style="margin-top: 12px;">
                         <label>Model</label>
                         <select onchange="updateAgent(${index}, 'model', this.value)">
                             ${MODELS.map(m => `<option value="${m.id}" ${agent.model === m.id ? 'selected' : ''}>${m.name}</option>`).join('')}
                             <option value="custom" ${!MODELS.find(m => m.id === agent.model) ? 'selected' : ''}>Custom...</option>
                         </select>
-                    </div>
-                    ${!MODELS.find(m => m.id === agent.model) ? `
-                    <div class="form-group" style="margin-top: 8px;">
-                        <input type="text" value="${agent.model}" onchange="updateAgent(${index}, 'model', this.value)" placeholder="ollama/custom-model:tag">
                     </div>
                     ` : ''}
                     <div style="margin-top: 12px;">
@@ -645,7 +642,6 @@
             const id = 'agent-' + Math.random().toString(36).substr(2, 5);
             agents.push({
                 id: id,
-                name: 'Agent' + (agents.length + 1),
                 model: 'ollama/kimi-k2.6:cloud',
                 channels: ['discord']
             });
@@ -698,7 +694,7 @@
 
             // Update summary
             const parts = [
-                `• ${d.ag.length} agent(s): ${d.ag.map(a => a.n).join(', ')}`,
+                `• ${d.ag.length} agent(s): ${d.ag.map(a => a.id).join(', ')}`,
                 `• Models: ${d.ag.map(a => a.m).join(', ')}`,
                 `• Channels: ${[...new Set(d.ag.flatMap(a => a.c))].join(', ')}`,
                 `• Discord: DMs=${d.dm ? 'ON' : 'OFF'}, Groups=${d.gr ? 'ON' : 'OFF'}`,

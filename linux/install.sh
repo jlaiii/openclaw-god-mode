@@ -214,7 +214,6 @@ controlUi:
 
 agents:
   - id: main
-    name: NanoBot
     model: ollama/kimi-k2.6:cloud
     channels:
       - discord
@@ -264,6 +263,13 @@ JSON
         ok "Gateway mode set to local in ~/.openclaw/openclaw.json"
         ok "Multi-agent support enabled"
     fi
+    
+    # Copy default BOOTSTRAP.md to workspace so OpenClaw skips onboarding
+    local script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    if [ -f "$script_dir/BOOTSTRAP.md" ] && [ ! -f "$workspace/workspace/BOOTSTRAP.md" ]; then
+        mkdir -p "$workspace/workspace"
+        cp "$script_dir/BOOTSTRAP.md" "$workspace/workspace/BOOTSTRAP.md"
+        ok "Default BOOTSTRAP.md copied — OpenClaw will use default identity"
     fi
     
     # Write .env template
