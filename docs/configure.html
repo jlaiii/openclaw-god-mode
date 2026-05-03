@@ -1041,10 +1041,14 @@ I read codebases, write tests, and deploy changes.
         });
 
         function addDefaultAgent() {
+            // Build default channels from currently-enabled integrations + webchat
+            const channels = ['webchat'];
+            if (document.getElementById('discordEnabled')?.checked) channels.push('discord');
+            if (document.getElementById('telegramEnabled')?.checked) channels.push('telegram');
             agents = [{
                 id: 'main',
                 model: 'ollama/kimi-k2.6:cloud',
-                channels: ['discord', 'telegram']
+                channels: channels
             }];
             renderAgents();
         }
